@@ -5,3 +5,4 @@ void main() {
   AppConfig.initialize(AppFlavor.prod);
   runImigongoApp();
 }
+

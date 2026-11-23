@@ -21,3 +21,4 @@ class AppConfig {
     flavor = targetFlavor;
   }
 }
+
