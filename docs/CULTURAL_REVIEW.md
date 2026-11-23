@@ -33,3 +33,4 @@ The following traditional names and pigment claims were removed from code identi
 1. **Plain English Identifiers:** Code references must use descriptive English terms (`charcoal`, `chalk`, `terracotta`, `ochre`).
 2. **No In-App Cultural Assertions:** Do not display unverified historical or pigment claims in the game interface.
 3. **No Claims of Authenticity:** Avoid asserting "authenticity" until accredited by Rwandan cultural institutions (e.g., Rwanda Cultural Heritage Academy / Inteko y'Umuco).
+

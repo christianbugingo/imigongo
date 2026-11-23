@@ -85,3 +85,4 @@ class Tile {
       currentRotation.hashCode ^
       targetRotation.hashCode;
 }
+

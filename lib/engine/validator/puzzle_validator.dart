@@ -115,3 +115,4 @@ class PuzzleValidator {
     return validate(board).isValid;
   }
 }
+

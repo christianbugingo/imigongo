@@ -51,3 +51,4 @@ class ConnectionMask {
     return current;
   }
 }
+
