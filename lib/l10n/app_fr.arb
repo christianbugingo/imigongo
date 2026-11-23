@@ -1,0 +1,18 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Puzzle Imigongo",
+  "geometricReliefPuzzle": "Puzzle de Relief Géométrique",
+  "play": "Jouer",
+  "settings": "Paramètres",
+  "dailyChallenge": "Défi Quotidien",
+  "moves": "Mouvements",
+  "par": "Par",
+  "targetMoves": "Mouvements Cibles",
+  "solved": "Résolu",
+  "starsEarned": "{count, plural, =1{1 Étoile} other{{count} Étoiles}}",
+  "rotateInstruction": "Touchez une tuile pour tourner dans le sens horaire",
+  "colorCharcoal": "Fusain",
+  "colorChalk": "Craie",
+  "colorTerracotta": "Terre cuite",
+  "colorOchre": "Ocre"
+}

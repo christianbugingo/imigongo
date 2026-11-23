@@ -29,6 +29,20 @@ android {
         versionName = flutter.versionName
     }
 
+    flavorDimensions += listOf("environment")
+
+    productFlavors {
+        create("dev") {
+            dimension = "environment"
+            applicationIdSuffix = ".dev"
+            resValue("string", "app_name", "Imigongo Dev")
+        }
+        create("prod") {
+            dimension = "environment"
+            resValue("string", "app_name", "Imigongo")
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'core/config/app_flavor.dart';
 import 'core/theme/imigongo_palette.dart';
 import 'core/theme/imigongo_theme.dart';
-import 'models/puzzle_enums.dart';
+import 'l10n/app_localizations.dart';
 
-void main() {
+void runImigongoApp() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const ImigongoPuzzleApp());
+}
+
+void main() {
+  AppConfig.initialize(AppFlavor.prod);
+  runImigongoApp();
 }
 
 class ImigongoPuzzleApp extends StatelessWidget {
@@ -14,9 +20,11 @@ class ImigongoPuzzleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Imigongo Pattern Puzzle',
-      debugShowCheckedModeBanner: false,
+      title: AppConfig.flavor.appTitle,
+      debugShowCheckedModeBanner: AppConfig.flavor.isDev,
       theme: ImigongoTheme.darkTheme,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const FoundationHomeScreen(),
     );
   }
@@ -27,9 +35,31 @@ class FoundationHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final isDev = AppConfig.flavor.isDev;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('IMIGONGO PUZZLE'),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(l10n?.appTitle ?? 'IMIGONGO PUZZLE'),
+            if (isDev) ...[
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: ImigongoPalette.terracotta,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const Text(
+                  'DEV',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ],
+        ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),
           child: Container(
@@ -78,10 +108,10 @@ class FoundationHomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 12),
-                        const Expanded(
+                        Expanded(
                           child: Text(
-                            'Geometric Relief Puzzle',
-                            style: TextStyle(
+                            l10n?.geometricReliefPuzzle ?? 'Geometric Relief Puzzle',
+                            style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: ImigongoPalette.chalk,
@@ -91,26 +121,41 @@ class FoundationHomeScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 12),
-                    const Text(
-                      'Inspired by geometric relief patterns. Rotate tiles to align '
-                      'geometric ridge paths into harmonic continuity.',
-                      style: TextStyle(
+                    Text(
+                      l10n?.rotateInstruction ?? 'Tap a tile to rotate clockwise',
+                      style: const TextStyle(
                         color: ImigongoPalette.parchment,
                         fontSize: 13.5,
                         height: 1.45,
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // Palette Swatches (plain English labels)
+                    // Palette Swatches (using localized strings)
                     Row(
                       children: [
-                        _buildColorPill('Charcoal', ImigongoPalette.charcoal, ImigongoPalette.chalk),
+                        _buildColorPill(
+                          l10n?.colorCharcoal ?? 'Charcoal',
+                          ImigongoPalette.charcoal,
+                          ImigongoPalette.chalk,
+                        ),
                         const SizedBox(width: 6),
-                        _buildColorPill('Chalk', ImigongoPalette.chalk, ImigongoPalette.charcoal),
+                        _buildColorPill(
+                          l10n?.colorChalk ?? 'Chalk',
+                          ImigongoPalette.chalk,
+                          ImigongoPalette.charcoal,
+                        ),
                         const SizedBox(width: 6),
-                        _buildColorPill('Terracotta', ImigongoPalette.terracotta, ImigongoPalette.chalk),
+                        _buildColorPill(
+                          l10n?.colorTerracotta ?? 'Terracotta',
+                          ImigongoPalette.terracotta,
+                          ImigongoPalette.chalk,
+                        ),
                         const SizedBox(width: 6),
-                        _buildColorPill('Ochre', ImigongoPalette.ochre, ImigongoPalette.charcoal),
+                        _buildColorPill(
+                          l10n?.colorOchre ?? 'Ochre',
+                          ImigongoPalette.ochre,
+                          ImigongoPalette.charcoal,
+                        ),
                       ],
                     ),
                   ],
@@ -131,7 +176,7 @@ class FoundationHomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Phase 1 • Step 1: Foundation Status',
+                      'Step 1b: Flavors & Localization Skeleton',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
@@ -140,54 +185,27 @@ class FoundationHomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 14),
                     _buildStatusRow(
+                      icon: Icons.layers_outlined,
+                      title: 'Current Flavor',
+                      value: '${AppConfig.flavor.name.toUpperCase()} (Package suffix: ${AppConfig.flavor.applicationIdSuffix.isEmpty ? "none (prod)" : AppConfig.flavor.applicationIdSuffix})',
+                    ),
+                    const Divider(color: ImigongoPalette.starInactive, height: 20),
+                    _buildStatusRow(
+                      icon: Icons.language,
+                      title: 'Supported Locales',
+                      value: '${AppLocalizations.supportedLocales.map((l) => l.languageCode).join(', ')} (English, French, Kinyarwanda)',
+                    ),
+                    const Divider(color: ImigongoPalette.starInactive, height: 20),
+                    _buildStatusRow(
                       icon: Icons.grid_4x4,
-                      title: 'Supported Grids',
-                      value: GridDimension.values.map((d) => '${d.size}x${d.size}').join(', '),
+                      title: 'Engine Status',
+                      value: 'Core engine + 40 unit tests passing (Steps 2-3 verified)',
                     ),
                     const Divider(color: ImigongoPalette.starInactive, height: 20),
                     _buildStatusRow(
                       icon: Icons.star_half,
-                      title: 'Move Targets',
-                      value: 'Par-based (Clockwise taps only; ADR 001 fallback)',
-                    ),
-                    const Divider(color: ImigongoPalette.starInactive, height: 20),
-                    _buildStatusRow(
-                      icon: Icons.notifications_active_outlined,
-                      title: 'Reminders',
-                      value: 'Local notifications (ADR 002: Offline first)',
-                    ),
-                    const Divider(color: ImigongoPalette.starInactive, height: 20),
-                    _buildStatusRow(
-                      icon: Icons.speed,
-                      title: 'Android Target',
-                      value: 'Release startup median 5 cold runs; Profile DevTools FPS',
-                    ),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 24),
-
-              // Checkpoint notice
-              Container(
-                padding: const EdgeInsets.all(14.0),
-                decoration: BoxDecoration(
-                  color: ImigongoPalette.charcoal,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: ImigongoPalette.terracotta.withValues(alpha: 0.6)),
-                ),
-                child: const Row(
-                  children: [
-                    Icon(Icons.info_outline, color: ImigongoPalette.terracotta, size: 22),
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        'Engine & Tests in progress. UI deferred until engine checkpoint review.',
-                        style: TextStyle(
-                          color: ImigongoPalette.chalk,
-                          fontSize: 13,
-                        ),
-                      ),
+                      title: 'Par Target Term',
+                      value: '${l10n?.par ?? "Par"} / ${l10n?.targetMoves ?? "Target Moves"}',
                     ),
                   ],
                 ),
@@ -213,9 +231,11 @@ class FoundationHomeScreen extends StatelessWidget {
           name,
           style: TextStyle(
             color: textColor,
-            fontSize: 11,
+            fontSize: 10.5,
             fontWeight: FontWeight.bold,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
     );

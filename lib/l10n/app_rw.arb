@@ -1,0 +1,18 @@
+{
+  "@@locale": "rw",
+  "appTitle": "Imigongo",
+  "geometricReliefPuzzle": "Umukino w'Ubugeni bw'Imigongo",
+  "play": "Gukina",
+  "settings": "Ibyigenewe",
+  "dailyChallenge": "Umukoro w'Umunsi",
+  "moves": "Intambwe",
+  "par": "Intego",
+  "targetMoves": "Intambwe Ziteganyijwe",
+  "solved": "Birarangiye",
+  "starsEarned": "{count, plural, =1{Inyenyeri 1} other{Inyenyeri {count}}}",
+  "rotateInstruction": "Kanda ku gasanduku kugira ngo gahindukire",
+  "colorCharcoal": "Umukara",
+  "colorChalk": "Umweru",
+  "colorTerracotta": "Umutuku w'ibumba",
+  "colorOchre": "Umuhondo w'ibumba"
+}

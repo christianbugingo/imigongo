@@ -1,0 +1,68 @@
+{
+  "@@locale": "en",
+  "appTitle": "Imigongo Puzzle",
+  "@appTitle": {
+    "description": "Main title of the application"
+  },
+  "geometricReliefPuzzle": "Geometric Relief Puzzle",
+  "@geometricReliefPuzzle": {
+    "description": "Subtitle describing the puzzle genre"
+  },
+  "play": "Play",
+  "@play": {
+    "description": "Label for play action"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Label for settings action"
+  },
+  "dailyChallenge": "Daily Challenge",
+  "@dailyChallenge": {
+    "description": "Label for daily puzzle challenge"
+  },
+  "moves": "Moves",
+  "@moves": {
+    "description": "Counter label for moves taken"
+  },
+  "par": "Par",
+  "@par": {
+    "description": "Target benchmark moves label"
+  },
+  "targetMoves": "Target Moves",
+  "@targetMoves": {
+    "description": "Full label for target move benchmark"
+  },
+  "solved": "Solved",
+  "@solved": {
+    "description": "Indicator when puzzle is completed"
+  },
+  "starsEarned": "{count, plural, =1{1 Star} other{{count} Stars}}",
+  "@starsEarned": {
+    "description": "Number of stars earned",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rotateInstruction": "Tap a tile to rotate clockwise",
+  "@rotateInstruction": {
+    "description": "Gameplay instruction for rotating a tile"
+  },
+  "colorCharcoal": "Charcoal",
+  "@colorCharcoal": {
+    "description": "Palette color label for charcoal"
+  },
+  "colorChalk": "Chalk",
+  "@colorChalk": {
+    "description": "Palette color label for chalk"
+  },
+  "colorTerracotta": "Terracotta",
+  "@colorTerracotta": {
+    "description": "Palette color label for terracotta"
+  },
+  "colorOchre": "Ochre",
+  "@colorOchre": {
+    "description": "Palette color label for ochre"
+  }
+}
