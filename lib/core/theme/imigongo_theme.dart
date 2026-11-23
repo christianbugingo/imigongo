@@ -11,20 +11,20 @@ class ImigongoTheme {
       brightness: Brightness.dark,
       scaffoldBackgroundColor: ImigongoPalette.canvasSlate,
       colorScheme: const ColorScheme.dark(
-        primary: ImigongoPalette.icyondoYellow,
-        secondary: ImigongoPalette.urukondoRed,
+        primary: ImigongoPalette.ochre,
+        secondary: ImigongoPalette.terracotta,
         surface: ImigongoPalette.tileSurface,
-        onPrimary: ImigongoPalette.uruziBlack,
-        onSecondary: ImigongoPalette.ingwaWhite,
-        onSurface: ImigongoPalette.ingwaWhite,
+        onPrimary: ImigongoPalette.charcoal,
+        onSecondary: ImigongoPalette.chalk,
+        onSurface: ImigongoPalette.chalk,
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: ImigongoPalette.canvasSlate,
         elevation: 0,
         centerTitle: true,
-        foregroundColor: ImigongoPalette.ingwaWhite,
+        foregroundColor: ImigongoPalette.chalk,
         titleTextStyle: TextStyle(
-          color: ImigongoPalette.ingwaWhite,
+          color: ImigongoPalette.chalk,
           fontSize: 20,
           fontWeight: FontWeight.bold,
           letterSpacing: 1.2,
@@ -40,21 +40,21 @@ class ImigongoTheme {
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          color: ImigongoPalette.ingwaWhite,
+          color: ImigongoPalette.chalk,
           fontWeight: FontWeight.w800,
           letterSpacing: 1.5,
         ),
         headlineMedium: TextStyle(
-          color: ImigongoPalette.ingwaWhite,
+          color: ImigongoPalette.chalk,
           fontWeight: FontWeight.w700,
           letterSpacing: 1.1,
         ),
         titleLarge: TextStyle(
-          color: ImigongoPalette.ingwaWhite,
+          color: ImigongoPalette.chalk,
           fontWeight: FontWeight.w600,
         ),
         bodyLarge: TextStyle(
-          color: ImigongoPalette.ingwaWhite,
+          color: ImigongoPalette.chalk,
           fontSize: 16,
         ),
         bodyMedium: TextStyle(

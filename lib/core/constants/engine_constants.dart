@@ -27,3 +27,4 @@ class EngineConstants {
   static const String motifInyange = 'inyange'; // Triangle elegance
   static const String motifBwirande = 'bwirande'; // Concentric squares
 }
+

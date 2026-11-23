@@ -1,4 +1,4 @@
-package com.imigongo.imigongo_pattern_puzzle
+package com.yourname.imigongo
 
 import io.flutter.embedding.android.FlutterActivity
 

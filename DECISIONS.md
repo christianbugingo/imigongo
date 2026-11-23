@@ -1,80 +1,86 @@
 # Architecture & Design Decisions (DECISIONS.md)
 
-This document records the foundational architectural, engineering, and design decisions for the **Imigongo Pattern Puzzle** Flutter project.
+This document records architectural, engineering, and design decisions for the **Imigongo Pattern Puzzle** project.
 
 ---
 
-## ADR 001: Move Targets, Star Thresholds & "Par" vs. Exact Minimum-Move Solver
+## Record of Plan Deviations & Alignment
+
+| Area | Initial Plan vs Delivered | Approved Adjustment & Rationale |
+|---|---|---|
+| **Packages** | Approved stack included Riverpod, go_router, Drift, shared_preferences, flutter_local_notifications. | **Staged Addition:** Added `shared_preferences` (settings only) and `flutter_local_notifications` in Step 1. `flutter_riverpod` and `go_router` will be added when UI begins (Step 4). `drift` is retained for player progress and future sync queue in Step 5 (never dropped silently). |
+| **Directory Tree** | Feature-sliced tree was initially considered. | **Layered Layout Kept:** `lib/engine/`, `lib/models/`, `lib/core/`, `lib/services/`, `lib/ui/`. Simpler and enforces strict boundary: **zero Flutter imports in `lib/engine/`**. |
+| **Target Platforms** | Web was initially created by default flutter create. | **Android & iOS Only:** Web target removed completely. |
+| **Board Dimensions** | Initial enum omitted 6x6. | **Expanded Range:** Supported sizes are now 3x3 through 7x7 (`3x3`, `4x4`, `5x5`, `6x6`, `7x7`). |
+| **Theming** | Light and dark themes. | **Staged:** Dark theme in Step 1; Light theme comes in Step 4 alongside board UI. |
+| **Cultural Content** | Unverified Kinyarwanda pigment terms were initially in palette. | **Strict Neutrality:** Palette renamed to plain English (`charcoal`, `chalk`, `terracotta`, `ochre`). All unverified claims isolated in `docs/CULTURAL_REVIEW.md` marked "unverified, needs native review". No unverified claims shown in UI. |
+
+---
+
+## ADR 001: Move Targets, Star Thresholds & "Par" vs. Offline Generation Solver
 
 ### Context
-In grid-based tile puzzles (such as rotation or swap puzzles representing traditional Rwandan Imigongo geometric patterns), determining the star rating (1, 2, or 3 stars) requires establishing a benchmark target move count. While small boards ($3 \times 3$ or $4 \times 4$) can potentially be solved to absolute optimality using graph search (BFS or IDA\*), larger grids ($5 \times 5$, and especially $7 \times 7$) explode combinatorially:
-- A $7 \times 7$ board with 4 possible tile orientations per cell yields $4^{49} \approx 3.24 \times 10^{29}$ states.
-- Exact minimum-move solvers for $7 \times 7$ are NP-hard or computationally prohibitive on mobile devices or during quick generation.
+Grid-based rotation puzzles feature combinatorial state spaces (up to $4^{49} \approx 3.24 \times 10^{29}$ for $7 \times 7$). Players rotate tiles using clockwise taps only.
 
 ### Decision
-1. **Generator-Derived "Par" as the Source of Truth for Stars:**
-   - Every generated puzzle begins in a solved target state and is scrambled by applying a sequence of $K$ valid inverted moves (rotations/swaps).
-   - The value $K$ (or the simplified path discovered during generation) establishes the **Par** value.
-   - Star rating thresholds are strictly anchored to this Par:
-     - **3 Stars:** Completed in $\le \text{Par}$ moves.
-     - **2 Stars:** Completed in $\le \lfloor\text{Par} \times 1.5\rfloor$ moves.
-     - **1 Star:** Completed with more moves (puzzle resolved successfully).
-2. **Time-Boxed Minimum-Move Solver:**
-   - Any exact solver implementation (IDA\* or branch-and-bound) is constrained to a strict, bounded time budget (e.g., maximum $50\text{ms}$ or a max search depth / expanded nodes cutoff).
-   - If the solver does not terminate with an optimal proof within that time-box (especially on $7 \times 7$ boards), the engine **must safely fall back to the generator's Par value**.
-3. **Strict Truth-in-Labeling Rule:**
-   - **Never label an unproven heuristic number as an "Exact Minimum" or "Optimal Moves".**
-   - In all UI, documentation, and telemetry, the benchmark is presented to the player as **"Par"** or **"Target Moves"**, creating fair, transparent gameplay without false claims of mathematical optimality.
+1. **Clockwise Controls & Move Accounting:**
+   - Controls are strictly clockwise taps (+90° per tap).
+   - Par counts clockwise taps only.
+2. **Generator Par as Gameplay Benchmark:**
+   - The generator creates a valid, solved board and applies an inverted sequence of $K$ clockwise taps (scramble depth).
+   - This verified solution depth establishes **Par**.
+   - **3 Stars:** $\text{movesTaken} \le \text{Par}$
+   - **2 Stars:** $\text{movesTaken} \le \lfloor\text{Par} \times 1.5\rfloor$ (Note: when $\lfloor\text{Par} \times 1.5\rfloor == \text{Par}$, e.g. for $\text{Par} = 1$, 2 stars is unattainable; score jumps from 3 stars to 1 star).
+   - **1 Star:** Level solved in $>\lfloor\text{Par} \times 1.5\rfloor$ moves.
+3. **Offline Generation Tool Solver (Never on UI Thread):**
+   - The exact minimum-move solver runs **only at content-generation time** in developer tooling (`tool/generate_puzzles.dart`), never on the user's UI thread during gameplay.
+   - The solver is time-boxed (≤50ms per puzzle); if search exceeds the budget on $6 \times 6$ or $7 \times 7$ boards, the tool safely falls back to the generator's Par.
+4. **Nomenclature:**
+   - In UI and telemetry, always label the metric as **"Par"** or **"Target Moves"** (never an unproven "minimum").
 
 ---
 
 ## ADR 002: Notification Strategy (Local Notifications Only, Deferring FCM)
 
-### Context
-A core mechanic for daily player engagement is the Daily Imigongo Challenge and streak reminders. Push notifications can be implemented either locally via the device OS alarm/scheduler (`flutter_local_notifications`) or remotely via Firebase Cloud Messaging (FCM).
-
 ### Decision
-- **Local Notifications Only:** We use `flutter_local_notifications` for scheduling daily challenge reminders at a player-selected time (e.g., 9:00 AM or 8:00 PM local time).
-- **Zero Backend / Offline First:** The game must be completely playable offline. Players in areas with intermittent connectivity (a key demographic across East Africa and mobile gamers globally) must have a seamless, uninterrupted experience.
-- **Defer Firebase Cloud Messaging:** FCM is deferred until a feature explicitly requires server-driven real-time pushes (such as live multiplayer tournaments or dynamic remote live-ops). This eliminates external network latency, backend infrastructure maintenance, privacy consent hurdles, and APK size bloat during Phase 1.
+- Daily challenge and streak reminders use local OS notifications via `flutter_local_notifications`.
+- Offline-first: zero network or server dependencies required for core gameplay.
+- Firebase Cloud Messaging is deferred until a feature explicitly requires remote push.
 
 ---
 
-## ADR 003: Performance Budgets & Real Low-End Android Phone Strategy
+## ADR 003: Performance Profiling on Real Devices (Corrected)
 
 ### Context
-Mobile gaming in emerging markets requires high responsiveness on entry-level hardware (e.g., devices with 2GB RAM, Android Go Edition, quad-core ARM Cortex-A53 or A55 CPUs, running Android 10, 11, or 12).
+Debug build timings and OS-level `dumpsys gfxinfo` do not reliably reflect Flutter engine frame scheduling or release bytecode performance.
 
 ### Decision
-We establish explicit performance budgets and profiling workflows:
+All performance profiling must be performed on physical low-end Android hardware using appropriate build modes:
 
-| Metric | Target Budget | Measurement Method |
-|---|---|---|
-| **Cold Startup Time** | $\le 1.8\text{ seconds}$ | `adb shell am start -W -n ...` (`TotalTime`) |
-| **Warm / Hot Startup** | $\le 600\text{ ms}$ | `adb shell am start -W -n ...` |
-| **Frame Rendering Time** | $60\text{ fps}$ ($\le 16.6\text{ ms}$ per frame) | `adb shell dumpsys gfxinfo <package> framestats` |
-| **Janky Frames ($>16.6\text{ms}$)** | $< 3\%$ of total frames | `dumpsys gfxinfo` jank percentage |
-| **Release APK Size (per ABI)** | $\le 15.0\text{ MB}$ | `flutter build apk --split-per-abi` |
-| **Runtime Memory (RAM)** | $\le 75\text{ MB}$ PSS | `adb shell dumpsys meminfo <package>` |
-
-### Technical Architectural Enforcements:
-- **Vector-Based CustomPainters:** Traditional Imigongo geometric patterns (zigzags, chevrons, lozenges, rhombuses) are drawn using lightweight mathematical paths (`CustomPainter` / `Canvas`) rather than high-resolution bitmap assets. This guarantees crisp rendering on all screen densities, near-zero image decoding overhead, and microscopic asset size.
-- **Pure Dart Game Engine:** The engine (`lib/engine/`) has zero Flutter UI or widget dependencies. It operates entirely on integer bitmasks and primitive coordinate grids, executing move validations and parity checks in microseconds.
+1. **Cold Startup Time (Release Mode):**
+   - Measured on a **Release build** (`flutter build apk --release` or `flutter run --release`).
+   - Calculation: **Median of 5 consecutive cold launches** via `adb`:
+     ```bash
+     adb shell am force-stop com.yourname.imigongo
+     adb shell am start -W -n com.yourname.imigongo/.MainActivity
+     ```
+   - Target: Median `TotalTime` $\le 1.8\text{ seconds}$.
+2. **Release Binary Size:**
+   - Measured on ABI-split release APKs (`flutter build apk --split-per-abi --release`).
+   - Target: Each split APK (`app-armeabi-v7a-release.apk`, `app-arm64-v8a-release.apk`) $\le 15.0\text{ MB}$.
+3. **Frame Timing & Rendering (Profile Mode):**
+   - Measured strictly in **Profile mode** (`flutter run --profile`) on a physical device.
+   - Measured using **Flutter DevTools Performance view** and the in-app **Performance Overlay** (`showPerformanceOverlay: true`), observing the UI thread and Raster thread rasterization time per frame.
+   - Target: Consistent 60 fps ($\le 16.6\text{ms}$ per frame budget).
+4. **Execution Timing:**
+   - **Do not run frame profiling until the board UI exists (Step 4 onwards)**, as measuring an empty foundation screen yields misleading metrics.
 
 ---
 
 ## ADR 004: Engine Architecture & Phased Checkpoint Protocol
 
-### Context
-Clean software engineering dictates separating logic from UI. Furthermore, the game engine's correctness must be formally validated before constructing visual layers.
-
 ### Decision
-- **Strict Layer Decoupling:**
-  - `lib/models/`: Immutable data structures (Board, Tile, Move, ImigongoPattern, Difficulty).
-  - `lib/engine/`: Pure algorithmic logic (Generator, ParCalculator, Scrambler, Validator, Solver).
-  - `lib/core/`: Palettes, cultural motifs, styling, constants.
-  - `lib/services/`: Persistence, notifications, audio.
-  - `lib/ui/`: Widgets, screens, custom painters (deferred to after engine review).
-- **Phase 1 Checkpoint Rule:**
-  - After completing Steps 2 & 3 (engine implementation + comprehensive unit tests), all work stops.
-  - A comprehensive review and plain-language walkthrough of the engine will be submitted for stakeholder review before any UI is implemented.
+- **Zero Flutter Engine Imports:** `lib/engine/` is pure Dart. It imports only standard Dart core/math libraries (`dart:math`, `dart:collection`), ensuring instantaneous headless execution and deterministic testing.
+- **Deterministic PRNG:** Random generation uses a documented, seeded integer PRNG (Xoshiro128++ / 64-bit LCG) with fixed test vectors. Every puzzle stores its `generatorVersion` and integer `seed`.
+- **Rule-Based Validation:** Boards are validated through geometrical continuity rules (edge connection masks), not by comparing against cached solution states.
+- **Mandatory Review Checkpoint:** Work halts after Steps 2–3 for stakeholder review of the engine before any UI development begins.

@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 
-/// Authentic color palette representing the traditional Rwandan Imigongo art form.
+/// Color palette inspired by Imigongo geometric art.
 ///
-/// Imigongo artists historically used natural mineral and organic pigments:
-/// - Uruzi: Black derived from banana peel ash, soot, and charcoal.
-/// - Ingwa: White kaolin clay sourced from river beds.
-/// - Urukondo: Red-brown iron-rich soil / terracotta clay.
-/// - Icyondo: Golden ochre clay.
+/// Plain English color identifiers are used. Cultural attributions and historical
+/// names are documented separately in docs/CULTURAL_REVIEW.md pending native review.
 class ImigongoPalette {
   ImigongoPalette._();
 
-  /// Uruzi: Deep charcoal black (natural ash/soot pigment).
-  static const Color uruziBlack = Color(0xFF181716);
+  /// Charcoal black tone.
+  static const Color charcoal = Color(0xFF181716);
 
-  /// Ingwa: Soft chalk white (natural kaolin clay).
-  static const Color ingwaWhite = Color(0xFFF7F5EE);
+  /// Off-white chalk tone.
+  static const Color chalk = Color(0xFFF7F5EE);
 
-  /// Urukondo: Rich terracotta red (iron-rich Rwandan earth).
-  static const Color urukondoRed = Color(0xFFA33824);
+  /// Terracotta red-brown tone.
+  static const Color terracotta = Color(0xFFA33824);
 
-  /// Icyondo: Earthy ochre yellow (natural clay pigment).
-  static const Color icyondoYellow = Color(0xFFD49B35);
+  /// Ochre yellow tone.
+  static const Color ochre = Color(0xFFD49B35);
 
   /// Board background slate (dark mode canvas).
   static const Color canvasSlate = Color(0xFF22201E);
 
-  /// Card/Tile base surface.
+  /// Card and tile base surface.
   static const Color tileSurface = Color(0xFF2C2A27);
 
-  /// Warm parchment (light accent and UI cards).
+  /// Warm parchment tone (light accent and UI cards).
   static const Color parchment = Color(0xFFEFE9DB);
 
-  /// Relief highlights simulating traditional sculpted cow-dung ridges.
+  /// Relief highlight tone for simulated 3D ridges.
   static const Color ridgeHighlight = Color(0x33FFFFFF);
 
-  /// Relief shadows simulating sculpted ridge depth.
+  /// Relief shadow tone for simulated 3D ridge depth.
   static const Color ridgeShadow = Color(0x55000000);
 
-  /// Golden star active color.
+  /// Active star color.
   static const Color starGold = Color(0xFFFFB800);
 
   /// Inactive star color.

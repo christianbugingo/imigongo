@@ -37,10 +37,10 @@ class FoundationHomeScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  ImigongoPalette.urukondoRed,
-                  ImigongoPalette.icyondoYellow,
-                  ImigongoPalette.ingwaWhite,
-                  ImigongoPalette.uruziBlack,
+                  ImigongoPalette.terracotta,
+                  ImigongoPalette.ochre,
+                  ImigongoPalette.chalk,
+                  ImigongoPalette.charcoal,
                 ],
               ),
             ),
@@ -53,14 +53,14 @@ class FoundationHomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Cultural Header Card
+              // Header Card
               Container(
                 padding: const EdgeInsets.all(18.0),
                 decoration: BoxDecoration(
                   color: ImigongoPalette.tileSurface,
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(
-                    color: ImigongoPalette.icyondoYellow.withValues(alpha: 0.4),
+                    color: ImigongoPalette.ochre.withValues(alpha: 0.4),
                     width: 1.5,
                   ),
                 ),
@@ -73,18 +73,18 @@ class FoundationHomeScreen extends StatelessWidget {
                           width: 10,
                           height: 28,
                           decoration: BoxDecoration(
-                            color: ImigongoPalette.urukondoRed,
+                            color: ImigongoPalette.terracotta,
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
                         const SizedBox(width: 12),
                         const Expanded(
                           child: Text(
-                            'Traditional Rwandan Art',
+                            'Geometric Relief Puzzle',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: ImigongoPalette.ingwaWhite,
+                              color: ImigongoPalette.chalk,
                             ),
                           ),
                         ),
@@ -92,9 +92,8 @@ class FoundationHomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     const Text(
-                      'Imigongo originated in the 18th century Gisaka Kingdom. '
-                      'Sculpted cow dung reliefs painted with natural organic '
-                      'and mineral pigments create rhythmic geometric harmony.',
+                      'Inspired by geometric relief patterns. Rotate tiles to align '
+                      'geometric ridge paths into harmonic continuity.',
                       style: TextStyle(
                         color: ImigongoPalette.parchment,
                         fontSize: 13.5,
@@ -102,16 +101,16 @@ class FoundationHomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // Traditional Palette Swatches
+                    // Palette Swatches (plain English labels)
                     Row(
                       children: [
-                        _buildColorPill('Uruzi (Black)', ImigongoPalette.uruziBlack, ImigongoPalette.ingwaWhite),
+                        _buildColorPill('Charcoal', ImigongoPalette.charcoal, ImigongoPalette.chalk),
                         const SizedBox(width: 6),
-                        _buildColorPill('Ingwa (White)', ImigongoPalette.ingwaWhite, ImigongoPalette.uruziBlack),
+                        _buildColorPill('Chalk', ImigongoPalette.chalk, ImigongoPalette.charcoal),
                         const SizedBox(width: 6),
-                        _buildColorPill('Urukondo (Red)', ImigongoPalette.urukondoRed, ImigongoPalette.ingwaWhite),
+                        _buildColorPill('Terracotta', ImigongoPalette.terracotta, ImigongoPalette.chalk),
                         const SizedBox(width: 6),
-                        _buildColorPill('Icyondo (Ochre)', ImigongoPalette.icyondoYellow, ImigongoPalette.uruziBlack),
+                        _buildColorPill('Ochre', ImigongoPalette.ochre, ImigongoPalette.charcoal),
                       ],
                     ),
                   ],
@@ -120,7 +119,7 @@ class FoundationHomeScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Step 1 Foundation Summary Card
+              // Foundation Summary Card
               Container(
                 padding: const EdgeInsets.all(18.0),
                 decoration: BoxDecoration(
@@ -136,7 +135,7 @@ class FoundationHomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
-                        color: ImigongoPalette.icyondoYellow,
+                        color: ImigongoPalette.ochre,
                       ),
                     ),
                     const SizedBox(height: 14),
@@ -149,7 +148,7 @@ class FoundationHomeScreen extends StatelessWidget {
                     _buildStatusRow(
                       icon: Icons.star_half,
                       title: 'Move Targets',
-                      value: 'Par-based (ADR 001: 50ms solver time-box)',
+                      value: 'Par-based (Clockwise taps only; ADR 001 fallback)',
                     ),
                     const Divider(color: ImigongoPalette.starInactive, height: 20),
                     _buildStatusRow(
@@ -161,7 +160,7 @@ class FoundationHomeScreen extends StatelessWidget {
                     _buildStatusRow(
                       icon: Icons.speed,
                       title: 'Android Target',
-                      value: '60 fps @ ≤16.6ms • Cold start ≤1.8s • APK ≤15MB',
+                      value: 'Release startup median 5 cold runs; Profile DevTools FPS',
                     ),
                   ],
                 ),
@@ -173,19 +172,19 @@ class FoundationHomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(14.0),
                 decoration: BoxDecoration(
-                  color: ImigongoPalette.uruziBlack,
+                  color: ImigongoPalette.charcoal,
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: ImigongoPalette.urukondoRed.withValues(alpha: 0.6)),
+                  border: Border.all(color: ImigongoPalette.terracotta.withValues(alpha: 0.6)),
                 ),
                 child: const Row(
                   children: [
-                    Icon(Icons.info_outline, color: ImigongoPalette.urukondoRed, size: 22),
+                    Icon(Icons.info_outline, color: ImigongoPalette.terracotta, size: 22),
                     SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        'Ready for Steps 2-3 (Engine & Tests). UI will be built after your engine checkpoint review.',
+                        'Engine & Tests in progress. UI deferred until engine checkpoint review.',
                         style: TextStyle(
-                          color: ImigongoPalette.ingwaWhite,
+                          color: ImigongoPalette.chalk,
                           fontSize: 13,
                         ),
                       ),
@@ -211,10 +210,10 @@ class FoundationHomeScreen extends StatelessWidget {
         ),
         alignment: Alignment.center,
         child: Text(
-          name.split(' ').first,
+          name,
           style: TextStyle(
             color: textColor,
-            fontSize: 10.5,
+            fontSize: 11,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -230,7 +229,7 @@ class FoundationHomeScreen extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 18, color: ImigongoPalette.icyondoYellow),
+        Icon(icon, size: 18, color: ImigongoPalette.ochre),
         const SizedBox(width: 10),
         Expanded(
           child: Column(
@@ -239,7 +238,7 @@ class FoundationHomeScreen extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                  color: ImigongoPalette.ingwaWhite,
+                  color: ImigongoPalette.chalk,
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),

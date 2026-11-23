@@ -1,8 +1,9 @@
-/// Grid dimensions supported by the Imigongo puzzle engine.
+/// Grid dimensions supported by the Imigongo puzzle engine (3x3 through 7x7).
 enum GridDimension {
   threeByThree(3, '3x3 (Beginner)'),
   fourByFour(4, '4x4 (Intermediate)'),
   fiveByFive(5, '5x5 (Advanced)'),
+  sixBySix(6, '6x6 (Expert)'),
   sevenBySeven(7, '7x7 (Master)');
 
   final int size;
@@ -23,7 +24,8 @@ enum GridDimension {
 enum Difficulty {
   easy('Easy', 3, 5),
   medium('Medium', 4, 10),
-  hard('Hard', 5, 18),
+  hard('Hard', 5, 16),
+  expert('Expert', 6, 22),
   master('Master', 7, 28);
 
   final String label;
@@ -34,6 +36,7 @@ enum Difficulty {
 }
 
 /// Discrete quarter-turn rotations for puzzle tiles (Clockwise).
+/// Controls are strictly clockwise taps; each tap rotates +90 degrees.
 enum TileRotation {
   rot0(0),
   rot90(1),
@@ -45,7 +48,7 @@ enum TileRotation {
 
   int get degrees => quarterTurns * 90;
 
-  /// Returns the rotation resulting from rotating 90 degrees clockwise.
+  /// Returns the rotation resulting from rotating 90 degrees clockwise (1 tap).
   TileRotation rotateClockwise() {
     return TileRotation.values[(index + 1) % 4];
   }
@@ -66,14 +69,21 @@ enum SolverStatus {
   /// Proved mathematically optimal within the bounded time-box.
   exactOptimal,
 
-  /// Time-box elapsed or grid too large (7x7); safe fallback to generator Par.
+  /// Time-box elapsed or grid too large (e.g. 7x7); safe fallback to generator Par.
   fallbackPar,
 
   /// Solver execution was stopped due to timeout or resource constraint.
   timeout,
 }
 
-/// Star ratings earned by the player upon level completion.
+/// Star ratings earned upon level completion.
+///
+/// Par counts clockwise taps only because in-game controls are clockwise-only.
+/// - 3 Stars: movesTaken <= Par
+/// - 2 Stars: movesTaken <= floor(Par * 1.5)
+/// - 1 Star:  movesTaken > floor(Par * 1.5)
+/// Note on edge cases: When floor(Par * 1.5) == Par (e.g. Par = 1), any move count > Par
+/// automatically yields 1 star, as no intermediate whole-number move count exists.
 enum StarRating {
   zero(0),
   one(1),
