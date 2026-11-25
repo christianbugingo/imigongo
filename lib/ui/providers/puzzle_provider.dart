@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import '../../engine/generator/puzzle_generator.dart';
 import '../../engine/models/board.dart';
 import '../../models/puzzle_enums.dart';
