@@ -62,3 +62,9 @@ flutter analyze
 
 ### Key Decisions
 See [DECISIONS.md](DECISIONS.md) for Architecture Decision Records (ADRs).
+
+## Engine checkpoint (Steps 2–3)
+
+See [the engine walkthrough](docs/ENGINE.md) for generation, validation,
+PRNG vectors, solver scope, verification commands and a learning exercise.
+The exact solver lives in `tool/solver/`, outside application code.

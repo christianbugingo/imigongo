@@ -2,6 +2,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:imigongo_pattern_puzzle/engine/prng/xoshiro128.dart';
 
 void main() {
+  test('independent unsigned 32-bit reference seed vectors', () {
+    const vectors = <int, List<int>>{
+      0: [4226848253, 3853465007, 1657604656, 2135928087, 1643513283],
+      1: [3187778163, 3899520863, 270678034, 2950105546, 3415064141],
+      4294967295: [2846478547, 2130249462, 456585916, 4065942502, 3472031905],
+    };
+    for (final entry in vectors.entries) {
+      final random = Xoshiro128(entry.key);
+      expect(List.generate(5, (_) => random.nextInt()), entry.value);
+    }
+    expect(() => Xoshiro128(1).nextBoundedInt(0), throwsArgumentError);
+    expect(() => Xoshiro128(1).nextBoundedInt(-1), throwsArgumentError);
+  });
+
   group('Xoshiro128 PRNG Tests (Documented Test Vectors)', () {
     test('Matches documented fixed test vectors for seed 123456789', () {
       final prng = Xoshiro128(Xoshiro128.testSeed);
@@ -56,4 +70,3 @@ void main() {
     });
   });
 }
-

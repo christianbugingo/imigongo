@@ -3,7 +3,9 @@ import 'package:imigongo_pattern_puzzle/engine/generator/puzzle_generator.dart';
 import 'package:imigongo_pattern_puzzle/engine/models/board.dart';
 import 'package:imigongo_pattern_puzzle/engine/models/connection_mask.dart';
 import 'package:imigongo_pattern_puzzle/engine/models/tile.dart';
-import 'package:imigongo_pattern_puzzle/engine/solver/puzzle_solver.dart';
+
+import '../../tool/solver/puzzle_solver.dart';
+
 import 'package:imigongo_pattern_puzzle/models/puzzle_enums.dart';
 
 void main() {
@@ -20,11 +22,26 @@ void main() {
           currentRotation: TileRotation.rot90,
           targetRotation: TileRotation.rot0,
         ),
-        const Tile(tileId: 1, row: 0, col: 1, baseMask: ConnectionMask.cornerSouthWest),
+        const Tile(
+          tileId: 1,
+          row: 0,
+          col: 1,
+          baseMask: ConnectionMask.cornerSouthWest,
+        ),
         const Tile(tileId: 2, row: 0, col: 2, baseMask: ConnectionMask.none),
 
-        const Tile(tileId: 3, row: 1, col: 0, baseMask: ConnectionMask.cornerNorthEast),
-        const Tile(tileId: 4, row: 1, col: 1, baseMask: ConnectionMask.cornerWestNorth),
+        const Tile(
+          tileId: 3,
+          row: 1,
+          col: 0,
+          baseMask: ConnectionMask.cornerNorthEast,
+        ),
+        const Tile(
+          tileId: 4,
+          row: 1,
+          col: 1,
+          baseMask: ConnectionMask.cornerWestNorth,
+        ),
         const Tile(tileId: 5, row: 1, col: 2, baseMask: ConnectionMask.none),
 
         const Tile(tileId: 6, row: 2, col: 0, baseMask: ConnectionMask.none),
@@ -48,10 +65,14 @@ void main() {
       expect(result.elapsedMs, lessThanOrEqualTo(50));
     });
 
-    test('Large 7x7 board safely falls back to generator Par within time-box', () {
-      final board = PuzzleGenerator.generate(size: 7, seed: 99999, targetScrambleTaps: 25);
+    test('Zero budget returns unproven generator Par', () {
+      final board = PuzzleGenerator.generate(
+        size: 7,
+        seed: 99999,
+        targetScrambleTaps: 25,
+      );
 
-      final result = PuzzleSolver.solve(board: board, timeboxMs: 50);
+      final result = PuzzleSolver.solve(board: board, timeboxMs: 0);
 
       expect(result.status, equals(SolverStatus.fallbackPar));
       expect(result.targetMoves, equals(board.par));
@@ -61,7 +82,11 @@ void main() {
     });
 
     test('Solver honors time-box cutoff even on intermediate grids', () {
-      final board = PuzzleGenerator.generate(size: 6, seed: 88888, targetScrambleTaps: 20);
+      final board = PuzzleGenerator.generate(
+        size: 6,
+        seed: 88888,
+        targetScrambleTaps: 20,
+      );
 
       final result = PuzzleSolver.solve(board: board, timeboxMs: 50);
 
@@ -74,4 +99,3 @@ void main() {
     });
   });
 }
-
