@@ -212,7 +212,8 @@ void main() {
           uri.contains('puzzle_solver') || uri.contains('/tool/'),
           isFalse,
         );
-        if (file.path.startsWith('lib/engine/')) {
+        if ((file.path.startsWith('lib/engine/') ||
+            file.path.startsWith('lib/models/'))) {
           expect(
             uri.startsWith('package:') || uri.startsWith('dart:ui'),
             isFalse,

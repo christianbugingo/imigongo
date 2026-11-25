@@ -1,70 +1,30 @@
-# Imigongo Pattern Puzzle
+# Imigongo: Pattern Puzzle
 
-A mobile puzzle game inspired by traditional geometric relief patterns.
+Flutter iOS/Android procedural puzzle prototype. Cultural notes and all Kinyarwanda translations are **unverified, needs native review**; see [CULTURAL_REVIEW.md](docs/CULTURAL_REVIEW.md).
 
----
+## Honest implementation status
 
-## 🎨 Cultural Context & Review
-Imigongo is a traditional geometric relief art form from Rwanda featuring rhythmic mathematical patterns (diamonds, chevrons, zigzags, and concentric formations).
+| Area | Status |
+| --- | --- |
+| Foundation | Partial: native Android flavors, themes, localization skeleton, strict analysis and analyze/test CI exist. CI debug build, final release identity and native iOS flavors remain incomplete. |
+| Steps 2–3 | Accepted engine and tests; generator v2, rule validation, documented PRNG and tool-only solver. |
+| Step 4a | Board, tap, moves, solved status, undo/reset through a tested Riverpod controller. Prototype audit only; full Step 4 is not complete. |
+| Later Phase 1 | Hints, haptics, audio, animations/win screen, 30 levels, Drift persistence and settings deferred. |
+| Phase 2 | Not implemented; no accounts, backend, daily play, leaderboards or cloud sync. |
+| Release/performance | Not verified; no real-device performance or hosted CI green claim. |
 
-> [!NOTE]
-> All specific historical assertions, Kinyarwanda terminology, and pigment claims are documented in [docs/CULTURAL_REVIEW.md](docs/CULTURAL_REVIEW.md) and marked **"unverified, needs native review"**. In-game code identifiers use descriptive English terms (`charcoal`, `chalk`, `terracotta`, `ochre`), and unverified claims are omitted from the UI pending review by cultural authorities.
+The early UI commit violated the checkpoint. Its history is recorded in [DECISIONS.md](DECISIONS.md); it is not accepted finished UI. [AUDIT_4A.md](docs/AUDIT_4A.md) maps the correction evidence and limitations.
 
----
+## Run and test
 
-## 🧩 Gameplay Concept
-
-Players rotate scrambled geometric tiles on a grid ($3 \times 3$ through $7 \times 7$) using single clockwise taps to align path edges into harmonic continuity.
-
-- **Par & Move Targets:** Every level features a fair **Par** target derived from the generator's verified solution depth.
-- **Clockwise-Only Accounting:** Controls are clockwise only; Par counts clockwise taps.
-- **Star Thresholds:**
-  - ⭐⭐⭐ Completed in $\le \text{Par}$ moves.
-  - ⭐⭐ Completed in $\le \lfloor\text{Par} \times 1.5\rfloor$ moves.
-  - ⭐ Puzzle solved.
-- **Daily Challenge & Streaks:** Offline-first daily puzzle with local reminder notifications.
-- **Performance:** Release cold startup median $\le 1.8\text{s}$, 60 fps in Profile mode, APK $\le 15\text{MB}$.
-
----
-
-## 📂 Project Architecture
-
-```
-lib/
-├── core/
-│   ├── constants/       # Grid limits, time-box budgets, default rules
-│   └── theme/           # Color palette and styling
-├── engine/              # Pure Dart puzzle engine (Zero Flutter UI imports)
-│   ├── generator/       # Deterministic PRNG & procedural generator
-│   ├── models/          # Board, Tile, Move, ConnectionMask
-│   ├── par/             # Par calculator & generator solution tracker
-│   └── validator/       # Rule-based geometrical continuity verifier
-├── models/              # Shared enums (GridDimension, TileRotation, StarRating)
-├── services/            # Local storage & Local notifications
-└── ui/                  # Custom painters and game screens (Step 4 onwards)
-tool/
-└── generate_puzzles.dart # Offline puzzle generation & solver tool
-```
-
----
-
-## 🚀 Getting Started
-
-### Run Tests
-```bash
-flutter test
-```
-
-### Run Static Analysis
-```bash
+```sh
+flutter pub get
 flutter analyze
+flutter test
+# Pure Dart content tooling:
+dart run tool/generate_puzzles.dart
 ```
 
-### Key Decisions
-See [DECISIONS.md](DECISIONS.md) for Architecture Decision Records (ADRs).
+See [RUN_4A.md](docs/RUN_4A.md) for simulator/emulator setup and the UI review exercise. Flutter 3.47.7 / Dart 3.13.5 and existing lockfiles were used for this audit; no dependency upgrade was made.
 
-## Engine checkpoint (Steps 2–3)
-
-See [the engine walkthrough](docs/ENGINE.md) for generation, validation,
-PRNG vectors, solver scope, verification commands and a learning exercise.
-The exact solver lives in `tool/solver/`, outside application code.
+See [ENGINE.md](docs/ENGINE.md) for bit order, architecture, fixed vectors, 200-seed-per-size solver statistics, test names and the deferred hint design. The exact solver is under tool/solver, never imported by lib.

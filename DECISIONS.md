@@ -6,14 +6,14 @@ This document records architectural, engineering, and design decisions for the *
 
 ## Record of Plan Deviations & Alignment
 
-| Area | Initial Plan vs Delivered | Approved Adjustment & Rationale |
+| Area | Initial Plan vs Delivered | Recorded adjustment / current status |
 |---|---|---|
-| **Packages** | Approved stack included Riverpod, go_router, Drift, shared_preferences, flutter_local_notifications. | **Staged Addition:** Added `shared_preferences` (settings only) and `flutter_local_notifications` in Step 1. `flutter_riverpod` and `go_router` will be added when UI begins (Step 4). `drift` is retained for player progress and future sync queue in Step 5 (never dropped silently). |
+| **Packages** | Original stack plus later notification adjustment. | Riverpod/go_router are already installed by the early prototype. Drift is not installed; progress/sync persistence remains deferred. Installed packages are not evidence of implemented features. |
 | **Directory Tree** | Feature-sliced tree was initially considered. | **Layered Layout Kept:** `lib/engine/`, `lib/models/`, `lib/core/`, `lib/services/`, `lib/ui/`. Simpler and enforces strict boundary: **zero Flutter imports in `lib/engine/`**. |
 | **Target Platforms** | Web was initially created by default flutter create. | **Android & iOS Only:** Web target removed completely. |
 | **Board Dimensions** | Initial enum omitted 6x6. | **Expanded Range:** Supported sizes are now 3x3 through 7x7 (`3x3`, `4x4`, `5x5`, `6x6`, `7x7`). |
 | **Theming** | Light and dark themes. | **Staged:** Dark theme in Step 1; Light theme comes in Step 4 alongside board UI. |
-| **Cultural Content** | Unverified Kinyarwanda pigment terms were initially in palette. | **Strict Neutrality:** Palette renamed to plain English (`charcoal`, `chalk`, `terracotta`, `ochre`). All unverified claims isolated in `docs/CULTURAL_REVIEW.md` marked "unverified, needs native review". No unverified claims shown in UI. |
+| **Cultural Content** | Palette renamed, but later audit found leftover motif keys and an unsupported painter claim. | Remaining legacy motif identifiers and painter claim removed during the Step 4a audit. Unverified notes remain only in docs/CULTURAL_REVIEW.md; translations need native review. |
 
 ---
 
@@ -93,3 +93,22 @@ All performance profiling must be performed on physical low-end Android hardware
 - The solver implementation now lives exclusively in tool/solver. It searches all distinct tile orientations, not only tiles different from the stored target. ADR 001's 50 ms cooperative deadline and explicit Par fallback apply there.
 - Validator adds the previously missing single-network traversal. Undo/reset use immutable engine snapshots.
 - The existing UI commit was present before this task. Only Riverpod import and deprecated radio API compatibility repairs were made to unblock full-project analyze/test; no Step 4 features were added.
+
+
+## Process correction and Step 4a authorization (2026-11-25)
+
+Commit `0f2fd3b` (Game UI & Custom Painters) introduced UI before the required engine review checkpoint. This violated ADR 004. The UI was a prototype, not completed or accepted Step 4 work. Earlier wording that merely said the commit pre-existed did not acknowledge the process violation.
+
+From now on, implement only the explicitly approved step. Discoveries outside that scope are documented, not silently implemented. Existing code, installed packages, or a past commit do not establish acceptance. Stop at each requested checkpoint and provide evidence before further work.
+
+The user approved only Step 4a: audit the prototype and deliver board rendering, clockwise tap, move count, engine-derived solved status, undo and reset through a tested Riverpod controller. Remove premature star/victory/next-puzzle presentation and disconnect settings navigation. Hints, haptics, sound, win screen, 30-level content, Drift persistence and settings remain deferred. Do not implement Step 4b or Phase 2 without a new approval.
+
+### Audit limitations that remain open
+
+- App identity is configured as placeholder `com.yourname.imigongo` (Android dev adds `.dev`); a final owned release identifier has not been supplied. iOS dev/prod schemes are not implemented (only Runner exists).
+- CI has analyze/test jobs but no debug-build step. Hosted CI green status is not verified by local tests.
+- Web source target was removed in `5a37f3d`; `.metadata` still records its historical creation. No Web target is delivered.
+- Contrast tests check selected foreground/background pairs; they do not certify every screen or accessibility behavior.
+- Future hint design needs its own approved implementation and tests; Step 4a includes no hint logic.
+
+Detailed evidence and before/after statuses: docs/AUDIT_4A.md. Solver observations are a sample, not a difficulty or optimality guarantee for all seeds.

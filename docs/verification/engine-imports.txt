@@ -1,0 +1,13 @@
+lib/engine/generator/puzzle_generator.dart:1: import '../models/board.dart';
+lib/engine/generator/puzzle_generator.dart:2: import '../models/connection_mask.dart';
+lib/engine/generator/puzzle_generator.dart:3: import '../models/tile.dart';
+lib/engine/generator/puzzle_generator.dart:4: import '../prng/xoshiro128.dart';
+lib/engine/models/board.dart:1: import '../validator/puzzle_validator.dart';
+lib/engine/models/board.dart:2: import 'tile.dart';
+lib/engine/models/game_session.dart:1: import 'board.dart';
+lib/engine/models/tile.dart:3: import '../../models/puzzle_enums.dart';
+lib/engine/models/tile.dart:4: import 'connection_mask.dart';
+lib/engine/validator/puzzle_validator.dart:1: import '../models/board.dart';
+lib/engine/validator/puzzle_validator.dart:2: import '../models/connection_mask.dart';
+
+Forbidden Flutter/dart:ui imports: 0

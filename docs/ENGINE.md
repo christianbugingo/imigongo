@@ -75,3 +75,60 @@ In the connected-network fixture `[6,14,12,7,15,13,3,11,9]`, change the center m
 - Flutter test guidance: https://docs.flutter.dev/testing/overview
 - Existing Riverpod 3 providers required the documented legacy import: https://riverpod.dev/docs/3.0_migration
 - Existing settings radio APIs were updated without adding features: https://api.flutter.dev/flutter/widgets/RadioGroup-class.html
+
+## Step 4a evidence additions
+
+Bit order (least significant first) is **N, E, S, W**: bits **0, 1, 2, 3**, values **1, 2, 4, 8**. The tile model now states this before its imports as well as ConnectionMask documenting the individual constants.
+
+Engine boundaries now cover both lib/engine and lib/models. The source guard's raw regular expression was corrected during this audit so it actually parses import/export whitespace; it checks those directories and rejects package imports and dart:ui. The UI has its own boundary test preventing widgets/painters from importing engine code. The Riverpod puzzle controller maps domain values to immutable display snapshots. Rendering tests verify that a tap changes the displayed mask.
+
+### Tool commands and representative output
+
+```sh
+dart run tool/generate_puzzles.dart
+dart run tool/benchmark_solver.dart > docs/verification/solver-statistics.json
+```
+
+The first command invokes the exact tooling solver for one generated puzzle per size. Example output from the checked run (timings vary):
+
+```text
+Generator Version: 2
+Grid: 4x4 | Seed: 20261127 | Par: 12
+Solver Status: exactOptimal | Time: 0ms
+Target Moves: 12 (Optimal: true)
+```
+
+The second command samples seeds 0..199 for each size, using generatorVersion=2 and the 50 ms budget. Full per-seed results, runtime and methodology are stored in docs/verification/solver-statistics.json. Cold-to-warm Dart JIT run, macOS ARM64, Dart 3.13.5; no warmup, generation excluded from timed duration, solver initialization/validation included. Timings are host measurements, not mobile performance figures.
+
+| Size | Proven exact | Par = exact | Mean Par − minimum (all exact samples) | Mean solver ms | Max solver ms | Timeout/fallback |
+| --- | --- | --- | --- | --- | --- | --- |
+| 3x3 | 200/200 | 200/200 (100%) | 0.00 | 0.03255 | 1.030 | 0/200 |
+| 4x4 | 200/200 | 193/200 (96.5%) | 0.16 | 0.03873 | 0.149 | 0/200 |
+| 5x5 | 200/200 | 200/200 (100%) | 0.00 | 0.02009 | 0.158 | 0/200 |
+| 6x6 | 200/200 | 185/200 (92.5%) | 0.30 | 0.01582 | 0.109 | 0/200 |
+| 7x7 | 200/200 | 198/200 (99%) | 0.04 | 0.01172 | 0.074 | 0/200 |
+
+A concrete counterexample to treating Par as the minimum: 4x4 seed 2 has Par=28 and proven minimum=24. For the seven nonzero 4x4 gaps, mean gap is 32/7 ≈ 4.57 taps. Fallback minima would be unknown and would not enter the gap denominator. Here every sample was exact. Zero observed timeouts reflects these relatively constrained generated graphs; it does not establish that arbitrary 7x7 boards finish inside the budget. Forced zero-budget fallback has a separate deterministic test.
+
+### Test evidence map
+
+| Behavior | File and named test |
+| --- | --- |
+| Disconnected networks | test/engine/properties_test.dart — `separate closed loops are not one network` |
+| Open boundary | test/engine/puzzle_validator_test.dart — `Detects path escaping outer boundary` |
+| Dangling neighbor | test/engine/puzzle_validator_test.dart — `Detects broken horizontal edge mismatch` |
+| Symmetric tile costs | test/engine/properties_test.dart — `all 16 masks use cheapest visually equivalent clockwise restoration` |
+| Undo/reset | test/engine/properties_test.dart — `undo snapshots, reset and invalid coordinates preserve state` |
+| Fixed determinism vectors | test/engine/prng_test.dart — `independent unsigned 32-bit reference seed vectors`, plus the seed 123456789 vector test |
+| Generation reproducibility | test/engine/properties_test.dart — five `1000 seeds: ... determinism, solution, Par, symmetry` cases |
+| Controller and undo after solve | test/ui/puzzle_provider_test.dart — `controller publishes engine masks, move count and solved state`, `undo after solve restores unsolved state; reset clears engine history` |
+| Rendered interaction | test/ui/puzzle_screen_test.dart — `tap renders rotated mask and counts move; undo/reset update UI` |
+| Engine/controller boundary | test/engine/properties_test.dart and test/ui/architecture_test.dart |
+
+### Future hints: design only, not implemented in Step 4a
+
+A hint must choose a tile from a rule-valid completion compatible with the current tile identities and any orientations the player is preserving. It must not simply compare currentRotation against the generator's targetRotation. If the board is already valid, no hint is necessary.
+
+The proposed offline approach is for content tooling to export certified alternative completions (masks, version and seed). A future hint controller would filter these against the current board and any preserved orientations, prefer a compatible completion with the greatest visible agreement, then highlight a tile that differs and whose rotation can move toward that completion. Each exported completion must pass the same validator. The runtime only compares masks to certified completions; it does not run the exact solver on the UI thread or elsewhere in the app.
+
+An incomplete catalog cannot prove a completion is impossible or globally closest. If it contains no compatible alternative, the hint must be unavailable rather than force the original solution or label a player's valid alternative as wrong. Reliable coverage of alternative player paths, catalog size, and the policy for preserving orientations remain unresolved design work for the later hint step. No hint feature is claimed as delivered here.

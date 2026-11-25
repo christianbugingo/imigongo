@@ -20,11 +20,4 @@ class EngineConstants {
 
   /// Maximum scrambles for 7x7 expert boards.
   static const int maxScrambleMoves = 30;
-
-  /// Traditional Imigongo motif keys.
-  static const String motifItana = 'itana'; // Zigzags / hearth
-  static const String motifUruhembe = 'uruhembe'; // Cattle horns / diamonds
-  static const String motifInyange = 'inyange'; // Triangle elegance
-  static const String motifBwirande = 'bwirande'; // Concentric squares
 }
-

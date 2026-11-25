@@ -1,3 +1,5 @@
+// Tile connection bit order: N, E, S, W are bits 0, 1, 2, 3
+// (values 1, 2, 4, 8). A clockwise tap maps N → E → S → W → N.
 import '../../models/puzzle_enums.dart';
 import 'connection_mask.dart';
 

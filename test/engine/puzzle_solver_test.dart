@@ -9,6 +9,14 @@ import '../../tool/solver/puzzle_solver.dart';
 import 'package:imigongo_pattern_puzzle/models/puzzle_enums.dart';
 
 void main() {
+  test('alternative completion can improve generator Par', () {
+    final board = PuzzleGenerator.generate(size: 4, seed: 2);
+    final result = PuzzleSolver.solve(board: board);
+    expect(board.par, 28);
+    expect(result.isProvablyOptimal, isTrue);
+    expect(result.targetMoves, 24);
+  });
+
   group('Time-Boxed Offline Puzzle Solver Tests', () {
     test('Small 3x3 board proves exact optimal moves within time-box', () {
       // 3x3 board where exactly one tile is scrambled by 1 clockwise turn
