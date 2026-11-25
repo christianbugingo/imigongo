@@ -63,3 +63,53 @@ Every value in app_rw.arb is a placeholder and has `needs native review` metadat
 - [ ] `undo`: Undo [needs native review] — **needs native review**
 - [ ] `reset`: Reset [needs native review] — **needs native review**
 - [ ] `inProgress`: In progress [needs native review] — **needs native review**
+
+## Step 4b UI strings — needs native review
+
+- [ ] `welcomeTitle`: Welcome to Imigongo [needs native review] — **needs native review**
+- [ ] `welcomeBody`: A quiet puzzle of connected lines. Learn with three short practice boards. [needs native review] — **needs native review**
+- [ ] `learnToPlay`: Learn to play [needs native review] — **needs native review**
+- [ ] `skipTutorial`: Skip tutorial [needs native review] — **needs native review**
+- [ ] `howToPlay`: How to Play [needs native review] — **needs native review**
+- [ ] `back`: Back [needs native review] — **needs native review**
+- [ ] `resume`: Resume [needs native review] — **needs native review**
+- [ ] `restart`: Restart [needs native review] — **needs native review**
+- [ ] `pause`: Pause [needs native review] — **needs native review**
+- [ ] `paused`: Paused [needs native review] — **needs native review**
+- [ ] `home`: Home [needs native review] — **needs native review**
+- [ ] `replay`: Replay [needs native review] — **needs native review**
+- [ ] `nextPuzzle`: Next puzzle [needs native review] — **needs native review**
+- [ ] `nextLesson`: Next lesson [needs native review] — **needs native review**
+- [ ] `finishTutorial`: Finish tutorial [needs native review] — **needs native review**
+- [ ] `newBest`: New best [needs native review] — **needs native review**
+- [ ] `levelComplete`: Level complete [needs native review] — **needs native review**
+- [ ] `lessonComplete`: Lesson complete [needs native review] — **needs native review**
+- [ ] `completionAnnouncement`: Level complete, {stars, plural, =1{1 star} other{{stars} stars}} [needs native review] — **needs native review**
+- [ ] `freePlayTitle`: Free Play · {size}×{size} [needs native review] — **needs native review**
+- [ ] `gridSize`: {size}×{size} [needs native review] — **needs native review**
+- [ ] `tutorialTitle`: Tutorial {number} of 3 [needs native review] — **needs native review**
+- [ ] `movesValue`: Moves: {count} [needs native review] — **needs native review**
+- [ ] `targetValue`: Target moves: {count} [needs native review] — **needs native review**
+- [ ] `tileLabel`: Tile at row {row}, column {col}. Connections: {connections}. [needs native review] — **needs native review**
+- [ ] `north`: north [needs native review] — **needs native review**
+- [ ] `east`: east [needs native review] — **needs native review**
+- [ ] `south`: south [needs native review] — **needs native review**
+- [ ] `west`: west [needs native review] — **needs native review**
+- [ ] `noConnections`: none [needs native review] — **needs native review**
+- [ ] `ruleOne`: Tap a tile to turn it a quarter turn clockwise. [needs native review] — **needs native review**
+- [ ] `ruleTwo`: Join the lines so no line ends in the open or points off the board. [needs native review] — **needs native review**
+- [ ] `ruleThree`: Everything must connect into one single pattern. [needs native review] — **needs native review**
+- [ ] `ruleFour`: Use as few turns as you can. Reach the target moves for three stars. [needs native review] — **needs native review**
+- [ ] `ruleFive`: Undo and Restart are always free. [needs native review] — **needs native review**
+- [ ] `lessonOne`: One tile needs a turn. Tap it to complete the pattern. [needs native review] — **needs native review**
+- [ ] `lessonTwo`: Match every open end. All lines must belong to one connected pattern; separate loops do not count. [needs native review] — **needs native review**
+- [ ] `lessonThree`: Try Undo or Restart, then solve the board. Meet the target moves to earn three stars. [needs native review] — **needs native review**
+- [ ] `tutorialNotice`: Practice only: these results do not affect your Free Play bests. [needs native review] — **needs native review**
+- [ ] `chooseSize`: Choose a Free Play grid [needs native review] — **needs native review**
+- [ ] `loading`: Loading [needs native review] — **needs native review**
+- [ ] `loadFailed`: Could not load tutorial preferences. [needs native review] — **needs native review**
+- [ ] `retry`: Retry [needs native review] — **needs native review**
+- [ ] `saveFailed`: Could not remember tutorial completion. Please try again. [needs native review] — **needs native review**
+- [ ] `practiceTutorial`: Practice the tutorial [needs native review] — **needs native review**
+- [ ] `sessionBestNote`: Free Play bests last until the app closes. [needs native review] — **needs native review**
+- [ ] `developmentBadge`: DEV [needs native review] — **needs native review**

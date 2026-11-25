@@ -47,3 +47,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Third-party visual references must not enter version control.
+/reference/

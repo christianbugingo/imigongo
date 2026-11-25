@@ -112,3 +112,22 @@ The user approved only Step 4a: audit the prototype and deliver board rendering,
 - Future hint design needs its own approved implementation and tests; Step 4a includes no hint logic.
 
 Detailed evidence and before/after statuses: docs/AUDIT_4A.md. Solver observations are a sample, not a difficulty or optimality guarantee for all seeds.
+
+## Historical app-logo experiment and commit permission (artwork superseded)
+
+The user explicitly requested adapting their supplied circular pattern photograph as the app logo. This authorizes native branding/icon changes, separately from gameplay steps. The pattern was recreated without the wooden background and installed into native launcher icon assets; no new gameplay feature is authorized by this request.
+
+The user instructed that no further changes be committed without permission. This applies to all future work: implementation approval is not commit approval. AGENTS.md records this rule. The logo work was never committed. Its artwork was subsequently retired by the Step 4b original-art policy below.
+
+
+## Approved roadmap change: Step 4b only
+
+The user approved the professional-game design brief and then the proposed Step 4b plan. The roadmap is 4b (win/results, How to Play, first-run authored tutorial, game/Pause layout), 4c (visual identity/seamless relief/new Home), 5 (Journey, persistent progress, Settings, Credits, Collection), 6 (sound/haptics and release/performance checks). Only 4b is authorized for implementation now. Stop for review afterward. No commits without explicit permission; approval of this step does not authorize commits.
+
+The photo-derived logo is retired under the new original-art policy. The adaptation is moved outside the repo to Documents/imigongo_reference; default launcher icons are restored. An original logo and visual-art manifest belong to 4c. No third-party visual reference is embedded or committed.
+
+Step 4b keeps the engine as the only gameplay authority. Undo restores the previous board and decreases the move count; Restart begins a fresh attempt. Once solved, the attempt locks (including Undo) through completion/results; Replay starts a new attempt. This intentionally replaces 4a's post-solve Undo behavior to prevent repeat rewards or duplicate result events. Best moves live only in memory and are keyed by size, seed and generatorVersion; tutorials do not write them.
+
+Authored tutorial data uses generatorVersion=0 with lesson-index seeds, distinct from generated content version 2. Internal route/controller keys -1..-3 select these authored records and are never generated or ranked. No special tutorial game rules exist.
+
+The 4b result flow uses a short 1-second completion hold followed by sequential star reveals. It does not implement 4c's network glow/region fill. System reduced motion removes both hold and star/diagram animations. Sounds and haptics wait for Step 6. No placeholder Settings action appears before Step 5.

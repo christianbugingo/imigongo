@@ -6,6 +6,7 @@ import '../../core/config/app_flavor.dart';
 import '../../core/theme/imigongo_palette.dart';
 import '../../l10n/app_localizations.dart';
 import '../../models/puzzle_enums.dart';
+import 'how_to_play_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -19,16 +20,25 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final isDev = AppConfig.flavor.isDev;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            tooltip: l10n.howToPlay,
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => Navigator.of(context).push<void>(
+              MaterialPageRoute(builder: (_) => const HowToPlayScreen()),
+            ),
+          ),
+        ],
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(l10n?.appTitle ?? 'Imigongo Puzzle'),
+            Text(l10n.appTitle),
             if (isDev) ...[
               const SizedBox(width: 8),
               Container(
@@ -37,9 +47,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   color: ImigongoPalette.terracotta,
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: const Text(
-                  'DEV',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                child: Text(
+                  l10n.developmentBadge,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -69,7 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n?.geometricReliefPuzzle ?? 'Geometric Relief Puzzle',
+                      l10n.geometricReliefPuzzle,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -80,8 +93,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      l10n?.rotateInstruction ??
-                          'Tap a tile to rotate clockwise',
+                      l10n.rotateInstruction,
                       style: TextStyle(
                         fontSize: 14,
                         color: isDark
@@ -98,7 +110,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
               // Grid Size Selector
               Text(
-                'Select Grid Dimension (3x3 through 7x7)',
+                l10n.chooseSize,
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -116,7 +128,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   final isSelected = dim == _selectedDimension;
                   return ChoiceChip(
                     label: Text(
-                      '${dim.size}x${dim.size}',
+                      l10n.gridSize(dim.size),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: isSelected
@@ -165,7 +177,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   );
                 },
                 child: Text(
-                  l10n?.play.toUpperCase() ?? 'PLAY',
+                  l10n.play.toUpperCase(),
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme/imigongo_palette.dart';
+import '../../l10n/app_localizations.dart';
 import '../models/puzzle_view.dart';
 import '../painters/tile_painter.dart';
 
@@ -28,8 +29,19 @@ class PuzzleTileWidget extends StatelessWidget {
         ? ImigongoPalette.ochre
         : ImigongoPalette.charcoal;
 
+    final l10n = AppLocalizations.of(context)!;
+    final directions = [
+      if (tile.north) l10n.north,
+      if (tile.east) l10n.east,
+      if (tile.south) l10n.south,
+      if (tile.west) l10n.west,
+    ];
     return Semantics(
-      label: 'Tile ${tile.row + 1}, ${tile.col + 1}',
+      label: l10n.tileLabel(
+        tile.row + 1,
+        tile.col + 1,
+        directions.isEmpty ? l10n.noConnections : directions.join(', '),
+      ),
       enabled: onTap != null,
       button: true,
       child: GestureDetector(

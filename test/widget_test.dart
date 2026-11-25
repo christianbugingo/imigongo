@@ -1,12 +1,27 @@
+import 'package:imigongo_pattern_puzzle/ui/providers/onboarding_provider.dart';
+
+import 'support/tutorial_preferences.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:imigongo_pattern_puzzle/core/config/app_flavor.dart';
 import 'package:imigongo_pattern_puzzle/main.dart';
 
 void main() {
-  testWidgets('Imigongo puzzle app loads with localization and prod flavor', (WidgetTester tester) async {
+  testWidgets('Imigongo puzzle app loads with localization and prod flavor', (
+    WidgetTester tester,
+  ) async {
     AppConfig.initialize(AppFlavor.prod);
-    await tester.pumpWidget(const ProviderScope(child: ImigongoPuzzleApp()));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          tutorialPreferencesProvider.overrideWithValue(
+            MemoryTutorialPreferences(finished: true),
+          ),
+        ],
+        child: const ImigongoPuzzleApp(),
+      ),
+    );
     await tester.pumpAndSettle();
 
     // Verify localized title
@@ -19,9 +34,20 @@ void main() {
     expect(find.text('PLAY'), findsOneWidget);
   });
 
-  testWidgets('Imigongo puzzle app displays DEV badge when in dev flavor', (WidgetTester tester) async {
+  testWidgets('Imigongo puzzle app displays DEV badge when in dev flavor', (
+    WidgetTester tester,
+  ) async {
     AppConfig.initialize(AppFlavor.dev);
-    await tester.pumpWidget(const ProviderScope(child: ImigongoPuzzleApp()));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          tutorialPreferencesProvider.overrideWithValue(
+            MemoryTutorialPreferences(finished: true),
+          ),
+        ],
+        child: const ImigongoPuzzleApp(),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.text('DEV'), findsOneWidget);

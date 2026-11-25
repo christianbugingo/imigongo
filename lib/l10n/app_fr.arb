@@ -17,5 +17,234 @@
   "colorOchre": "Ocre",
   "undo": "Annuler",
   "reset": "Recommencer",
-  "inProgress": "En cours"
+  "inProgress": "En cours",
+  "welcomeTitle": "Bienvenue dans Imigongo",
+  "@welcomeTitle": {
+    "description": "Step 4b: welcomeTitle"
+  },
+  "welcomeBody": "Un puzzle paisible de lignes à relier. Découvrez-le avec trois petites grilles d’entraînement.",
+  "@welcomeBody": {
+    "description": "Step 4b: welcomeBody"
+  },
+  "learnToPlay": "Apprendre à jouer",
+  "@learnToPlay": {
+    "description": "Step 4b: learnToPlay"
+  },
+  "skipTutorial": "Passer le tutoriel",
+  "@skipTutorial": {
+    "description": "Step 4b: skipTutorial"
+  },
+  "howToPlay": "Comment jouer",
+  "@howToPlay": {
+    "description": "Step 4b: howToPlay"
+  },
+  "back": "Retour",
+  "@back": {
+    "description": "Step 4b: back"
+  },
+  "resume": "Reprendre",
+  "@resume": {
+    "description": "Step 4b: resume"
+  },
+  "restart": "Recommencer",
+  "@restart": {
+    "description": "Step 4b: restart"
+  },
+  "pause": "Pause",
+  "@pause": {
+    "description": "Step 4b: pause"
+  },
+  "paused": "En pause",
+  "@paused": {
+    "description": "Step 4b: paused"
+  },
+  "home": "Accueil",
+  "@home": {
+    "description": "Step 4b: home"
+  },
+  "replay": "Rejouer",
+  "@replay": {
+    "description": "Step 4b: replay"
+  },
+  "nextPuzzle": "Puzzle suivant",
+  "@nextPuzzle": {
+    "description": "Step 4b: nextPuzzle"
+  },
+  "nextLesson": "Leçon suivante",
+  "@nextLesson": {
+    "description": "Step 4b: nextLesson"
+  },
+  "finishTutorial": "Terminer le tutoriel",
+  "@finishTutorial": {
+    "description": "Step 4b: finishTutorial"
+  },
+  "newBest": "Nouveau record",
+  "@newBest": {
+    "description": "Step 4b: newBest"
+  },
+  "levelComplete": "Niveau terminé",
+  "@levelComplete": {
+    "description": "Step 4b: levelComplete"
+  },
+  "lessonComplete": "Leçon terminée",
+  "@lessonComplete": {
+    "description": "Step 4b: lessonComplete"
+  },
+  "completionAnnouncement": "Niveau terminé, {stars, plural, =1{1 étoile} other{{stars} étoiles}}",
+  "@completionAnnouncement": {
+    "description": "Step 4b: completionAnnouncement",
+    "placeholders": {
+      "stars": {
+        "type": "int"
+      }
+    }
+  },
+  "freePlayTitle": "Jeu libre · {size}×{size}",
+  "@freePlayTitle": {
+    "description": "Step 4b: freePlayTitle",
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "gridSize": "{size}×{size}",
+  "@gridSize": {
+    "description": "Step 4b: gridSize",
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "tutorialTitle": "Tutoriel {number} sur 3",
+  "@tutorialTitle": {
+    "description": "Step 4b: tutorialTitle",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "movesValue": "Coups : {count}",
+  "@movesValue": {
+    "description": "Step 4b: movesValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetValue": "Objectif : {count} coups",
+  "@targetValue": {
+    "description": "Step 4b: targetValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tileLabel": "Case à la ligne {row}, colonne {col}. Connexions : {connections}.",
+  "@tileLabel": {
+    "description": "Step 4b: tileLabel",
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "col": {
+        "type": "int"
+      },
+      "connections": {
+        "type": "String"
+      }
+    }
+  },
+  "north": "nord",
+  "@north": {
+    "description": "Step 4b: north"
+  },
+  "east": "est",
+  "@east": {
+    "description": "Step 4b: east"
+  },
+  "south": "sud",
+  "@south": {
+    "description": "Step 4b: south"
+  },
+  "west": "ouest",
+  "@west": {
+    "description": "Step 4b: west"
+  },
+  "noConnections": "aucune",
+  "@noConnections": {
+    "description": "Step 4b: noConnections"
+  },
+  "ruleOne": "Touchez une case pour la tourner d’un quart de tour dans le sens des aiguilles d’une montre.",
+  "@ruleOne": {
+    "description": "Step 4b: ruleOne"
+  },
+  "ruleTwo": "Reliez les lignes pour qu’aucune extrémité ne reste libre ni ne pointe hors de la grille.",
+  "@ruleTwo": {
+    "description": "Step 4b: ruleTwo"
+  },
+  "ruleThree": "Toutes les lignes doivent former un seul motif connecté.",
+  "@ruleThree": {
+    "description": "Step 4b: ruleThree"
+  },
+  "ruleFour": "Faites le moins de rotations possible. Atteignez l’objectif de coups pour obtenir trois étoiles.",
+  "@ruleFour": {
+    "description": "Step 4b: ruleFour"
+  },
+  "ruleFive": "Annuler et Recommencer sont toujours gratuits.",
+  "@ruleFive": {
+    "description": "Step 4b: ruleFive"
+  },
+  "lessonOne": "Il suffit de tourner une case. Touchez-la pour terminer le motif.",
+  "@lessonOne": {
+    "description": "Step 4b: lessonOne"
+  },
+  "lessonTwo": "Reliez chaque extrémité libre. Toutes les lignes doivent appartenir au même motif connecté ; des boucles séparées ne suffisent pas.",
+  "@lessonTwo": {
+    "description": "Step 4b: lessonTwo"
+  },
+  "lessonThree": "Essayez Annuler ou Recommencer, puis résolvez la grille. Atteignez l’objectif de coups pour gagner trois étoiles.",
+  "@lessonThree": {
+    "description": "Step 4b: lessonThree"
+  },
+  "tutorialNotice": "Entraînement : ces résultats ne modifient pas vos records en jeu libre.",
+  "@tutorialNotice": {
+    "description": "Step 4b: tutorialNotice"
+  },
+  "chooseSize": "Choisissez une grille de jeu libre",
+  "@chooseSize": {
+    "description": "Step 4b: chooseSize"
+  },
+  "loading": "Chargement",
+  "@loading": {
+    "description": "Step 4b: loading"
+  },
+  "loadFailed": "Impossible de charger les préférences du tutoriel.",
+  "@loadFailed": {
+    "description": "Step 4b: loadFailed"
+  },
+  "retry": "Réessayer",
+  "@retry": {
+    "description": "Step 4b: retry"
+  },
+  "saveFailed": "Impossible d’enregistrer la fin du tutoriel. Veuillez réessayer.",
+  "@saveFailed": {
+    "description": "Step 4b: saveFailed"
+  },
+  "practiceTutorial": "Refaire le tutoriel",
+  "@practiceTutorial": {
+    "description": "Step 4b: practiceTutorial"
+  },
+  "sessionBestNote": "Les records en jeu libre sont conservés jusqu’à la fermeture de l’application.",
+  "@sessionBestNote": {
+    "description": "Step 4b: sessionBestNote"
+  },
+  "developmentBadge": "DEV",
+  "@developmentBadge": {
+    "description": "Step 4b: developmentBadge"
+  }
 }

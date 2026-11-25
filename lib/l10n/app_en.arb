@@ -76,5 +76,234 @@
   },
   "@inProgress": {
     "description": "Step 4a control/status: inProgress"
+  },
+  "welcomeTitle": "Welcome to Imigongo",
+  "@welcomeTitle": {
+    "description": "Step 4b: welcomeTitle"
+  },
+  "welcomeBody": "A quiet puzzle of connected lines. Learn with three short practice boards.",
+  "@welcomeBody": {
+    "description": "Step 4b: welcomeBody"
+  },
+  "learnToPlay": "Learn to play",
+  "@learnToPlay": {
+    "description": "Step 4b: learnToPlay"
+  },
+  "skipTutorial": "Skip tutorial",
+  "@skipTutorial": {
+    "description": "Step 4b: skipTutorial"
+  },
+  "howToPlay": "How to Play",
+  "@howToPlay": {
+    "description": "Step 4b: howToPlay"
+  },
+  "back": "Back",
+  "@back": {
+    "description": "Step 4b: back"
+  },
+  "resume": "Resume",
+  "@resume": {
+    "description": "Step 4b: resume"
+  },
+  "restart": "Restart",
+  "@restart": {
+    "description": "Step 4b: restart"
+  },
+  "pause": "Pause",
+  "@pause": {
+    "description": "Step 4b: pause"
+  },
+  "paused": "Paused",
+  "@paused": {
+    "description": "Step 4b: paused"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Step 4b: home"
+  },
+  "replay": "Replay",
+  "@replay": {
+    "description": "Step 4b: replay"
+  },
+  "nextPuzzle": "Next puzzle",
+  "@nextPuzzle": {
+    "description": "Step 4b: nextPuzzle"
+  },
+  "nextLesson": "Next lesson",
+  "@nextLesson": {
+    "description": "Step 4b: nextLesson"
+  },
+  "finishTutorial": "Finish tutorial",
+  "@finishTutorial": {
+    "description": "Step 4b: finishTutorial"
+  },
+  "newBest": "New best",
+  "@newBest": {
+    "description": "Step 4b: newBest"
+  },
+  "levelComplete": "Level complete",
+  "@levelComplete": {
+    "description": "Step 4b: levelComplete"
+  },
+  "lessonComplete": "Lesson complete",
+  "@lessonComplete": {
+    "description": "Step 4b: lessonComplete"
+  },
+  "completionAnnouncement": "Level complete, {stars, plural, =1{1 star} other{{stars} stars}}",
+  "@completionAnnouncement": {
+    "description": "Step 4b: completionAnnouncement",
+    "placeholders": {
+      "stars": {
+        "type": "int"
+      }
+    }
+  },
+  "freePlayTitle": "Free Play · {size}×{size}",
+  "@freePlayTitle": {
+    "description": "Step 4b: freePlayTitle",
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "gridSize": "{size}×{size}",
+  "@gridSize": {
+    "description": "Step 4b: gridSize",
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "tutorialTitle": "Tutorial {number} of 3",
+  "@tutorialTitle": {
+    "description": "Step 4b: tutorialTitle",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "movesValue": "Moves: {count}",
+  "@movesValue": {
+    "description": "Step 4b: movesValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetValue": "Target moves: {count}",
+  "@targetValue": {
+    "description": "Step 4b: targetValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tileLabel": "Tile at row {row}, column {col}. Connections: {connections}.",
+  "@tileLabel": {
+    "description": "Step 4b: tileLabel",
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "col": {
+        "type": "int"
+      },
+      "connections": {
+        "type": "String"
+      }
+    }
+  },
+  "north": "north",
+  "@north": {
+    "description": "Step 4b: north"
+  },
+  "east": "east",
+  "@east": {
+    "description": "Step 4b: east"
+  },
+  "south": "south",
+  "@south": {
+    "description": "Step 4b: south"
+  },
+  "west": "west",
+  "@west": {
+    "description": "Step 4b: west"
+  },
+  "noConnections": "none",
+  "@noConnections": {
+    "description": "Step 4b: noConnections"
+  },
+  "ruleOne": "Tap a tile to turn it a quarter turn clockwise.",
+  "@ruleOne": {
+    "description": "Step 4b: ruleOne"
+  },
+  "ruleTwo": "Join the lines so no line ends in the open or points off the board.",
+  "@ruleTwo": {
+    "description": "Step 4b: ruleTwo"
+  },
+  "ruleThree": "Everything must connect into one single pattern.",
+  "@ruleThree": {
+    "description": "Step 4b: ruleThree"
+  },
+  "ruleFour": "Use as few turns as you can. Reach the target moves for three stars.",
+  "@ruleFour": {
+    "description": "Step 4b: ruleFour"
+  },
+  "ruleFive": "Undo and Restart are always free.",
+  "@ruleFive": {
+    "description": "Step 4b: ruleFive"
+  },
+  "lessonOne": "One tile needs a turn. Tap it to complete the pattern.",
+  "@lessonOne": {
+    "description": "Step 4b: lessonOne"
+  },
+  "lessonTwo": "Match every open end. All lines must belong to one connected pattern; separate loops do not count.",
+  "@lessonTwo": {
+    "description": "Step 4b: lessonTwo"
+  },
+  "lessonThree": "Try Undo or Restart, then solve the board. Meet the target moves to earn three stars.",
+  "@lessonThree": {
+    "description": "Step 4b: lessonThree"
+  },
+  "tutorialNotice": "Practice only: these results do not affect your Free Play bests.",
+  "@tutorialNotice": {
+    "description": "Step 4b: tutorialNotice"
+  },
+  "chooseSize": "Choose a Free Play grid",
+  "@chooseSize": {
+    "description": "Step 4b: chooseSize"
+  },
+  "loading": "Loading",
+  "@loading": {
+    "description": "Step 4b: loading"
+  },
+  "loadFailed": "Could not load tutorial preferences.",
+  "@loadFailed": {
+    "description": "Step 4b: loadFailed"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Step 4b: retry"
+  },
+  "saveFailed": "Could not remember tutorial completion. Please try again.",
+  "@saveFailed": {
+    "description": "Step 4b: saveFailed"
+  },
+  "practiceTutorial": "Practice the tutorial",
+  "@practiceTutorial": {
+    "description": "Step 4b: practiceTutorial"
+  },
+  "sessionBestNote": "Free Play bests last until the app closes.",
+  "@sessionBestNote": {
+    "description": "Step 4b: sessionBestNote"
+  },
+  "developmentBadge": "DEV",
+  "@developmentBadge": {
+    "description": "Step 4b: developmentBadge"
   }
 }

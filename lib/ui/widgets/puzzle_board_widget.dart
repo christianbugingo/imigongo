@@ -50,7 +50,7 @@ class PuzzleBoardWidget extends StatelessWidget {
                     key: ValueKey('tile_${tile.row}_${tile.col}'),
                     tile: tile,
                     isDark: isDark,
-                    onTap: state.isSolved
+                    onTap: state.phase != PlayPhase.playing || state.isSolved
                         ? null
                         : () => onRotateTile(tile.row, tile.col),
                   );

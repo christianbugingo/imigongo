@@ -8,8 +8,9 @@ Flutter iOS/Android procedural puzzle prototype. Cultural notes and all Kinyarwa
 | --- | --- |
 | Foundation | Partial: native Android flavors, themes, localization skeleton, strict analysis and analyze/test CI exist. CI debug build, final release identity and native iOS flavors remain incomplete. |
 | Steps 2–3 | Accepted engine and tests; generator v2, rule validation, documented PRNG and tool-only solver. |
-| Step 4a | Board, tap, moves, solved status, undo/reset through a tested Riverpod controller. Prototype audit only; full Step 4 is not complete. |
-| Later Phase 1 | Hints, haptics, audio, animations/win screen, 30 levels, Drift persistence and settings deferred. |
+| Step 4a | Accepted audit and engine/controller boundary. |
+| Step 4b | Welcome/three authored tutorial lessons, remembered completion/skip, How to Play, game/Pause layout and single-event result sheet. Local verification in docs/STEP_4B.md. No 4c work delivered. |
+| Later Phase 1 | 4c visual identity, seamless board and network reveal/new Home; then Journey, Drift, Settings and Collection; sound/haptics in Step 6. |
 | Phase 2 | Not implemented; no accounts, backend, daily play, leaderboards or cloud sync. |
 | Release/performance | Not verified; no real-device performance or hosted CI green claim. |
 
@@ -25,6 +26,6 @@ flutter test
 dart run tool/generate_puzzles.dart
 ```
 
-See [RUN_4A.md](docs/RUN_4A.md) for simulator/emulator setup and the UI review exercise. Flutter 3.47.7 / Dart 3.13.5 and existing lockfiles were used for this audit; no dependency upgrade was made.
+See [STEP_4B.md](docs/STEP_4B.md) for the current simulator review checklist and exercise; [RUN_4A.md](docs/RUN_4A.md) retains the platform setup steps. Flutter 3.47.7 / Dart 3.13.5 and existing lockfiles were used for this audit; no dependency upgrade was made.
 
 See [ENGINE.md](docs/ENGINE.md) for bit order, architecture, fixed vectors, 200-seed-per-size solver statistics, test names and the deferred hint design. The exact solver is under tool/solver, never imported by lib.

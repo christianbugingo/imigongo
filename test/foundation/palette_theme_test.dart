@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:imigongo_pattern_puzzle/core/theme/imigongo_palette.dart';
@@ -28,29 +29,65 @@ double _contrastRatio(Color foreground, Color background) {
 }
 
 void main() {
+  for (final theme in [ImigongoTheme.lightTheme, ImigongoTheme.darkTheme]) {
+    test(
+      'Step 4b ${theme.brightness.name}: action and sheet text meets AA',
+      () {
+        final colors = theme.colorScheme;
+        expect(
+          _contrastRatio(colors.primary, colors.surface),
+          greaterThanOrEqualTo(4.5),
+        );
+        expect(
+          _contrastRatio(colors.onSurface, colors.surface),
+          greaterThanOrEqualTo(4.5),
+        );
+        expect(
+          _contrastRatio(colors.onPrimary, colors.primary),
+          greaterThanOrEqualTo(4.5),
+        );
+      },
+    );
+  }
+
   group('WCAG AA Contrast Ratio Tests (Dark & Light Themes)', () {
     test('Dark theme: chalk on canvas background meets WCAG AA (>= 4.5:1)', () {
-      final ratio = _contrastRatio(ImigongoPalette.chalk, ImigongoPalette.canvasSlate);
+      final ratio = _contrastRatio(
+        ImigongoPalette.chalk,
+        ImigongoPalette.canvasSlate,
+      );
       expect(ratio, greaterThanOrEqualTo(4.5));
     });
 
     test('Dark theme: chalk on tile surface meets WCAG AA (>= 4.5:1)', () {
-      final ratio = _contrastRatio(ImigongoPalette.chalk, ImigongoPalette.tileSurface);
+      final ratio = _contrastRatio(
+        ImigongoPalette.chalk,
+        ImigongoPalette.tileSurface,
+      );
       expect(ratio, greaterThanOrEqualTo(4.5));
     });
 
     test('Dark theme: charcoal on ochre meets WCAG AA (>= 4.5:1)', () {
-      final ratio = _contrastRatio(ImigongoPalette.charcoal, ImigongoPalette.ochre);
+      final ratio = _contrastRatio(
+        ImigongoPalette.charcoal,
+        ImigongoPalette.ochre,
+      );
       expect(ratio, greaterThanOrEqualTo(4.5));
     });
 
     test('Light theme: charcoal on chalk canvas meets WCAG AA (>= 4.5:1)', () {
-      final ratio = _contrastRatio(ImigongoPalette.charcoal, ImigongoPalette.chalk);
+      final ratio = _contrastRatio(
+        ImigongoPalette.charcoal,
+        ImigongoPalette.chalk,
+      );
       expect(ratio, greaterThanOrEqualTo(4.5));
     });
 
     test('Light theme: charcoal on parchment card surface meets WCAG AA (>= 4.5:1)', () {
-      final ratio = _contrastRatio(ImigongoPalette.charcoal, ImigongoPalette.parchment);
+      final ratio = _contrastRatio(
+        ImigongoPalette.charcoal,
+        ImigongoPalette.parchment,
+      );
       expect(ratio, greaterThanOrEqualTo(4.5));
     });
 
