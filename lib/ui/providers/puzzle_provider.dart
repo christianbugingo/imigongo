@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
 import '../../engine/content/tutorial_boards.dart';
+import '../../engine/content/challenge_catalog.dart';
+import '../../engine/models/challenge_progress.dart';
 import '../../engine/generator/puzzle_generator.dart';
 import '../../engine/models/board.dart';
 import '../../engine/models/connection_mask.dart';
@@ -53,24 +55,43 @@ TileView _tileView(Tile tile) => TileView(
 class PuzzleNotifier extends StateNotifier<PuzzleState> {
   final GameSession _session;
   final MemoryBests? _bests;
+  final String _paletteId;
+  final int Function()? _onWin;
   int _attempt = 1;
   PlayPhase _phase = PlayPhase.playing;
   CompletionView? _completion;
-  PuzzleNotifier(Board initial, {MemoryBests? bests})
-    : this._(GameSession(initial), bests);
-  PuzzleNotifier._(this._session, this._bests)
-    : super(_snapshot(_session, PlayPhase.playing, null));
+  PuzzleNotifier(
+    Board initial, {
+    MemoryBests? bests,
+    int? moveLimit,
+    int Function()? onWin,
+    String paletteId = 'classic',
+  }) : this._(
+         GameSession(initial, moveLimit: moveLimit),
+         bests,
+         onWin,
+         paletteId,
+       );
+  PuzzleNotifier._(this._session, this._bests, this._onWin, this._paletteId)
+    : super(_snapshot(_session, PlayPhase.playing, null, _paletteId));
 
   static PuzzleState _snapshot(
     GameSession session,
     PlayPhase phase,
     CompletionView? completion,
+    String paletteId,
   ) {
     final board = session.board;
     return PuzzleState(
       size: board.size,
+      paletteId: paletteId,
       movesTaken: board.movesTaken,
       targetMoves: board.par,
+      remainingMoves: session.remainingMoves,
+      previewTiles: [
+        for (final tile in session.initialBoard.tiles)
+          _tileView(tile.copyWith(currentRotation: tile.targetRotation)),
+      ],
       isSolved: board.isSolved,
       canUndo: session.canUndo && phase == PlayPhase.playing,
       phase: phase,
@@ -79,13 +100,14 @@ class PuzzleNotifier extends StateNotifier<PuzzleState> {
     );
   }
 
-  void _publish() => state = _snapshot(_session, _phase, _completion);
+  void _publish() =>
+      state = _snapshot(_session, _phase, _completion, _paletteId);
 
   void rotateTile(int row, int col) {
     if (_phase != PlayPhase.playing || state.isSolved) return;
     _session.rotateTile(row, col);
     final board = _session.board;
-    if (board.isSolved) {
+    if (_session.outcome == SessionOutcome.won) {
       _phase = PlayPhase.completing;
       _completion = CompletionView(
         attemptId: _attempt,
@@ -96,7 +118,10 @@ class PuzzleNotifier extends StateNotifier<PuzzleState> {
           par: board.par,
         ).count,
         newBest: _bests?.record(board) ?? false,
+        bonusAwarded: _onWin?.call() ?? 0,
       );
+    } else if (_session.outcome == SessionOutcome.lost) {
+      _phase = PlayPhase.gameOver;
     }
     _publish();
   }
@@ -159,3 +184,73 @@ final networkDiagramProvider = Provider<List<TileView>>((ref) {
       _tileView(tile.copyWith(currentRotation: tile.targetRotation)),
   ];
 });
+
+final challengeProgressProvider = Provider((ref) => ChallengeProgress());
+final challengeBoardFactoryProvider = Provider<Board Function(ChallengeLevel)>(
+  (ref) =>
+      (level) => level.generate(),
+);
+PatternView _pattern(
+  ChallengeLevel level,
+  Board board,
+  ChallengeProgress progress,
+) => PatternView(
+  id: level.id,
+  paletteId: level.paletteId,
+  tier: level.tier.name,
+  number: level.number,
+  size: level.size,
+  baseMoves: ChallengeRules.baseAllowance(board, level.tier),
+  bonusMoves: progress.bonusFor(level.id),
+  nextId: level.nextId,
+  tiles: [
+    for (final tile in board.tiles)
+      _tileView(tile.copyWith(currentRotation: tile.targetRotation)),
+  ],
+);
+// Views are refreshed after wins; preview pages re-read the session ledger on entry.
+final patternCatalogProvider = Provider.autoDispose
+    .family<List<PatternView>, String>((ref, tier) {
+      final progress = ref.watch(challengeProgressProvider);
+      final factory = ref.watch(challengeBoardFactoryProvider);
+      return [
+        for (final level in ChallengeCatalog.levels)
+          if (level.tier.name == tier)
+            _pattern(level, factory(level), progress),
+      ];
+    });
+final patternViewProvider = Provider.autoDispose.family<PatternView?, String>((
+  ref,
+  id,
+) {
+  final level = ChallengeCatalog.find(id);
+  return level == null
+      ? null
+      : _pattern(
+          level,
+          ref.watch(challengeBoardFactoryProvider)(level),
+          ref.watch(challengeProgressProvider),
+        );
+});
+final challengePuzzleProvider = StateNotifierProvider.autoDispose
+    .family<PuzzleNotifier, PuzzleState, String>((ref, id) {
+      final level = ChallengeCatalog.find(id);
+      if (level == null) throw ArgumentError.value(id, 'id');
+      final board = ref.watch(challengeBoardFactoryProvider)(level);
+      final progress = ref.read(challengeProgressProvider);
+      return PuzzleNotifier(
+        board,
+        paletteId: level.paletteId,
+        bests: ref.read(memoryBestsProvider),
+        moveLimit:
+            ChallengeRules.baseAllowance(board, level.tier) +
+            progress.bonusFor(id),
+        onWin: () {
+          final reward = progress.recordWin(level);
+          // Mutating the ledger does not replace an active gameplay session.
+          ref.invalidate(patternViewProvider);
+          ref.invalidate(patternCatalogProvider);
+          return reward;
+        },
+      );
+    });

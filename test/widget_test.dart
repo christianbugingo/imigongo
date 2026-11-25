@@ -31,7 +31,7 @@ void main() {
     expect(find.text('Geometric Relief Puzzle'), findsOneWidget);
 
     // Verify Play button
-    expect(find.text('PLAY'), findsOneWidget);
+    expect(find.text('Free Play'), findsOneWidget);
   });
 
   testWidgets('Imigongo puzzle app displays DEV badge when in dev flavor', (

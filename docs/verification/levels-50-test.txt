@@ -1,0 +1,115 @@
+00:00 +0: loading /Users/a/Documents/imigongo_pattern_puzzle/test/ui/level_palette_test.dart
+00:00 +0: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +1: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +2: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +3: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +4: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +5: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart: tap renders rotation; undo and restart update HUD before completion
+00:00 +6: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:00 +7: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:00 +8: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +9: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +10: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +11: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +12: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +13: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +14: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +15: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +16: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +17: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +18: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +19: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +20: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: temporary Home offers size selection and opens Step 4b gameplay
+00:01 +21: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/catalog_navigation_test.dart: lazy Hard list reaches Pattern 50 and opens its colored preview
+00:02 +22: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/tutorial_flow_test.dart: first launch can skip; returning launch goes straight to Home
+00:02 +23: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/tutorial_flow_test.dart: first launch can skip; returning launch goes straight to Home
+00:02 +24: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/tutorial_flow_test.dart: first launch can skip; returning launch goes straight to Home
+00:02 +25: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +26: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +27: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +28: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +29: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +30: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +31: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +32: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +33: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/completion_sheet_test.dart: earned stars appear sequentially
+00:02 +34: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +35: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +36: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +37: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +38: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +39: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +40: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +41: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +42: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +43: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +44: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +45: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: difficulty → choose pattern → preview → play → rewarded next preview
+00:03 +46: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: Game over offers Replay with full allowance and no bonus
+00:03 +47: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/challenge_flow_test.dart: Game over offers Replay with full allowance and no bonus
+00:03 +48: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +49: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +50: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +51: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +52: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +53: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +54: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +55: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +56: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +57: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:03 +58: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:04 +59: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:04 +60: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:04 +61: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:04 +62: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:04 +63: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:04 +64: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Valid 2x2 loop satisfies all geometric continuity rules
+00:04 +65: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Detects broken horizontal edge mismatch
+00:04 +66: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Detects path escaping outer boundary
+00:04 +67: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Rejects trivial empty board with no active paths
+00:04 +68: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Accepts alternative valid rotation not matching stored target rotation
+00:04 +69: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/tutorial_boards_test.dart: all three authored lessons solve through ordinary clockwise moves
+00:04 +70: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +71: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +72: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +73: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +74: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +75: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: exact tier ranges, contiguous chains and deterministic content-tool output
+00:04 +76: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: 50 unique topology classes even after quarter-turn normalization
+00:04 +77: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: all nine earlier pattern identities still use their v2 seeds
+00:04 +78: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3 fixed vector protects generator identity across future edits
+00:04 +79: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: difficulty boundaries continue the global 1–50 reward chain
+00:04 +80: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3: 1000 seeds 3x3 deterministic, symmetric, solvable and Par-correct
+00:04 +81: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3: 1000 seeds 4x4 deterministic, symmetric, solvable and Par-correct
+00:05 +82: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3: 1000 seeds 5x5 deterministic, symmetric, solvable and Par-correct
+00:05 +83: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3: 1000 seeds 6x6 deterministic, symmetric, solvable and Par-correct
+00:05 +84: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/catalog_50_test.dart: v3: 1000 seeds 7x7 deterministic, symmetric, solvable and Par-correct
+00:07 +85: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: independent unsigned 32-bit reference seed vectors
+00:07 +86: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) Matches documented fixed test vectors for seed 123456789
+00:07 +87: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) Identical seeds produce identical sequences
+00:07 +88: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) Different seeds produce different sequences
+00:07 +89: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) nextBoundedInt produces integers strictly in [0, max - 1]
+00:07 +90: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) nextDouble produces values strictly in [0.0, 1.0)
+00:07 +91: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/prng_test.dart: Xoshiro128 PRNG Tests (Documented Test Vectors) generatorVersion is 1
+00:07 +92: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 3x3 determinism, solution, Par, symmetry
+00:08 +93: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 4x4 determinism, solution, Par, symmetry
+00:08 +94: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 5x5 determinism, solution, Par, symmetry
+00:08 +95: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 6x6 determinism, solution, Par, symmetry
+00:08 +96: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 7x7 determinism, solution, Par, symmetry
+00:08 +97: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +98: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +99: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +100: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +101: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +102: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:08 +103: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:08 +104: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:08 +105: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:08 +106: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:08 +107: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:08 +108: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: engine is pure Dart and application cannot import the tool solver
+00:08 +109: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/challenge_rules_test.dart: solving on final allowed turn wins; unsolved zero loses and locks
+00:08 +110: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/challenge_rules_test.dart: undo refunds moves, invalid input costs nothing, free play has no cap
+00:08 +111: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/challenge_rules_test.dart: +4 goes only to the next pattern, once; replays cannot farm it
+00:08 +112: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/challenge_rules_test.dart: 50-level catalog has stable identity, valid previews, and solvable allowances
+00:08 +113: All tests passed!

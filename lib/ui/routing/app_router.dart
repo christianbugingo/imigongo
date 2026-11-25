@@ -1,5 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../providers/puzzle_provider.dart';
+import '../screens/free_play_screen.dart';
+import '../screens/pattern_selection_screen.dart';
 
 import '../screens/welcome_screen.dart';
 import '../screens/puzzle_screen.dart';
@@ -9,6 +14,42 @@ final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(path: '/', builder: (context, state) => const LaunchGate()),
+    GoRoute(path: '/free-play', builder: (_, _) => const FreePlayScreen()),
+    GoRoute(
+      path: '/patterns/:tier',
+      builder: (_, state) => PatternSelectionScreen(
+        tier:
+            const [
+              'easy',
+              'medium',
+              'hard',
+            ].contains(state.pathParameters['tier'])
+            ? state.pathParameters['tier']!
+            : 'easy',
+      ),
+    ),
+    GoRoute(
+      path: '/preview/:id',
+      builder: (_, state) =>
+          PatternPreviewScreen(id: state.pathParameters['id']!),
+    ),
+    GoRoute(
+      path: '/challenge/:id',
+      builder: (_, state) => Consumer(
+        builder: (context, ref, _) {
+          final id = state.pathParameters['id']!;
+          final pattern = ref.watch(patternViewProvider(id));
+          return pattern == null
+              ? PatternPreviewScreen(id: id)
+              : PuzzleScreen(
+                  key: ValueKey('challenge_$id'),
+                  size: pattern.size,
+                  seed: 0,
+                  challengeId: id,
+                );
+        },
+      ),
+    ),
     GoRoute(
       path: '/tutorial/:lesson',
       builder: (context, state) {

@@ -300,5 +300,118 @@
   "developmentBadge": "DEV [needs native review]",
   "@developmentBadge": {
     "description": "PLACEHOLDER — needs native review. Step 4b: developmentBadge"
+  },
+  "chooseDifficulty": "Choose a challenge difficulty [needs native review]",
+  "@chooseDifficulty": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: chooseDifficulty"
+  },
+  "easy": "Easy [needs native review]",
+  "@easy": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: easy"
+  },
+  "medium": "Medium [needs native review]",
+  "@medium": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: medium"
+  },
+  "hard": "Hard [needs native review]",
+  "@hard": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: hard"
+  },
+  "freePlay": "Free Play [needs native review]",
+  "@freePlay": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: freePlay"
+  },
+  "challengeSessionNote": "Challenge progress and bonus moves last for this app session. Free Play has no move limit. [needs native review]",
+  "@challengeSessionNote": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: challengeSessionNote"
+  },
+  "choosePattern": "Choose the pattern you want to complete. [needs native review]",
+  "@choosePattern": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: choosePattern"
+  },
+  "patternNumber": "Pattern {number} [needs native review]",
+  "@patternNumber": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternNumber",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "allowanceValue": "Move allowance: {count} [needs native review]",
+  "@allowanceValue": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: allowanceValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusIncluded": "Includes {count} earned bonus moves. [needs native review]",
+  "@bonusIncluded": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: bonusIncluded",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "patternUnavailable": "This pattern is not available. [needs native review]",
+  "@patternUnavailable": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternUnavailable"
+  },
+  "patternPreview": "Study the completed pattern before you start. [needs native review]",
+  "@patternPreview": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternPreview"
+  },
+  "previewRule": "Use this as your reference. Any single connected pattern with no loose ends is a valid solution. [needs native review]",
+  "@previewRule": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: previewRule"
+  },
+  "referencePattern": "Completed reference pattern [needs native review]",
+  "@referencePattern": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: referencePattern"
+  },
+  "referenceHint": "Your reference stays here. Tap it to enlarge. [needs native review]",
+  "@referenceHint": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: referenceHint"
+  },
+  "startPuzzle": "Start puzzle [needs native review]",
+  "@startPuzzle": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: startPuzzle"
+  },
+  "remainingMoves": "Moves left: {count} [needs native review]",
+  "@remainingMoves": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: remainingMoves",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusReward": "+{count} moves earned for the next pattern [needs native review]",
+  "@bonusReward": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: bonusReward",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "gameOver": "Game over [needs native review]",
+  "@gameOver": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: gameOver"
+  },
+  "outOfMoves": "No moves left. Replay this pattern with a fresh allowance. [needs native review]",
+  "@outOfMoves": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: outOfMoves"
+  },
+  "challengeHelp": "Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active. [needs native review]",
+  "@challengeHelp": {
+    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: challengeHelp"
+  },
+  "colorHelp": "Colors are decorative. Match the connections, not the colors. [needs native review]",
+  "@colorHelp": {
+    "description": "PLACEHOLDER — needs native review. Level palettes do not affect puzzle validation."
   }
 }

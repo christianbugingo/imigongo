@@ -8,10 +8,16 @@ Step 4b adds no downloaded image, sound, display font, or runtime asset package.
 | Stars, arrow, pause, undo, restart and help glyphs | Flutter SDK MaterialIcons font, used via Icons and uses-material-design | The installed SDK's MaterialIcons_LICENSE.txt specifies CC BY 4.0; retained verbatim in docs/licenses/MaterialIcons_LICENSE.txt. Attribution: Material Icons, distributed with Flutter; original upstream project https://github.com/google/material-design-icons. No custom icon font was downloaded. |
 | Body/title text | Existing Flutter platform/default font selection; no fontFamily or new font assets | System fonts remain platform-provided. The SDK fallback Roboto font's Apache 2.0 license is retained in docs/licenses/Roboto_LICENSE.txt. No OFL display font has been added yet. |
 | Temporary launcher PNGs | Restored Flutter project-template icons under ios/Runner/Assets.xcassets/AppIcon.appiconset and Android mipmap folders | Existing framework scaffold placeholder only, as approved in the Step 4b plan. Flutter template source is distributed under BSD-3-Clause; Flutter branding/trademark policy is separate. This is not the final game logo and no release branding clearance is claimed. Source: installed Flutter SDK templates, https://github.com/flutter/flutter and https://flutter.dev/brand. |
-| Screenshot evidence | Screenshots of this project's running UI in docs/verification/step4b-welcome.png | Project UI capture; no third-party reference imagery. Not bundled into the app. |
+| Screenshot evidence | Screenshots of this project's running UI in docs/verification/step4b-welcome.png and docs/verification/challenge-home.png | Project UI capture; no third-party reference imagery. Not bundled into the app. |
 | Sounds | None | Deferred to Step 6; no sound license required yet. |
 | Photo-derived logo experiment | Moved to /Users/a/Documents/imigongo_reference/photo-derived-logo | Reference/adaptation provenance unverified; retired and outside the repo. No copy is bundled or intended for commit. |
 
 `/reference/` is gitignored should local visual references be gathered later. They must stay out of app bundles, source history and asset manifests. Record exact source/license and attribution before introducing any commissioned art, OFL font or CC0/permissive sound in its approved step.
 
 The native Flutter icons are temporary scaffolding, not a style reference for future art. The game board remains procedural. New original art must not trace or reproduce the supplied photograph.
+
+## 50-level palette checkpoint
+
+- Center-grown geometric networks: original pure-Dart procedural project data (CenterNetworkGenerator v3), with no external image reference or assigned cultural meaning. The earlier nine v2 seed identities are preserved.
+- Five board palettes: coordinate-based combinations of the existing project colors, implemented in lib/core/theme/pattern_palette.dart. No additional artwork, font or sound was downloaded.
+- docs/verification/catalog-light.png and catalog-dark.png: developer contact sheets rendered by tool/render_catalog_test.dart with the production painter. Labels use the installed Flutter SDK's Roboto font under the Apache 2.0 license already retained here. These files are not bundled into the game.

@@ -246,5 +246,118 @@
   "developmentBadge": "DEV",
   "@developmentBadge": {
     "description": "Step 4b: developmentBadge"
+  },
+  "chooseDifficulty": "Choisissez la difficulté du défi",
+  "@chooseDifficulty": {
+    "description": "Challenge checkpoint: chooseDifficulty"
+  },
+  "easy": "Facile",
+  "@easy": {
+    "description": "Challenge checkpoint: easy"
+  },
+  "medium": "Moyen",
+  "@medium": {
+    "description": "Challenge checkpoint: medium"
+  },
+  "hard": "Difficile",
+  "@hard": {
+    "description": "Challenge checkpoint: hard"
+  },
+  "freePlay": "Jeu libre",
+  "@freePlay": {
+    "description": "Challenge checkpoint: freePlay"
+  },
+  "challengeSessionNote": "La progression et les coups bonus des défis sont conservés pour cette session. Le jeu libre n’a pas de limite de coups.",
+  "@challengeSessionNote": {
+    "description": "Challenge checkpoint: challengeSessionNote"
+  },
+  "choosePattern": "Choisissez le motif que vous souhaitez compléter.",
+  "@choosePattern": {
+    "description": "Challenge checkpoint: choosePattern"
+  },
+  "patternNumber": "Motif {number}",
+  "@patternNumber": {
+    "description": "Challenge checkpoint: patternNumber",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "allowanceValue": "Coups disponibles : {count}",
+  "@allowanceValue": {
+    "description": "Challenge checkpoint: allowanceValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusIncluded": "Comprend {count} coups bonus gagnés.",
+  "@bonusIncluded": {
+    "description": "Challenge checkpoint: bonusIncluded",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "patternUnavailable": "Ce motif n’est pas disponible.",
+  "@patternUnavailable": {
+    "description": "Challenge checkpoint: patternUnavailable"
+  },
+  "patternPreview": "Observez le motif terminé avant de commencer.",
+  "@patternPreview": {
+    "description": "Challenge checkpoint: patternPreview"
+  },
+  "previewRule": "Utilisez ce motif comme référence. Tout motif unique et connecté sans extrémité libre est une solution valide.",
+  "@previewRule": {
+    "description": "Challenge checkpoint: previewRule"
+  },
+  "referencePattern": "Motif de référence terminé",
+  "@referencePattern": {
+    "description": "Challenge checkpoint: referencePattern"
+  },
+  "referenceHint": "Votre référence reste ici. Touchez-la pour l’agrandir.",
+  "@referenceHint": {
+    "description": "Challenge checkpoint: referenceHint"
+  },
+  "startPuzzle": "Commencer le puzzle",
+  "@startPuzzle": {
+    "description": "Challenge checkpoint: startPuzzle"
+  },
+  "remainingMoves": "Coups restants : {count}",
+  "@remainingMoves": {
+    "description": "Challenge checkpoint: remainingMoves",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusReward": "+{count} coups gagnés pour le motif suivant",
+  "@bonusReward": {
+    "description": "Challenge checkpoint: bonusReward",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "gameOver": "Partie terminée",
+  "@gameOver": {
+    "description": "Challenge checkpoint: gameOver"
+  },
+  "outOfMoves": "Il ne reste plus de coups. Rejouez ce motif avec tous vos coups disponibles.",
+  "@outOfMoves": {
+    "description": "Challenge checkpoint: outOfMoves"
+  },
+  "challengeHelp": "Les défis ont une limite de coups. Résoudre un motif rapporte quatre coups supplémentaires pour le suivant, une seule fois par niveau. Annuler rend un coup tant que la partie est en cours.",
+  "@challengeHelp": {
+    "description": "Challenge checkpoint: challengeHelp"
+  },
+  "colorHelp": "Les couleurs sont décoratives. Reliez les connexions, pas les couleurs.",
+  "@colorHelp": {
+    "description": "Level palettes do not affect puzzle validation."
   }
 }

@@ -8,7 +8,13 @@ enum ResultAction { next, replay, home }
 class CompletionSheet extends StatefulWidget {
   final CompletionView result;
   final int? lesson;
-  const CompletionSheet({super.key, required this.result, this.lesson});
+  final bool hasNext;
+  const CompletionSheet({
+    super.key,
+    required this.result,
+    this.lesson,
+    this.hasNext = true,
+  });
   @override
   State<CompletionSheet> createState() => _CompletionSheetState();
 }
@@ -94,6 +100,14 @@ class _CompletionSheetState extends State<CompletionSheet>
               l10n.targetValue(result.targetMoves),
               textAlign: TextAlign.center,
             ),
+            if (result.bonusAwarded > 0)
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  l10n.bonusReward(result.bonusAwarded),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             if (result.newBest)
               Padding(
                 padding: const EdgeInsets.only(top: 12),
@@ -111,17 +125,18 @@ class _CompletionSheetState extends State<CompletionSheet>
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
-            FilledButton(
-              key: const ValueKey('result_next'),
-              onPressed: () => Navigator.pop(context, ResultAction.next),
-              child: Text(
-                widget.lesson == null
-                    ? l10n.nextPuzzle
-                    : widget.lesson == 2
-                    ? l10n.finishTutorial
-                    : l10n.nextLesson,
+            if (widget.hasNext)
+              FilledButton(
+                key: const ValueKey('result_next'),
+                onPressed: () => Navigator.pop(context, ResultAction.next),
+                child: Text(
+                  widget.lesson == null
+                      ? l10n.nextPuzzle
+                      : widget.lesson == 2
+                      ? l10n.finishTutorial
+                      : l10n.nextLesson,
+                ),
               ),
-            ),
             const SizedBox(height: 8),
             OutlinedButton(
               key: const ValueKey('result_replay'),

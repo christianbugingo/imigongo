@@ -131,3 +131,31 @@ Step 4b keeps the engine as the only gameplay authority. Undo restores the previ
 Authored tutorial data uses generatorVersion=0 with lesson-index seeds, distinct from generated content version 2. Internal route/controller keys -1..-3 select these authored records and are never generated or ranked. No special tutorial game rules exist.
 
 The 4b result flow uses a short 1-second completion hold followed by sequential star reveals. It does not implement 4c's network glow/region fill. System reduced motion removes both hold and star/diagram animations. Sounds and haptics wait for Step 6. No placeholder Settings action appears before Step 5.
+
+
+## Approved challenge checkpoint (2026-11-26)
+
+The user approved the staged plan adding a completed reference preview, Home difficulty selection, challenge move budgets, Game Over/Replay, and a +4 next-pattern reward. The approval did not select alternatives in the preceding questions; the stated defaults were used: any rule-valid connected solution wins (the reference is one valid completion), the next pattern gets its own base allowance plus four with no unused-move carryover, and Undo refunds a move only while an attempt is active. These choices were restated before implementation.
+
+This checkpoint includes nine distinct procedural review patterns (three each for Easy/Medium/Hard), not the requested final 50. The expanded 50-level catalog and color variations, sound/mute/volume Settings, ratings and purchase preparation remain separate checkpoints. No store or Settings placeholder actions are exposed. Original procedural art only; no reference photograph is used.
+
+Move limits and outcomes live in GameSession. Validation is checked before exhaustion so success on the final allowed move wins. An unsolved board at zero locks and offers free Replay, restoring that attempt's allowance. Base budgets are generator Par plus review margins of 6/3/1 for Easy/Medium/Hard; Par remains a verified restoration route, not an asserted minimum. Bonus grants are domain rules in ChallengeProgress: once per unique level, attached to its next catalog entry, never stacked by replay. The last review pattern in each difficulty has no next action/reward.
+
+Challenge progress/bonuses are held in memory and survive navigation but not process restart. A Replay does not consume the earned bonus again; it restores the same allowance. Paid move wallets and persistence are not part of this implementation. Free Play and tutorials retain their unlimited-move behavior. The first-launch tutorial remains practice; challenge play always passes through pattern selection/preview before Start from Home.
+
+Home now leads to difficulty/pattern selection; old size chips are under Free Play. Reference snapshots and game tiles are derived through the Riverpod engine adapter; widgets only paint supplied data. A persistent thumbnail opens a paused full-size reference. All labels/help/error messages use ARB localization with English/French and flagged rw placeholders.
+
+Work remains uncommitted. Baseline for this task was the user's existing `5072adf` commit; the assistant did not create it or any new commit.
+
+
+## Approved 50-level and palette checkpoint (2026-11-26)
+
+The user approved checkpoint 1 of the remaining-work plan: exactly 50 numbered levels and color variations only. Easy=1–15, Medium=16–35, Hard=36–50. Sound/Settings/persistence and store integration are not authorized by this approval. Do not commit without explicit permission; stop here for review.
+
+The v2 generator favored dense perimeter grids, so a separate deterministic center-growth v3 generator supplies 41 additional original symmetric networks. The nine prior IDs/seeds/sizes remain v2; no published seed is silently reinterpreted. The catalog stores every seed with its version and palette metadata; content selection/deduplication runs in tooling. Free Play stays on v2. The static generated table and its full metadata report are reproducible from tool/build_50_levels.dart.
+
+Topology uniqueness ignores palette/scramble and normalizes quarter-turn rotations. Color is cosmetic and cannot affect solving, Par, budgets or rewards. Preview and gameplay use one palette resolver, with contrasting outlines for colored paths. Static review sheets use the production painter and are not runtime assets. Difficulty thresholds are initial tuning, not proven human rankings; Par remains a verified route, not a global-minimum claim.
+
+With the complete catalog, Next continues across difficulty boundaries (15→16 and 35→36). The once-per-level +4 reward follows that next ID. Only level 50 has no next level/reward. This supersedes the earlier small review set's end-of-difficulty stop. It does not introduce Journey locking or persistent progress.
+
+See docs/LEVELS_50.md for verification, review instructions, limits and an exercise. No commits were created.

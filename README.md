@@ -10,6 +10,7 @@ Flutter iOS/Android procedural puzzle prototype. Cultural notes and all Kinyarwa
 | Steps 2–3 | Accepted engine and tests; generator v2, rule validation, documented PRNG and tool-only solver. |
 | Step 4a | Accepted audit and engine/controller boundary. |
 | Step 4b | Welcome/three authored tutorial lessons, remembered completion/skip, How to Play, game/Pause layout and single-event result sheet. Local verification in docs/STEP_4B.md. No 4c work delivered. |
+| 50-level checkpoint | Easy 1–15, Medium 16–35, Hard 36–50; 50 distinct versioned patterns, five palettes, previews, move limits and +4 next-level bonuses. See docs/LEVELS_50.md. |
 | Later Phase 1 | 4c visual identity, seamless board and network reveal/new Home; then Journey, Drift, Settings and Collection; sound/haptics in Step 6. |
 | Phase 2 | Not implemented; no accounts, backend, daily play, leaderboards or cloud sync. |
 | Release/performance | Not verified; no real-device performance or hosted CI green claim. |
@@ -26,6 +27,6 @@ flutter test
 dart run tool/generate_puzzles.dart
 ```
 
-See [STEP_4B.md](docs/STEP_4B.md) for the current simulator review checklist and exercise; [RUN_4A.md](docs/RUN_4A.md) retains the platform setup steps. Flutter 3.47.7 / Dart 3.13.5 and existing lockfiles were used for this audit; no dependency upgrade was made.
+See [LEVELS_50.md](docs/LEVELS_50.md) for the current review checklist and exercise; [CHALLENGE_CHECKPOINT.md](docs/CHALLENGE_CHECKPOINT.md) records the earlier nine-pattern review; [STEP_4B.md](docs/STEP_4B.md) records the previous checkpoint; [RUN_4A.md](docs/RUN_4A.md) retains the platform setup steps. Flutter 3.47.7 / Dart 3.13.5 and existing lockfiles were used for this audit; no dependency upgrade was made.
 
 See [ENGINE.md](docs/ENGINE.md) for bit order, architecture, fixed vectors, 200-seed-per-size solver statistics, test names and the deferred hint design. The exact solver is under tool/solver, never imported by lib.

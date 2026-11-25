@@ -113,3 +113,33 @@ Every value in app_rw.arb is a placeholder and has `needs native review` metadat
 - [ ] `practiceTutorial`: Practice the tutorial [needs native review] — **needs native review**
 - [ ] `sessionBestNote`: Free Play bests last until the app closes. [needs native review] — **needs native review**
 - [ ] `developmentBadge`: DEV [needs native review] — **needs native review**
+
+## Challenge preview and move-budget strings — needs native review
+
+- [ ] `chooseDifficulty`: Choose a challenge difficulty [needs native review] — **needs native review**
+- [ ] `easy`: Easy [needs native review] — **needs native review**
+- [ ] `medium`: Medium [needs native review] — **needs native review**
+- [ ] `hard`: Hard [needs native review] — **needs native review**
+- [ ] `freePlay`: Free Play [needs native review] — **needs native review**
+- [ ] `challengeSessionNote`: Challenge progress and bonus moves last for this app session. Free Play has no move limit. [needs native review] — **needs native review**
+- [ ] `choosePattern`: Choose the pattern you want to complete. [needs native review] — **needs native review**
+- [ ] `patternNumber`: Pattern {number} [needs native review] — **needs native review**
+- [ ] `allowanceValue`: Move allowance: {count} [needs native review] — **needs native review**
+- [ ] `bonusIncluded`: Includes {count} earned bonus moves. [needs native review] — **needs native review**
+- [ ] `patternUnavailable`: This pattern is not available. [needs native review] — **needs native review**
+- [ ] `patternPreview`: Study the completed pattern before you start. [needs native review] — **needs native review**
+- [ ] `previewRule`: Use this as your reference. Any single connected pattern with no loose ends is a valid solution. [needs native review] — **needs native review**
+- [ ] `referencePattern`: Completed reference pattern [needs native review] — **needs native review**
+- [ ] `referenceHint`: Your reference stays here. Tap it to enlarge. [needs native review] — **needs native review**
+- [ ] `startPuzzle`: Start puzzle [needs native review] — **needs native review**
+- [ ] `remainingMoves`: Moves left: {count} [needs native review] — **needs native review**
+- [ ] `bonusReward`: +{count} moves earned for the next pattern [needs native review] — **needs native review**
+- [ ] `gameOver`: Game over [needs native review] — **needs native review**
+- [ ] `outOfMoves`: No moves left. Replay this pattern with a fresh allowance. [needs native review] — **needs native review**
+- [ ] `challengeHelp`: Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active. [needs native review] — **needs native review**
+
+## 50-level palette text
+
+- [ ] `colorHelp`: Colors are decorative. Match the connections, not the colors. [needs native review] — **needs native review**. This is an English placeholder in app_rw.arb, not a verified translation.
+
+The new networks and palette labels carry no traditional pattern names or cultural meanings.

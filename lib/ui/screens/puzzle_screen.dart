@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -11,6 +12,7 @@ import '../providers/onboarding_provider.dart';
 import '../providers/puzzle_provider.dart';
 import '../widgets/completion_sheet.dart';
 import '../widgets/puzzle_board_widget.dart';
+import '../widgets/pattern_image.dart';
 import 'how_to_play_screen.dart';
 
 enum _PauseAction { resume, restart, help, home }
@@ -18,11 +20,13 @@ enum _PauseAction { resume, restart, help, home }
 class PuzzleScreen extends ConsumerStatefulWidget {
   final int size, seed;
   final int? lesson;
+  final String? challengeId;
   const PuzzleScreen({
     super.key,
     required this.size,
     required this.seed,
     this.lesson,
+    this.challengeId,
   });
   @override
   ConsumerState<PuzzleScreen> createState() => _PuzzleScreenState();
@@ -34,6 +38,10 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
   bool _modalOpen = false;
   bool _finishingTutorial = false;
   (int, int) get _key => (widget.size, widget.seed);
+  StateNotifierProvider<PuzzleNotifier, PuzzleState> get _provider =>
+      widget.challengeId == null
+      ? puzzleProvider(_key)
+      : challengePuzzleProvider(widget.challengeId!);
   @override
   void initState() {
     super.initState();
@@ -52,7 +60,7 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
     if (state == AppLifecycleState.inactive &&
         mounted &&
         !_modalOpen &&
-        ref.read(puzzleProvider(_key)).phase == PlayPhase.playing) {
+        ref.read(_provider).phase == PlayPhase.playing) {
       unawaited(_pause());
     }
   }
@@ -63,7 +71,7 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
     if (MediaQuery.disableAnimationsOf(context) &&
         (_resultTimer?.isActive ?? false)) {
       _resultTimer?.cancel();
-      final completion = ref.read(puzzleProvider(_key)).completion;
+      final completion = ref.read(_provider).completion;
       if (completion != null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted) unawaited(_showResults(completion));
@@ -105,11 +113,11 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(AppLocalizations.of(context)!.saveFailed)),
       );
-      final completion = ref.read(puzzleProvider(_key)).completion;
+      final completion = ref.read(_provider).completion;
       if (completion != null) {
         unawaited(_showResults(completion));
       } else {
-        ref.read(puzzleProvider(_key).notifier).resume();
+        ref.read(_provider.notifier).resume();
       }
     }
   }
@@ -117,11 +125,10 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
   Future<void> _showResults(CompletionView result) async {
     if (!mounted ||
         _modalOpen ||
-        ref.read(puzzleProvider(_key)).completion?.attemptId !=
-            result.attemptId) {
+        ref.read(_provider).completion?.attemptId != result.attemptId) {
       return;
     }
-    final controller = ref.read(puzzleProvider(_key).notifier);
+    final controller = ref.read(_provider.notifier);
     controller.revealResults(result.attemptId);
     _modalOpen = true;
     final action = await showModalBottomSheet<ResultAction>(
@@ -134,7 +141,13 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
       sheetAnimationStyle: MediaQuery.disableAnimationsOf(context)
           ? AnimationStyle.noAnimation
           : null,
-      builder: (_) => CompletionSheet(result: result, lesson: widget.lesson),
+      builder: (_) => CompletionSheet(
+        result: result,
+        lesson: widget.lesson,
+        hasNext:
+            widget.challengeId == null ||
+            ref.read(patternViewProvider(widget.challengeId!))?.nextId != null,
+      ),
     );
     _modalOpen = false;
     if (!mounted) return;
@@ -148,6 +161,11 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
           } else {
             context.go('/tutorial/${widget.lesson! + 1}');
           }
+        } else if (widget.challengeId != null) {
+          final nextId = ref
+              .read(patternViewProvider(widget.challengeId!))
+              ?.nextId;
+          if (nextId != null) context.go('/preview/$nextId');
         } else {
           context.go(
             '/puzzle?size=${widget.size}&seed=${(widget.seed + 1) & 0xFFFFFFFF}',
@@ -164,11 +182,119 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
     }
   }
 
+  Future<void> _gameOver() async {
+    if (_modalOpen || ref.read(_provider).phase != PlayPhase.gameOver) return;
+    final controller = ref.read(_provider.notifier);
+    final l10n = AppLocalizations.of(context)!;
+    unawaited(
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        l10n.gameOver,
+        Directionality.of(context),
+      ),
+    );
+    _modalOpen = true;
+    final replay = await showModalBottomSheet<bool>(
+      context: context,
+      isDismissible: false,
+      enableDrag: false,
+      isScrollControlled: true,
+      useSafeArea: true,
+      sheetAnimationStyle: MediaQuery.disableAnimationsOf(context)
+          ? AnimationStyle.noAnimation
+          : null,
+      builder: (context) => PopScope(
+        canPop: false,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                l10n.gameOver,
+                key: const ValueKey('game_over_title'),
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 12),
+              Text(l10n.outOfMoves),
+              const SizedBox(height: 24),
+              FilledButton(
+                key: const ValueKey('game_over_replay'),
+                onPressed: () => Navigator.pop(context, true),
+                child: Text(l10n.replay),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(l10n.home),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    _modalOpen = false;
+    if (!mounted) return;
+    if (replay == true) {
+      controller.reset();
+    } else {
+      context.go('/');
+    }
+  }
+
+  Future<void> _reference(PuzzleState state) async {
+    if (_modalOpen) return;
+    final controller = ref.read(_provider.notifier);
+    controller.pause();
+    _modalOpen = true;
+    final l10n = AppLocalizations.of(context)!;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      sheetAnimationStyle: MediaQuery.disableAnimationsOf(context)
+          ? AnimationStyle.noAnimation
+          : null,
+      builder: (context) => SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(l10n.referencePattern),
+            const SizedBox(height: 12),
+            PatternImage(
+              tiles: state.previewTiles,
+              paletteId: state.paletteId,
+              size: state.size,
+              label: l10n.referencePattern,
+            ),
+            const SizedBox(height: 12),
+            Text(l10n.previewRule),
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.back),
+            ),
+          ],
+        ),
+      ),
+    );
+    _modalOpen = false;
+    if (!mounted) return;
+    controller.resume();
+    if (ref.read(_provider).phase == PlayPhase.gameOver) {
+      await _gameOver();
+    }
+    final result = ref.read(_provider).completion;
+    if (result != null) {
+      await _showResults(result);
+    }
+  }
+
   Future<void> _pause() async {
     if (_modalOpen) return;
-    final controller = ref.read(puzzleProvider(_key).notifier);
+    final controller = ref.read(_provider.notifier);
     controller.pause();
-    if (ref.read(puzzleProvider(_key)).phase != PlayPhase.paused) return;
+    if (ref.read(_provider).phase != PlayPhase.paused) return;
     final l10n = AppLocalizations.of(context)!;
     _modalOpen = true;
     final action = await showModalBottomSheet<_PauseAction>(
@@ -228,14 +354,20 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(puzzleProvider(_key));
-    final controller = ref.read(puzzleProvider(_key).notifier);
-    ref.listen(puzzleProvider(_key), (previous, next) {
+    final state = ref.watch(_provider);
+    final controller = ref.read(_provider.notifier);
+    ref.listen(_provider, (previous, next) {
       if (next.completion != null &&
           previous?.completion?.attemptId != next.completion!.attemptId) {
         _completed(next.completion!);
       }
       if (next.completion == null) _resultTimer?.cancel();
+      if (next.phase == PlayPhase.gameOver &&
+          previous?.phase != PlayPhase.gameOver) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) unawaited(_gameOver());
+        });
+      }
     });
     final l10n = AppLocalizations.of(context)!;
     final lesson = widget.lesson;
@@ -250,7 +382,13 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
           automaticallyImplyLeading: false,
           title: Text(
             lesson == null
-                ? l10n.freePlayTitle(state.size)
+                ? widget.challengeId == null
+                      ? l10n.freePlayTitle(state.size)
+                      : l10n.patternNumber(
+                          ref
+                              .watch(patternViewProvider(widget.challengeId!))!
+                              .number,
+                        )
                 : l10n.tutorialTitle(lesson + 1),
           ),
           actions: [
@@ -278,9 +416,38 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
                       key: const ValueKey('move_counter'),
                     ),
                     Text(l10n.targetValue(state.targetMoves)),
+                    if (state.remainingMoves != null)
+                      Text(
+                        l10n.remainingMoves(state.remainingMoves!),
+                        key: const ValueKey('remaining_moves'),
+                      ),
                   ],
                 ),
               ),
+              if (widget.challengeId != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 64,
+                        height: 64,
+                        child: InkWell(
+                          key: const ValueKey('reference_thumbnail'),
+                          onTap: () => _reference(state),
+                          child: PatternImage(
+                            tiles: state.previewTiles,
+                            paletteId: state.paletteId,
+                            size: state.size,
+                            label: l10n.referencePattern,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Flexible(child: Text(l10n.referenceHint)),
+                    ],
+                  ),
+                ),
               if (lesson != null)
                 Flexible(
                   child: SingleChildScrollView(

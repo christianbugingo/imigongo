@@ -109,6 +109,10 @@ class _HowToPlayScreenState extends ConsumerState<HowToPlayScreen> {
               ),
             ),
           const SizedBox(height: 16),
+          Text(l10n.challengeHelp),
+          const SizedBox(height: 12),
+          Text(l10n.colorHelp),
+          const SizedBox(height: 16),
           OutlinedButton(
             onPressed: () => context.go('/tutorial/0'),
             child: Text(l10n.practiceTutorial),

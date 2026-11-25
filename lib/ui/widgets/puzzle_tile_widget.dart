@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/theme/imigongo_palette.dart';
+import '../../core/theme/pattern_palette.dart';
 import '../../l10n/app_localizations.dart';
 import '../models/puzzle_view.dart';
 import '../painters/tile_painter.dart';
@@ -12,22 +12,19 @@ class PuzzleTileWidget extends StatelessWidget {
   final TileView tile;
   final VoidCallback? onTap;
   final bool isDark;
+  final String paletteId;
 
   const PuzzleTileWidget({
     super.key,
     required this.tile,
     required this.onTap,
     this.isDark = true,
+    this.paletteId = 'classic',
   });
 
   @override
   Widget build(BuildContext context) {
-    final surfaceColor = isDark
-        ? ImigongoPalette.tileSurface
-        : ImigongoPalette.parchment;
-    final ridgeColor = isDark
-        ? ImigongoPalette.ochre
-        : ImigongoPalette.charcoal;
+    final ink = PatternPalette.resolve(paletteId, isDark, tile.row, tile.col);
 
     final l10n = AppLocalizations.of(context)!;
     final directions = [
@@ -52,8 +49,9 @@ class PuzzleTileWidget extends StatelessWidget {
           child: CustomPaint(
             painter: TilePainter(
               tile: tile,
-              ridgeColor: ridgeColor,
-              surfaceColor: surfaceColor,
+              ridgeColor: ink.ridge,
+              outlineColor: ink.outline,
+              surfaceColor: ink.surface,
               isDark: isDark,
             ),
           ),

@@ -49,6 +49,7 @@ class PuzzleBoardWidget extends StatelessWidget {
                   return PuzzleTileWidget(
                     key: ValueKey('tile_${tile.row}_${tile.col}'),
                     tile: tile,
+                    paletteId: state.paletteId,
                     isDark: isDark,
                     onTap: state.phase != PlayPhase.playing || state.isSolved
                         ? null

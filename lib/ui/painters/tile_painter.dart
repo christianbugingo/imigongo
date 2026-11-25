@@ -11,12 +11,14 @@ class TilePainter extends CustomPainter {
   final TileView tile;
   final Color ridgeColor;
   final Color surfaceColor;
+  final Color? outlineColor;
   final bool isDark;
 
   TilePainter({
     required this.tile,
     required this.ridgeColor,
     required this.surfaceColor,
+    this.outlineColor,
     this.isDark = true,
   });
 
@@ -73,6 +75,21 @@ class TilePainter extends CustomPainter {
     // Clip to tile rounded boundary
     canvas.save();
     canvas.clipRRect(tileRect);
+
+    if (outlineColor != null) {
+      final outline = Paint()
+        ..color = outlineColor!
+        ..style = PaintingStyle.stroke
+        ..strokeCap = StrokeCap.square
+        ..strokeJoin = StrokeJoin.round
+        ..strokeWidth = strokeWidth + 4;
+      canvas.drawPath(path, outline);
+      canvas.drawCircle(
+        center,
+        (strokeWidth + 4) / 2,
+        outline..style = PaintingStyle.fill,
+      );
+    }
 
     // 2. Draw 3D relief depth shadow (offset slightly bottom-right)
     final shadowPaint = Paint()
@@ -147,6 +164,7 @@ class TilePainter extends CustomPainter {
   bool shouldRepaint(covariant TilePainter oldDelegate) {
     return oldDelegate.tile.mask != tile.mask ||
         oldDelegate.ridgeColor != ridgeColor ||
+        oldDelegate.outlineColor != outlineColor ||
         oldDelegate.surfaceColor != surfaceColor ||
         oldDelegate.isDark != isDark;
   }

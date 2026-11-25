@@ -28,6 +28,11 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(HomeScreen), findsOneWidget);
       expect(find.byIcon(Icons.settings_outlined), findsNothing);
+      expect(find.text('Easy'), findsOneWidget);
+      expect(find.text('Medium'), findsOneWidget);
+      expect(find.text('Hard'), findsOneWidget);
+      await tester.tap(find.text('Free Play'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('6×6'));
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();

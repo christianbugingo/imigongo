@@ -239,4 +239,85 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get developmentBadge => 'DEV';
+
+  @override
+  String get chooseDifficulty => 'Choose a challenge difficulty';
+
+  @override
+  String get easy => 'Easy';
+
+  @override
+  String get medium => 'Medium';
+
+  @override
+  String get hard => 'Hard';
+
+  @override
+  String get freePlay => 'Free Play';
+
+  @override
+  String get challengeSessionNote =>
+      'Challenge progress and bonus moves last for this app session. Free Play has no move limit.';
+
+  @override
+  String get choosePattern => 'Choose the pattern you want to complete.';
+
+  @override
+  String patternNumber(int number) {
+    return 'Pattern $number';
+  }
+
+  @override
+  String allowanceValue(int count) {
+    return 'Move allowance: $count';
+  }
+
+  @override
+  String bonusIncluded(int count) {
+    return 'Includes $count earned bonus moves.';
+  }
+
+  @override
+  String get patternUnavailable => 'This pattern is not available.';
+
+  @override
+  String get patternPreview => 'Study the completed pattern before you start.';
+
+  @override
+  String get previewRule =>
+      'Use this as your reference. Any single connected pattern with no loose ends is a valid solution.';
+
+  @override
+  String get referencePattern => 'Completed reference pattern';
+
+  @override
+  String get referenceHint => 'Your reference stays here. Tap it to enlarge.';
+
+  @override
+  String get startPuzzle => 'Start puzzle';
+
+  @override
+  String remainingMoves(int count) {
+    return 'Moves left: $count';
+  }
+
+  @override
+  String bonusReward(int count) {
+    return '+$count moves earned for the next pattern';
+  }
+
+  @override
+  String get gameOver => 'Game over';
+
+  @override
+  String get outOfMoves =>
+      'No moves left. Replay this pattern with a fresh allowance.';
+
+  @override
+  String get challengeHelp =>
+      'Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active.';
+
+  @override
+  String get colorHelp =>
+      'Colors are decorative. Match the connections, not the colors.';
 }

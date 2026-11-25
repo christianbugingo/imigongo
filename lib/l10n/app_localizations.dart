@@ -489,6 +489,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'DEV'**
   String get developmentBadge;
+
+  /// Challenge checkpoint: chooseDifficulty
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a challenge difficulty'**
+  String get chooseDifficulty;
+
+  /// Challenge checkpoint: easy
+  ///
+  /// In en, this message translates to:
+  /// **'Easy'**
+  String get easy;
+
+  /// Challenge checkpoint: medium
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get medium;
+
+  /// Challenge checkpoint: hard
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get hard;
+
+  /// Challenge checkpoint: freePlay
+  ///
+  /// In en, this message translates to:
+  /// **'Free Play'**
+  String get freePlay;
+
+  /// Challenge checkpoint: challengeSessionNote
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge progress and bonus moves last for this app session. Free Play has no move limit.'**
+  String get challengeSessionNote;
+
+  /// Challenge checkpoint: choosePattern
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the pattern you want to complete.'**
+  String get choosePattern;
+
+  /// Challenge checkpoint: patternNumber
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern {number}'**
+  String patternNumber(int number);
+
+  /// Challenge checkpoint: allowanceValue
+  ///
+  /// In en, this message translates to:
+  /// **'Move allowance: {count}'**
+  String allowanceValue(int count);
+
+  /// Challenge checkpoint: bonusIncluded
+  ///
+  /// In en, this message translates to:
+  /// **'Includes {count} earned bonus moves.'**
+  String bonusIncluded(int count);
+
+  /// Challenge checkpoint: patternUnavailable
+  ///
+  /// In en, this message translates to:
+  /// **'This pattern is not available.'**
+  String get patternUnavailable;
+
+  /// Challenge checkpoint: patternPreview
+  ///
+  /// In en, this message translates to:
+  /// **'Study the completed pattern before you start.'**
+  String get patternPreview;
+
+  /// Challenge checkpoint: previewRule
+  ///
+  /// In en, this message translates to:
+  /// **'Use this as your reference. Any single connected pattern with no loose ends is a valid solution.'**
+  String get previewRule;
+
+  /// Challenge checkpoint: referencePattern
+  ///
+  /// In en, this message translates to:
+  /// **'Completed reference pattern'**
+  String get referencePattern;
+
+  /// Challenge checkpoint: referenceHint
+  ///
+  /// In en, this message translates to:
+  /// **'Your reference stays here. Tap it to enlarge.'**
+  String get referenceHint;
+
+  /// Challenge checkpoint: startPuzzle
+  ///
+  /// In en, this message translates to:
+  /// **'Start puzzle'**
+  String get startPuzzle;
+
+  /// Challenge checkpoint: remainingMoves
+  ///
+  /// In en, this message translates to:
+  /// **'Moves left: {count}'**
+  String remainingMoves(int count);
+
+  /// Challenge checkpoint: bonusReward
+  ///
+  /// In en, this message translates to:
+  /// **'+{count} moves earned for the next pattern'**
+  String bonusReward(int count);
+
+  /// Challenge checkpoint: gameOver
+  ///
+  /// In en, this message translates to:
+  /// **'Game over'**
+  String get gameOver;
+
+  /// Challenge checkpoint: outOfMoves
+  ///
+  /// In en, this message translates to:
+  /// **'No moves left. Replay this pattern with a fresh allowance.'**
+  String get outOfMoves;
+
+  /// Challenge checkpoint: challengeHelp
+  ///
+  /// In en, this message translates to:
+  /// **'Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active.'**
+  String get challengeHelp;
+
+  /// Level palettes do not affect puzzle validation.
+  ///
+  /// In en, this message translates to:
+  /// **'Colors are decorative. Match the connections, not the colors.'**
+  String get colorHelp;
 }
 
 class _AppLocalizationsDelegate

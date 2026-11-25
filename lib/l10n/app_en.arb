@@ -305,5 +305,118 @@
   "developmentBadge": "DEV",
   "@developmentBadge": {
     "description": "Step 4b: developmentBadge"
+  },
+  "chooseDifficulty": "Choose a challenge difficulty",
+  "@chooseDifficulty": {
+    "description": "Challenge checkpoint: chooseDifficulty"
+  },
+  "easy": "Easy",
+  "@easy": {
+    "description": "Challenge checkpoint: easy"
+  },
+  "medium": "Medium",
+  "@medium": {
+    "description": "Challenge checkpoint: medium"
+  },
+  "hard": "Hard",
+  "@hard": {
+    "description": "Challenge checkpoint: hard"
+  },
+  "freePlay": "Free Play",
+  "@freePlay": {
+    "description": "Challenge checkpoint: freePlay"
+  },
+  "challengeSessionNote": "Challenge progress and bonus moves last for this app session. Free Play has no move limit.",
+  "@challengeSessionNote": {
+    "description": "Challenge checkpoint: challengeSessionNote"
+  },
+  "choosePattern": "Choose the pattern you want to complete.",
+  "@choosePattern": {
+    "description": "Challenge checkpoint: choosePattern"
+  },
+  "patternNumber": "Pattern {number}",
+  "@patternNumber": {
+    "description": "Challenge checkpoint: patternNumber",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "allowanceValue": "Move allowance: {count}",
+  "@allowanceValue": {
+    "description": "Challenge checkpoint: allowanceValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusIncluded": "Includes {count} earned bonus moves.",
+  "@bonusIncluded": {
+    "description": "Challenge checkpoint: bonusIncluded",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "patternUnavailable": "This pattern is not available.",
+  "@patternUnavailable": {
+    "description": "Challenge checkpoint: patternUnavailable"
+  },
+  "patternPreview": "Study the completed pattern before you start.",
+  "@patternPreview": {
+    "description": "Challenge checkpoint: patternPreview"
+  },
+  "previewRule": "Use this as your reference. Any single connected pattern with no loose ends is a valid solution.",
+  "@previewRule": {
+    "description": "Challenge checkpoint: previewRule"
+  },
+  "referencePattern": "Completed reference pattern",
+  "@referencePattern": {
+    "description": "Challenge checkpoint: referencePattern"
+  },
+  "referenceHint": "Your reference stays here. Tap it to enlarge.",
+  "@referenceHint": {
+    "description": "Challenge checkpoint: referenceHint"
+  },
+  "startPuzzle": "Start puzzle",
+  "@startPuzzle": {
+    "description": "Challenge checkpoint: startPuzzle"
+  },
+  "remainingMoves": "Moves left: {count}",
+  "@remainingMoves": {
+    "description": "Challenge checkpoint: remainingMoves",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bonusReward": "+{count} moves earned for the next pattern",
+  "@bonusReward": {
+    "description": "Challenge checkpoint: bonusReward",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "gameOver": "Game over",
+  "@gameOver": {
+    "description": "Challenge checkpoint: gameOver"
+  },
+  "outOfMoves": "No moves left. Replay this pattern with a fresh allowance.",
+  "@outOfMoves": {
+    "description": "Challenge checkpoint: outOfMoves"
+  },
+  "challengeHelp": "Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active.",
+  "@challengeHelp": {
+    "description": "Challenge checkpoint: challengeHelp"
+  },
+  "colorHelp": "Colors are decorative. Match the connections, not the colors.",
+  "@colorHelp": {
+    "description": "Level palettes do not affect puzzle validation."
   }
 }

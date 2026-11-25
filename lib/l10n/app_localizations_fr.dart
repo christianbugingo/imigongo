@@ -243,4 +243,87 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get developmentBadge => 'DEV';
+
+  @override
+  String get chooseDifficulty => 'Choisissez la difficulté du défi';
+
+  @override
+  String get easy => 'Facile';
+
+  @override
+  String get medium => 'Moyen';
+
+  @override
+  String get hard => 'Difficile';
+
+  @override
+  String get freePlay => 'Jeu libre';
+
+  @override
+  String get challengeSessionNote =>
+      'La progression et les coups bonus des défis sont conservés pour cette session. Le jeu libre n’a pas de limite de coups.';
+
+  @override
+  String get choosePattern =>
+      'Choisissez le motif que vous souhaitez compléter.';
+
+  @override
+  String patternNumber(int number) {
+    return 'Motif $number';
+  }
+
+  @override
+  String allowanceValue(int count) {
+    return 'Coups disponibles : $count';
+  }
+
+  @override
+  String bonusIncluded(int count) {
+    return 'Comprend $count coups bonus gagnés.';
+  }
+
+  @override
+  String get patternUnavailable => 'Ce motif n’est pas disponible.';
+
+  @override
+  String get patternPreview => 'Observez le motif terminé avant de commencer.';
+
+  @override
+  String get previewRule =>
+      'Utilisez ce motif comme référence. Tout motif unique et connecté sans extrémité libre est une solution valide.';
+
+  @override
+  String get referencePattern => 'Motif de référence terminé';
+
+  @override
+  String get referenceHint =>
+      'Votre référence reste ici. Touchez-la pour l’agrandir.';
+
+  @override
+  String get startPuzzle => 'Commencer le puzzle';
+
+  @override
+  String remainingMoves(int count) {
+    return 'Coups restants : $count';
+  }
+
+  @override
+  String bonusReward(int count) {
+    return '+$count coups gagnés pour le motif suivant';
+  }
+
+  @override
+  String get gameOver => 'Partie terminée';
+
+  @override
+  String get outOfMoves =>
+      'Il ne reste plus de coups. Rejouez ce motif avec tous vos coups disponibles.';
+
+  @override
+  String get challengeHelp =>
+      'Les défis ont une limite de coups. Résoudre un motif rapporte quatre coups supplémentaires pour le suivant, une seule fois par niveau. Annuler rend un coup tant que la partie est en cours.';
+
+  @override
+  String get colorHelp =>
+      'Les couleurs sont décoratives. Reliez les connexions, pas les couleurs.';
 }
