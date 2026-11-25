@@ -81,6 +81,15 @@ All performance profiling must be performed on physical low-end Android hardware
 
 ### Decision
 - **Zero Flutter Engine Imports:** `lib/engine/` is pure Dart. It imports only standard Dart core/math libraries (`dart:math`, `dart:collection`), ensuring instantaneous headless execution and deterministic testing.
-- **Deterministic PRNG:** Random generation uses a documented, seeded integer PRNG (Xoshiro128++ / 64-bit LCG) with fixed test vectors. Every puzzle stores its `generatorVersion` and integer `seed`.
+- **Deterministic PRNG:** Random generation uses a documented, seeded integer PRNG (Xoshiro128++ with a custom documented 32-bit seed expander) with fixed test vectors. Every puzzle stores its `generatorVersion` and integer `seed`.
 - **Rule-Based Validation:** Boards are validated through geometrical continuity rules (edge connection masks), not by comparing against cached solution states.
 - **Mandatory Review Checkpoint:** Work halts after Steps 2–3 for stakeholder review of the engine before any UI development begins.
+
+### Steps 2–3 review corrections (2026-11-25)
+
+- Generator version 2 replaces the unsymmetrical/disconnected version-1 motifs with connected reflection orbits; retain versions with all serialized seeds.
+- Xoshiro128++ remains algorithm version 1 with a precisely documented custom 32-bit seed expander and independent fixed vectors (see docs/ENGINE.md).
+- Par uses visually equivalent masks; it is a verified upper bound, never an unproven minimum.
+- The solver implementation now lives exclusively in tool/solver. It searches all distinct tile orientations, not only tiles different from the stored target. ADR 001's 50 ms cooperative deadline and explicit Par fallback apply there.
+- Validator adds the previously missing single-network traversal. Undo/reset use immutable engine snapshots.
+- The existing UI commit was present before this task. Only Riverpod import and deprecated radio API compatibility repairs were made to unblock full-project analyze/test; no Step 4 features were added.

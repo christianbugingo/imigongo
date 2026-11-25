@@ -1,268 +1,92 @@
-import '../../models/puzzle_enums.dart';
 import '../models/board.dart';
 import '../models/connection_mask.dart';
 import '../models/tile.dart';
 import '../prng/xoshiro128.dart';
-import '../validator/puzzle_validator.dart';
 
-/// Procedural generator for Imigongo geometric pattern puzzles.
-///
-/// Produces deterministic boards from an integer seed and stores generatorVersion.
-/// Generates a valid solved motif, scrambles it with clockwise taps, and computes Par.
+/// Version 2: a connected frame plus reflected edge orbits from one quadrant.
 class PuzzleGenerator {
-  /// Current generator version. Stored with every puzzle seed.
-  static const int generatorVersion = 1;
-
+  static const int generatorVersion = 2;
   PuzzleGenerator._();
 
-  /// Generates a scrambled puzzle board with guaranteed rule-based solution and Par.
   static Board generate({
     required int size,
     required int seed,
     int? targetScrambleTaps,
   }) {
-    assert(size >= 3 && size <= 7, 'Size must be between 3 and 7 (was $size)');
-
-    final prng = Xoshiro128(seed);
-
-    // Step 1: Synthesize a valid continuous geometric motif on the NxN grid
-    final solvedTiles = _buildSolvedMotif(size, prng);
-
-    // Step 2: Establish the target solved rotation for every tile
-    // Standardize baseMask so that targetRotation is TileRotation.rot0
-    final targetTiles = <Tile>[];
-    for (int i = 0; i < solvedTiles.length; i++) {
-      final base = solvedTiles[i];
-      targetTiles.add(Tile(
-        tileId: i,
-        row: base.row,
-        col: base.col,
-        baseMask: base.effectiveMask,
-        currentRotation: TileRotation.rot0,
-        targetRotation: TileRotation.rot0,
-      ));
+    if (size < 3 || size > 7) throw ArgumentError.value(size, 'size');
+    final budget = targetScrambleTaps ?? (size * 2 + 4);
+    if (budget < 0) throw ArgumentError.value(budget, 'targetScrambleTaps');
+    final random = Xoshiro128(seed);
+    final masks = List<int>.filled(size * size, 0);
+    void edge(int a, int b) {
+      final bit = b == a + 1 ? ConnectionMask.east : ConnectionMask.south;
+      masks[a] |= bit;
+      masks[b] |= ConnectionMask.rotateClockwise(bit, 2);
     }
 
-    // Step 3: Scramble the board using clockwise taps and compute Par
-    final scrambleBudget = targetScrambleTaps ?? (size * 2 + 4);
-    final scrambledTiles = List<Tile>.of(targetTiles);
+    void reflectedEdge(int a, int b) {
+      for (var vertical = 0; vertical < 2; vertical++) {
+        for (var horizontal = 0; horizontal < 2; horizontal++) {
+          int reflect(int i) {
+            final r = i ~/ size;
+            final c = i % size;
+            return (vertical == 0 ? r : size - 1 - r) * size +
+                (horizontal == 0 ? c : size - 1 - c);
+          }
 
-    int totalPar = 0;
-    // Collect tiles that are non-symmetric (i.e. rotating them actually changes the mask)
-    final rotatableIndices = <int>[];
-    for (int i = 0; i < scrambledTiles.length; i++) {
-      final t = scrambledTiles[i];
-      final m0 = t.baseMask;
-      final m1 = ConnectionMask.rotateClockwise(m0, 1);
-      final m2 = ConnectionMask.rotateClockwise(m0, 2);
-      final m3 = ConnectionMask.rotateClockwise(m0, 3);
-      if (m1 != m0 || m2 != m0 || m3 != m0) {
-        rotatableIndices.add(i);
-      }
-    }
-
-    if (rotatableIndices.isNotEmpty) {
-      // Apply scrambles
-      int appliedTaps = 0;
-      final tileRotations = List<int>.filled(scrambledTiles.length, 0);
-
-      while (appliedTaps < scrambleBudget) {
-        final randIdx = rotatableIndices[prng.nextBoundedInt(rotatableIndices.length)];
-        final turns = prng.nextBoundedInt(3) + 1; // 1, 2, or 3 quarter turns
-        tileRotations[randIdx] = (tileRotations[randIdx] + turns) % 4;
-        appliedTaps += turns;
-      }
-
-      // Reconstruct scrambled tiles and calculate true clockwise Par
-      for (int i = 0; i < scrambledTiles.length; i++) {
-        final turns = tileRotations[i];
-        if (turns != 0) {
-          final rot = TileRotation.fromQuarterTurns(turns);
-          scrambledTiles[i] = scrambledTiles[i].copyWith(currentRotation: rot);
-          // Clockwise taps to return to rot0: (4 - turns) % 4
-          totalPar += (4 - turns) % 4;
+          final x = reflect(a), y = reflect(b);
+          edge(x < y ? x : y, x < y ? y : x);
         }
       }
     }
 
-    // Fallback: If par ended up 0, force rotate at least one rotatable tile
-    if (totalPar == 0 && rotatableIndices.isNotEmpty) {
-      final idx = rotatableIndices[0];
-      scrambledTiles[idx] = scrambledTiles[idx].copyWith(currentRotation: TileRotation.rot90);
-      totalPar = 3; // (4 - 1) = 3 clockwise taps to return to rot0
+    // The perimeter guarantees a connected, nonempty starting network.
+    for (var i = 0; i < size - 1; i++) {
+      edge(i, i + 1);
+      edge((size - 1) * size + i, (size - 1) * size + i + 1);
+      edge(i * size, (i + 1) * size);
+      edge(i * size + size - 1, (i + 1) * size + size - 1);
     }
-
-    final board = Board(
-      size: size,
-      tiles: scrambledTiles,
-      seed: seed,
-      generatorVersion: generatorVersion,
-      par: totalPar,
-    );
-
-    // If accidentally still solved under rules, apply an additional rotation
-    if (PuzzleValidator.isSolved(board) && rotatableIndices.isNotEmpty) {
-      final idx = rotatableIndices[0];
-      scrambledTiles[idx] = scrambledTiles[idx].rotateClockwise();
-      final newPar = totalPar + 1;
-      return Board(
-        size: size,
-        tiles: scrambledTiles,
-        seed: seed,
-        generatorVersion: generatorVersion,
-        par: newPar,
-      );
-    }
-
-    return board;
-  }
-
-  /// Builds a fully connected, closed geometric Imigongo layout (degree >= 2 on all active nodes).
-  static List<Tile> _buildSolvedMotif(int size, Xoshiro128 prng) {
-    // Generate horizontal and vertical edge connection grids
-    // hEdges[r][c] is connection between (r, c) and (r, c + 1), size: r in [0, size-1], c in [0, size-2]
-    final hEdges = List.generate(size, (_) => List<bool>.filled(size - 1, false));
-    // vEdges[r][c] is connection between (r, c) and (r + 1, c), size: r in [0, size-2], c in [0, size-1]
-    final vEdges = List.generate(size - 1, (_) => List<bool>.filled(size, false));
-
-    // Choose a geometric archetype based on seed
-    final motifType = prng.nextBoundedInt(3);
-
-    if (motifType == 0) {
-      // Archetype 0: Diamond lozenges / concentric loops
-      _generateDiamondLozenges(size, hEdges, vEdges);
-    } else if (motifType == 1) {
-      // Archetype 1: Chevron / wave bands (Itana)
-      _generateChevronWaves(size, hEdges, vEdges);
-    } else {
-      // Archetype 2: Concentric frame loops
-      _generateConcentricFrames(size, hEdges, vEdges);
-    }
-
-    // Assemble tiles from the edge connections
-    final tiles = <Tile>[];
-    int id = 0;
-    for (int r = 0; r < size; r++) {
-      for (int c = 0; c < size; c++) {
-        int mask = ConnectionMask.none;
-        // North
-        if (r > 0 && vEdges[r - 1][c]) mask |= ConnectionMask.north;
-        // South
-        if (r < size - 1 && vEdges[r][c]) mask |= ConnectionMask.south;
-        // West
-        if (c > 0 && hEdges[r][c - 1]) mask |= ConnectionMask.west;
-        // East
-        if (c < size - 1 && hEdges[r][c]) mask |= ConnectionMask.east;
-
-        tiles.add(Tile(
-          tileId: id++,
-          row: r,
-          col: c,
-          baseMask: mask,
-        ));
-      }
-    }
-
-    return tiles;
-  }
-
-  /// Diamond lozenge motif.
-  static void _generateDiamondLozenges(
-    int size,
-    List<List<bool>> hEdges,
-    List<List<bool>> vEdges,
-  ) {
-    final mid = size ~/ 2;
-    for (int ring = 1; ring <= mid; ring++) {
-      for (int r = 0; r < size; r++) {
-        for (int c = 0; c < size; c++) {
-          final dist = (r - mid).abs() + (c - mid).abs();
-          if (dist == ring) {
-            // Connect to neighboring diamond cells
-            if (c < size - 1 && ((r - mid).abs() + (c + 1 - mid).abs() == ring)) {
-              hEdges[r][c] = true;
-            }
-            if (r < size - 1 && ((r + 1 - mid).abs() + (c - mid).abs() == ring)) {
-              vEdges[r][c] = true;
+    // Grow only from the existing network; reflected additions preserve both axes.
+    for (var pass = 0; pass < size; pass++) {
+      for (var r = 0; r <= (size - 1) ~/ 2; r++) {
+        for (var c = 0; c <= (size - 1) ~/ 2; c++) {
+          final a = r * size + c;
+          for (final b in [
+            if (c + 1 < size) a + 1,
+            if (r + 1 < size) a + size,
+          ]) {
+            if ((masks[a] != 0 || masks[b] != 0) &&
+                random.nextBoundedInt(3) == 0) {
+              reflectedEdge(a, b);
             }
           }
         }
       }
     }
-    // Ensure connectivity
-    _ensureNonEmpty(size, hEdges, vEdges);
-  }
-
-  /// Chevron waves (Itana) motif.
-  static void _generateChevronWaves(
-    int size,
-    List<List<bool>> hEdges,
-    List<List<bool>> vEdges,
-  ) {
-    for (int r = 0; r < size; r++) {
-      for (int c = 0; c < size - 1; c++) {
-        if ((r + c) % 2 == 0) {
-          hEdges[r][c] = true;
-        }
-      }
+    final tiles = List<Tile>.generate(
+      size * size,
+      (i) => Tile(tileId: i, row: i ~/ size, col: i % size, baseMask: masks[i]),
+    );
+    final rotatable = [
+      for (var i = 0; i < tiles.length; i++)
+        if (ConnectionMask.rotateClockwise(masks[i], 1) != masks[i]) i,
+    ];
+    for (var tap = 0; tap < budget; tap++) {
+      final i = rotatable[random.nextBoundedInt(rotatable.length)];
+      tiles[i] = tiles[i].rotateClockwise();
     }
-    for (int r = 0; r < size - 1; r++) {
-      for (int c = 0; c < size; c++) {
-        if ((r + c) % 2 == 1) {
-          vEdges[r][c] = true;
-        }
-      }
+    Board build() => Board(
+      size: size,
+      tiles: tiles,
+      seed: seed,
+      generatorVersion: generatorVersion,
+      par: tiles.fold(0, (sum, tile) => sum + tile.clockwiseDistanceToTarget),
+    );
+    if (build().isSolved) {
+      final i = rotatable.first;
+      tiles[i] = tiles[i].rotateClockwise();
     }
-    _ensureNonEmpty(size, hEdges, vEdges);
-  }
-
-  /// Concentric frames motif.
-  static void _generateConcentricFrames(
-    int size,
-    List<List<bool>> hEdges,
-    List<List<bool>> vEdges,
-  ) {
-    final maxInset = (size - 1) ~/ 2;
-    for (int inset = 0; inset < maxInset; inset += 2) {
-      final minCoord = inset;
-      final maxCoord = size - 1 - inset;
-
-      // Top and bottom horizontal edges
-      for (int c = minCoord; c < maxCoord; c++) {
-        hEdges[minCoord][c] = true;
-        hEdges[maxCoord][c] = true;
-      }
-      // Left and right vertical edges
-      for (int r = minCoord; r < maxCoord; r++) {
-        vEdges[r][minCoord] = true;
-        vEdges[r][maxCoord] = true;
-      }
-    }
-    _ensureNonEmpty(size, hEdges, vEdges);
-  }
-
-  static void _ensureNonEmpty(
-    int size,
-    List<List<bool>> hEdges,
-    List<List<bool>> vEdges,
-  ) {
-    // If empty, activate a minimal 2x2 loop in the center
-    bool hasActive = false;
-    for (final row in hEdges) {
-      if (row.any((e) => e)) {
-        hasActive = true;
-        break;
-      }
-    }
-    if (!hasActive) {
-      final mid = size ~/ 2;
-      if (mid > 0 && mid < size) {
-        hEdges[mid - 1][mid - 1] = true;
-        hEdges[mid][mid - 1] = true;
-        vEdges[mid - 1][mid - 1] = true;
-        vEdges[mid - 1][mid] = true;
-      }
-    }
+    return build();
   }
 }
-

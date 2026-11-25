@@ -10,22 +10,26 @@ class Board {
   final int par;
   final int movesTaken;
 
-  const Board({
+  Board({
     required this.size,
-    required this.tiles,
+    required List<Tile> tiles,
     required this.seed,
     required this.generatorVersion,
     required this.par,
     this.movesTaken = 0,
-  });
+  }) : tiles = List<Tile>.unmodifiable(tiles) {
+    if (size < 1 || tiles.length != size * size) {
+      throw ArgumentError('Board dimensions do not match tile count');
+    }
+  }
 
   /// Total count of tiles in the grid.
   int get totalTiles => size * size;
 
   /// Retrieves the tile at the specified row and column.
   Tile tileAt(int row, int col) {
-    assert(row >= 0 && row < size, 'Row $row out of bounds [0, $size)');
-    assert(col >= 0 && col < size, 'Col $col out of bounds [0, $size)');
+    RangeError.checkValueInInterval(row, 0, size - 1, 'row');
+    RangeError.checkValueInInterval(col, 0, size - 1, 'col');
     return tiles[row * size + col];
   }
 
@@ -33,14 +37,12 @@ class Board {
   ///
   /// Controls are clockwise only. Increments [movesTaken] by 1.
   Board rotateTile(int row, int col) {
+    tileAt(row, col);
     final index = row * size + col;
     final updatedTiles = List<Tile>.of(tiles);
     updatedTiles[index] = updatedTiles[index].rotateClockwise();
 
-    return copyWith(
-      tiles: updatedTiles,
-      movesTaken: movesTaken + 1,
-    );
+    return copyWith(tiles: updatedTiles, movesTaken: movesTaken + 1);
   }
 
   /// Checks if the board satisfies all geometric continuity rules.
@@ -83,15 +85,18 @@ class Board {
       'generatorVersion': generatorVersion,
       'par': par,
       'movesTaken': movesTaken,
-      'tiles': tiles.map((t) => <String, dynamic>{
-        'id': t.tileId,
-        'r': t.row,
-        'c': t.col,
-        'base': t.baseMask,
-        'rot': t.currentRotation.quarterTurns,
-        'target': t.targetRotation.quarterTurns,
-      }).toList(),
+      'tiles': tiles
+          .map(
+            (t) => <String, dynamic>{
+              'id': t.tileId,
+              'r': t.row,
+              'c': t.col,
+              'base': t.baseMask,
+              'rot': t.currentRotation.quarterTurns,
+              'target': t.targetRotation.quarterTurns,
+            },
+          )
+          .toList(),
     };
   }
 }
-

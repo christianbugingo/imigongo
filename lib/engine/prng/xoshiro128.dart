@@ -15,12 +15,9 @@ class Xoshiro128 {
   int _s3;
 
   /// Initializes the PRNG with a seed.
-  /// Uses a SplitMix32 subroutine to expand a single seed into the 4 state words.
-  Xoshiro128(this.initialSeed)
-      : _s0 = 0,
-        _s1 = 0,
-        _s2 = 0,
-        _s3 = 0 {
+  /// Adds 0x9E3779B9 then applies the MurmurHash3 finalizer four times.
+  /// The seed is normalized modulo 2^32; see docs/ENGINE.md for vectors.
+  Xoshiro128(this.initialSeed) : _s0 = 0, _s1 = 0, _s2 = 0, _s3 = 0 {
     _initFromSeed(initialSeed);
   }
 
@@ -29,8 +26,8 @@ class Xoshiro128 {
     int nextSm() {
       smState = (smState + 0x9E3779B9) & 0xFFFFFFFF;
       int z = smState;
-      z = ((z ^ (z >> 16)) * 0x85EBCA6B) & 0xFFFFFFFF;
-      z = ((z ^ (z >> 13)) * 0xC2B2AE35) & 0xFFFFFFFF;
+      z = _multiply32(z ^ (z >> 16), 0x85EBCA6B);
+      z = _multiply32(z ^ (z >> 13), 0xC2B2AE35);
       return (z ^ (z >> 16)) & 0xFFFFFFFF;
     }
 
@@ -45,8 +42,16 @@ class Xoshiro128 {
     }
   }
 
+  // 16-bit limbs avoid intermediate products exceeding JavaScript's exact integers.
+  static int _multiply32(int a, int b) {
+    final low = (a & 0xFFFF) * (b & 0xFFFF);
+    final high = ((a >> 16) * (b & 0xFFFF) + (a & 0xFFFF) * (b >> 16)) & 0xFFFF;
+    return (low + (high << 16)) & 0xFFFFFFFF;
+  }
+
   static int _rotl(int x, int k) {
-    return (((x << k) & 0xFFFFFFFF) | ((x & 0xFFFFFFFF) >> (32 - k))) & 0xFFFFFFFF;
+    return (((x << k) & 0xFFFFFFFF) | ((x & 0xFFFFFFFF) >> (32 - k))) &
+        0xFFFFFFFF;
   }
 
   /// Generates the next pseudo-random 32-bit unsigned integer [0, 2^32 - 1].
@@ -66,10 +71,14 @@ class Xoshiro128 {
     return result;
   }
 
-  /// Returns an integer in range [0, max - 1].
+  /// Returns an integer in range [0, max - 1] using versioned modulo mapping.
+  /// This has slight modulo bias for bounds that do not divide 2^32.
   int nextBoundedInt(int max) {
-    if (max <= 1) return 0;
-    return (nextInt() % max).abs();
+    if (max <= 0 || max > 0x100000000) {
+      throw ArgumentError.value(max, 'max', 'Must be 1..2^32');
+    }
+    if (max == 1) return 0;
+    return nextInt() % max;
   }
 
   /// Returns a floating-point number in range [0.0, 1.0).

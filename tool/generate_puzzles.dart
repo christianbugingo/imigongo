@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_print
 import 'dart:convert';
+
 import 'package:imigongo_pattern_puzzle/engine/generator/puzzle_generator.dart';
-import 'package:imigongo_pattern_puzzle/engine/solver/puzzle_solver.dart';
+
+import 'solver/puzzle_solver.dart';
 
 /// Offline content generation script.
 ///
@@ -24,13 +26,18 @@ void main(List<String> args) {
     final solverResult = PuzzleSolver.solve(board: board, timeboxMs: 50);
 
     print('\nGrid: ${size}x$size | Seed: $seed | Par: ${board.par}');
-    print('Solver Status: ${solverResult.status.name} | Time: ${solverResult.elapsedMs}ms');
-    print('Target Moves: ${solverResult.targetMoves} (Optimal: ${solverResult.isProvablyOptimal})');
+    print(
+      'Solver Status: ${solverResult.status.name} | Time: ${solverResult.elapsedMs}ms',
+    );
+    print(
+      'Target Moves: ${solverResult.targetMoves} (Optimal: ${solverResult.isProvablyOptimal})',
+    );
 
     results.add(<String, dynamic>{
       'size': size,
       'seed': seed,
       'par': board.par,
+      'targetMoves': solverResult.targetMoves,
       'status': solverResult.status.name,
       'optimal': solverResult.isProvablyOptimal,
       'elapsedMs': solverResult.elapsedMs,
@@ -40,5 +47,11 @@ void main(List<String> args) {
 
   print('\n=== Generation & Verification Summary ===');
   print('Generated ${results.length} verified puzzle levels.');
-  print(jsonEncode(<String, dynamic>{'totalLevels': results.length, 'version': PuzzleGenerator.generatorVersion}));
+  print(
+    jsonEncode(<String, dynamic>{
+      'totalLevels': results.length,
+      'version': PuzzleGenerator.generatorVersion,
+      'levels': results,
+    }),
+  );
 }

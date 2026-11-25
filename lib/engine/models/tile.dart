@@ -26,18 +26,24 @@ class Tile {
   });
 
   /// The active connection mask after applying currentRotation.
-  int get effectiveMask => ConnectionMask.rotateClockwise(baseMask, currentRotation.quarterTurns);
+  int get effectiveMask =>
+      ConnectionMask.rotateClockwise(baseMask, currentRotation.quarterTurns);
 
   /// The target connection mask in the solved state.
-  int get targetMask => ConnectionMask.rotateClockwise(baseMask, targetRotation.quarterTurns);
+  int get targetMask =>
+      ConnectionMask.rotateClockwise(baseMask, targetRotation.quarterTurns);
 
   /// True if tile matches its target rotation.
-  bool get isAtTargetRotation => currentRotation == targetRotation;
+  bool get isAtTargetRotation => effectiveMask == targetMask;
 
   /// Number of clockwise taps needed to reach targetRotation from currentRotation.
   int get clockwiseDistanceToTarget {
-    final diff = targetRotation.quarterTurns - currentRotation.quarterTurns;
-    return ((diff % 4) + 4) % 4;
+    for (var taps = 0; taps < 4; taps++) {
+      if (ConnectionMask.rotateClockwise(effectiveMask, taps) == targetMask) {
+        return taps;
+      }
+    }
+    throw StateError('Target must be a rotation of this tile');
   }
 
   /// Returns a new Tile with rotation advanced by 1 clockwise tap (+90 degrees).
@@ -85,4 +91,3 @@ class Tile {
       currentRotation.hashCode ^
       targetRotation.hashCode;
 }
-
