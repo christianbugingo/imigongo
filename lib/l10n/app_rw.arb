@@ -14,6 +14,62 @@
   "colorCharcoal": "Umukara",
   "colorChalk": "Umweru",
   "colorTerracotta": "Umutuku w'ibumba",
-  "colorOchre": "Umuhondo w'ibumba"
+  "colorOchre": "Umuhondo w'ibumba",
+  "undo": "Undo [needs native review]",
+  "reset": "Reset [needs native review]",
+  "inProgress": "In progress [needs native review]",
+  "@appTitle": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@geometricReliefPuzzle": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@play": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@settings": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@dailyChallenge": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@moves": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@par": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@targetMoves": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@solved": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@starsEarned": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@rotateInstruction": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@colorCharcoal": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@colorChalk": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@colorTerracotta": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@colorOchre": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@undo": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@reset": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  },
+  "@inProgress": {
+    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+  }
 }
-

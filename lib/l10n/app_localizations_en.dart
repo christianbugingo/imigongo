@@ -61,4 +61,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get colorOchre => 'Ochre';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get inProgress => 'In progress';
 }

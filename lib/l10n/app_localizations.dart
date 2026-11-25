@@ -189,6 +189,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ochre'**
   String get colorOchre;
+
+  /// Step 4a control/status: undo
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// Step 4a control/status: reset
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get reset;
+
+  /// Step 4a control/status: inProgress
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get inProgress;
 }
 
 class _AppLocalizationsDelegate

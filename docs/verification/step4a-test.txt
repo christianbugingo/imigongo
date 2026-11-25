@@ -1,0 +1,75 @@
+00:00 +0: loading /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_screen_test.dart
+00:00 +0: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/puzzle_provider_test.dart: controller publishes engine masks, move count and solved state
+00:00 +1: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +2: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +3: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +4: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +5: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +6: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +7: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +8: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +9: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +10: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +11: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +12: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +13: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +14: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +15: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +16: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +17: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:00 +18: /Users/a/Documents/imigongo_pattern_puzzle/test/ui/router_navigation_test.dart: prototype offers only size selection and Step 4a gameplay
+00:01 +19: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: GridDimension Tests Calculates total tiles correctly from 3x3 through 7x7
+00:01 +20: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: GridDimension Tests fromSize resolves correctly for all supported dimensions
+00:01 +21: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: TileRotation Tests (Clockwise Controls) Calculates quarter turns and degrees
+00:01 +22: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: TileRotation Tests (Clockwise Controls) Rotates clockwise cyclically on tap (controls are clockwise-only)
+00:01 +23: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: TileRotation Tests (Clockwise Controls) fromQuarterTurns normalizes correctly
+00:01 +24: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: StarRating Calculation & Small Par Edge Cases Par = 0 edge case: returns zero stars (invalid puzzle)
+00:01 +25: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: StarRating Calculation & Small Par Edge Cases Par = 1 edge case: floor(1 * 1.5) == 1, so 2 stars is unattainable
+00:01 +26: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: StarRating Calculation & Small Par Edge Cases Par = 2 edge case: floor(2 * 1.5) = 3 allows exactly 1 step for 2 stars
+00:01 +27: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: StarRating Calculation & Small Par Edge Cases Par = 3 edge case: floor(3 * 1.5) = 4 allows 4 moves for 2 stars
+00:01 +28: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/models_enums_test.dart: StarRating Calculation & Small Par Edge Cases Standard scale: Par = 10 with clear 3-star, 2-star, and 1-star ranges
+00:01 +29: /Users/a/Documents/imigongo_pattern_puzzle/test/foundation/localization_test.dart: Localization Skeleton Tests (en, fr, rw) Supported locales include English, French, and Kinyarwanda
+00:01 +30: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +31: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +32: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +33: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +34: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +35: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +36: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +37: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +38: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +39: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +40: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +41: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:01 +42: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +43: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +44: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +45: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +46: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +47: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +48: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app loads with localization and prod flavor
+00:02 +49: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Valid 2x2 loop satisfies all geometric continuity rules
+00:02 +50: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/puzzle_validator_test.dart: Rule-Based Puzzle Validator Tests Valid 2x2 loop satisfies all geometric continuity rules
+00:02 +51: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:02 +52: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:02 +53: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:02 +54: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:02 +55: /Users/a/Documents/imigongo_pattern_puzzle/test/widget_test.dart: Imigongo puzzle app displays DEV badge when in dev flavor
+00:02 +56: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Edge bit values match directional constants
+00:02 +57: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Helper functions detect directional presence
+00:02 +58: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Clockwise rotation of straight line
+00:02 +59: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations Clockwise rotation of corner elbow
+00:02 +60: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/connection_mask_test.dart: ConnectionMask Bitwise Operations All-cross is invariant under rotation
+00:02 +61: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 3x3 determinism, solution, Par, symmetry
+00:02 +62: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 4x4 determinism, solution, Par, symmetry
+00:02 +63: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 5x5 determinism, solution, Par, symmetry
+00:02 +64: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 6x6 determinism, solution, Par, symmetry
+00:02 +65: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: 1000 seeds: 7x7 determinism, solution, Par, symmetry
+00:02 +66: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: separate closed loops are not one network
+00:02 +67: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: end, straight, tee and cross participate in a valid connected graph
+00:02 +68: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: all 16 masks use cheapest visually equivalent clockwise restoration
+00:02 +69: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: undo snapshots, reset and invalid coordinates preserve state
+00:02 +70: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: bad generator parameters fail in release too
+00:02 +71: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: solver equals independent exhaustive 2x2 orientation oracle
+00:02 +72: /Users/a/Documents/imigongo_pattern_puzzle/test/engine/properties_test.dart: engine is pure Dart and application cannot import the tool solver
+00:02 +73: All tests passed!

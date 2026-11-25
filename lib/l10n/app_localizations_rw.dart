@@ -61,4 +61,13 @@ class AppLocalizationsRw extends AppLocalizations {
 
   @override
   String get colorOchre => 'Umuhondo w\'ibumba';
+
+  @override
+  String get undo => 'Undo [needs native review]';
+
+  @override
+  String get reset => 'Reset [needs native review]';
+
+  @override
+  String get inProgress => 'In progress [needs native review]';
 }

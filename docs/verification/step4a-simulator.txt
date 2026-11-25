@@ -1,0 +1,6 @@
+Launching lib/main_dev.dart on Aabo Keyboard Review iPad Air M3 in debug mode...
+Running pod install...                                             506ms
+Running Xcode build...                                          
+Xcode build done.                                           24.2s
+[IMPORTANT:flutter/shell/platform/darwin/graphics/FlutterDarwinContextMetalImpeller.mm(45)] Using the Impeller rendering backend (Metal).
+Syncing files to device Aabo Keyboard Review iPad Air M3...        216ms

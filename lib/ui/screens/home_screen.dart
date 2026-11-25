@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../core/config/app_flavor.dart';
 import '../../core/theme/imigongo_palette.dart';
 import '../../l10n/app_localizations.dart';
@@ -36,18 +37,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   color: ImigongoPalette.terracotta,
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: const Text('DEV', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'DEV',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings_outlined),
-            tooltip: l10n?.settings ?? 'Settings',
-            onPressed: () => context.push('/settings'),
-          ),
-        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -59,7 +56,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               Container(
                 padding: const EdgeInsets.all(20.0),
                 decoration: BoxDecoration(
-                  color: isDark ? ImigongoPalette.tileSurface : ImigongoPalette.parchment,
+                  color: isDark
+                      ? ImigongoPalette.tileSurface
+                      : ImigongoPalette.parchment,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: ImigongoPalette.ochre.withValues(alpha: 0.4),
@@ -74,15 +73,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: isDark ? ImigongoPalette.chalk : ImigongoPalette.charcoal,
+                        color: isDark
+                            ? ImigongoPalette.chalk
+                            : ImigongoPalette.charcoal,
                       ),
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      l10n?.rotateInstruction ?? 'Tap a tile to rotate clockwise',
+                      l10n?.rotateInstruction ??
+                          'Tap a tile to rotate clockwise',
                       style: TextStyle(
                         fontSize: 14,
-                        color: isDark ? ImigongoPalette.parchment : ImigongoPalette.charcoal,
+                        color: isDark
+                            ? ImigongoPalette.parchment
+                            : ImigongoPalette.charcoal,
                         height: 1.4,
                       ),
                     ),
@@ -98,7 +102,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? ImigongoPalette.chalk : ImigongoPalette.charcoal,
+                  color: isDark
+                      ? ImigongoPalette.chalk
+                      : ImigongoPalette.charcoal,
                 ),
               ),
               const SizedBox(height: 12),
@@ -115,14 +121,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         fontWeight: FontWeight.bold,
                         color: isSelected
                             ? ImigongoPalette.charcoal
-                            : (isDark ? ImigongoPalette.chalk : ImigongoPalette.charcoal),
+                            : (isDark
+                                  ? ImigongoPalette.chalk
+                                  : ImigongoPalette.charcoal),
                       ),
                     ),
                     selected: isSelected,
                     selectedColor: ImigongoPalette.ochre,
-                    backgroundColor: isDark ? ImigongoPalette.canvasSlate : Colors.white,
+                    backgroundColor: isDark
+                        ? ImigongoPalette.canvasSlate
+                        : Colors.white,
                     side: BorderSide(
-                      color: isSelected ? ImigongoPalette.ochre : ImigongoPalette.starInactive,
+                      color: isSelected
+                          ? ImigongoPalette.ochre
+                          : ImigongoPalette.starInactive,
                     ),
                     onSelected: (selected) {
                       if (selected) {
@@ -141,16 +153,24 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   backgroundColor: ImigongoPalette.ochre,
                   foregroundColor: ImigongoPalette.charcoal,
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                   elevation: 2,
                 ),
                 onPressed: () {
                   final seed = DateTime.now().millisecondsSinceEpoch % 1000000;
-                  context.push('/puzzle?size=${_selectedDimension.size}&seed=$seed');
+                  context.push(
+                    '/puzzle?size=${_selectedDimension.size}&seed=$seed',
+                  );
                 },
                 child: Text(
                   l10n?.play.toUpperCase() ?? 'PLAY',
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 1.2),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
                 ),
               ),
             ],
@@ -160,4 +180,3 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 }
-

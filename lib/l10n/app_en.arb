@@ -64,6 +64,17 @@
   "colorOchre": "Ochre",
   "@colorOchre": {
     "description": "Palette color label for ochre"
+  },
+  "undo": "Undo",
+  "reset": "Reset",
+  "inProgress": "In progress",
+  "@undo": {
+    "description": "Step 4a control/status: undo"
+  },
+  "@reset": {
+    "description": "Step 4a control/status: reset"
+  },
+  "@inProgress": {
+    "description": "Step 4a control/status: inProgress"
   }
 }
-

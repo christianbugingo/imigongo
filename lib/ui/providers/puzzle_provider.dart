@@ -1,87 +1,64 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
+
 import '../../engine/generator/puzzle_generator.dart';
 import '../../engine/models/board.dart';
-import '../../models/puzzle_enums.dart';
+import '../../engine/models/connection_mask.dart';
+import '../../engine/models/game_session.dart';
+import '../models/puzzle_view.dart';
 
-class PuzzleState {
-  final Board board;
-  final bool isSolved;
-  final StarRating stars;
-  final bool hasWon;
+/// Replaceable input for controller tests and future authored content.
+final puzzleBoardFactoryProvider = Provider<Board Function(int, int)>((ref) {
+  return (size, seed) => PuzzleGenerator.generate(size: size, seed: seed);
+});
 
-  const PuzzleState({
-    required this.board,
-    required this.isSolved,
-    required this.stars,
-    required this.hasWon,
-  });
+final puzzleProvider = StateNotifierProvider.autoDispose
+    .family<PuzzleNotifier, PuzzleState, (int, int)>((ref, key) {
+      final factory = ref.watch(puzzleBoardFactoryProvider);
+      return PuzzleNotifier(factory(key.$1, key.$2));
+    });
 
-  PuzzleState copyWith({
-    Board? board,
-    bool? isSolved,
-    StarRating? stars,
-    bool? hasWon,
-  }) {
-    return PuzzleState(
-      board: board ?? this.board,
-      isSolved: isSolved ?? this.isSolved,
-      stars: stars ?? this.stars,
-      hasWon: hasWon ?? this.hasWon,
-    );
-  }
-}
-
-final puzzleProvider = StateNotifierProvider.family<PuzzleNotifier, PuzzleState, (int, int)>(
-  (ref, args) {
-    final size = args.$1;
-    final seed = args.$2;
-    return PuzzleNotifier(size: size, seed: seed);
-  },
-);
-
+/// The sole adapter between gameplay widgets and the pure Dart engine.
 class PuzzleNotifier extends StateNotifier<PuzzleState> {
-  final int size;
-  final int seed;
-  late final Board _initialBoard;
+  final GameSession _session;
+  PuzzleNotifier(Board initial) : this._(GameSession(initial));
+  PuzzleNotifier._(this._session) : super(_snapshot(_session));
 
-  PuzzleNotifier({required this.size, required this.seed})
-      : super(
-          PuzzleState(
-            board: PuzzleGenerator.generate(size: size, seed: seed),
-            isSolved: false,
-            stars: StarRating.zero,
-            hasWon: false,
+  static PuzzleState _snapshot(GameSession session) {
+    final board = session.board;
+    return PuzzleState(
+      size: board.size,
+      movesTaken: board.movesTaken,
+      isSolved: board.isSolved,
+      canUndo: session.canUndo,
+      tiles: [
+        for (final tile in board.tiles)
+          TileView(
+            row: tile.row,
+            col: tile.col,
+            mask: tile.effectiveMask,
+            north: ConnectionMask.hasNorth(tile.effectiveMask),
+            east: ConnectionMask.hasEast(tile.effectiveMask),
+            south: ConnectionMask.hasSouth(tile.effectiveMask),
+            west: ConnectionMask.hasWest(tile.effectiveMask),
           ),
-        ) {
-    _initialBoard = state.board;
+      ],
+    );
   }
 
-  /// Rotates a tile at (row, col) clockwise by 1 tap (+90 degrees).
   void rotateTile(int row, int col) {
-    if (state.hasWon) return; // Ignore input once level is already solved
-
-    final updatedBoard = state.board.rotateTile(row, col);
-    final solved = updatedBoard.isSolved;
-    final stars = solved
-        ? StarRating.calculate(movesTaken: updatedBoard.movesTaken, par: updatedBoard.par)
-        : StarRating.zero;
-
-    state = state.copyWith(
-      board: updatedBoard,
-      isSolved: solved,
-      stars: stars,
-      hasWon: solved,
-    );
+    if (state.isSolved) return;
+    _session.rotateTile(row, col);
+    state = _snapshot(_session);
   }
 
-  /// Resets the current puzzle back to its initial scrambled state.
+  void undo() {
+    _session.undo();
+    state = _snapshot(_session);
+  }
+
   void reset() {
-    state = PuzzleState(
-      board: _initialBoard,
-      isSolved: false,
-      stars: StarRating.zero,
-      hasWon: false,
-    );
+    _session.reset();
+    state = _snapshot(_session);
   }
 }
-

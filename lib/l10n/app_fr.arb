@@ -14,6 +14,8 @@
   "colorCharcoal": "Fusain",
   "colorChalk": "Craie",
   "colorTerracotta": "Terre cuite",
-  "colorOchre": "Ocre"
+  "colorOchre": "Ocre",
+  "undo": "Annuler",
+  "reset": "Recommencer",
+  "inProgress": "En cours"
 }
-

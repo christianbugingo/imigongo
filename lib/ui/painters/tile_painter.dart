@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/imigongo_palette.dart';
-import '../../engine/models/connection_mask.dart';
-import '../../engine/models/tile.dart';
 
-/// High-performance vector CustomPainter rendering authentic Imigongo geometric relief ridges.
+import '../../core/theme/imigongo_palette.dart';
+import '../models/puzzle_view.dart';
+
+/// Procedural geometric placeholder painter; cultural review is pending.
 ///
 /// Simulates sculpted relief ridges with subtle light highlight and depth shadow bevels.
 /// Pure mathematical vector canvas rendering: zero bitmap decoding overhead and microscopic memory footprint.
 class TilePainter extends CustomPainter {
-  final Tile tile;
+  final TileView tile;
   final Color ridgeColor;
   final Color surfaceColor;
   final bool isDark;
@@ -42,13 +42,13 @@ class TilePainter extends CustomPainter {
       ..strokeWidth = 1.0;
     canvas.drawRRect(tileRect, borderPaint);
 
-    final mask = tile.effectiveMask;
-    if (mask == ConnectionMask.none) return;
+    final mask = tile.mask;
+    if (mask == 0) return;
 
-    final hasN = ConnectionMask.hasNorth(mask);
-    final hasE = ConnectionMask.hasEast(mask);
-    final hasS = ConnectionMask.hasSouth(mask);
-    final hasW = ConnectionMask.hasWest(mask);
+    final hasN = tile.north;
+    final hasE = tile.east;
+    final hasS = tile.south;
+    final hasW = tile.west;
 
     // Build the geometric path
     final path = Path();
@@ -85,7 +85,11 @@ class TilePainter extends CustomPainter {
     canvas.save();
     canvas.translate(1.5, 1.5);
     canvas.drawPath(path, shadowPaint);
-    canvas.drawCircle(center, strokeWidth / 2, shadowPaint..style = PaintingStyle.fill);
+    canvas.drawCircle(
+      center,
+      strokeWidth / 2,
+      shadowPaint..style = PaintingStyle.fill,
+    );
     canvas.restore();
 
     // 3. Draw 3D relief highlight (offset slightly top-left)
@@ -99,7 +103,11 @@ class TilePainter extends CustomPainter {
     canvas.save();
     canvas.translate(-1.0, -1.0);
     canvas.drawPath(path, highlightPaint);
-    canvas.drawCircle(center, strokeWidth / 2, highlightPaint..style = PaintingStyle.fill);
+    canvas.drawCircle(
+      center,
+      strokeWidth / 2,
+      highlightPaint..style = PaintingStyle.fill,
+    );
     canvas.restore();
 
     // 4. Draw primary colored ridge body
@@ -111,10 +119,14 @@ class TilePainter extends CustomPainter {
       ..strokeWidth = strokeWidth - 2.0;
 
     canvas.drawPath(path, ridgePaint);
-    canvas.drawCircle(center, (strokeWidth - 2.0) / 2, ridgePaint..style = PaintingStyle.fill);
+    canvas.drawCircle(
+      center,
+      (strokeWidth - 2.0) / 2,
+      ridgePaint..style = PaintingStyle.fill,
+    );
 
     // 5. Center relief lozenge / diamond accent for 4-way crossings
-    if (mask == ConnectionMask.crossAll) {
+    if (tile.north && tile.east && tile.south && tile.west) {
       final diamondPath = Path()
         ..moveTo(center.dx, center.dy - strokeWidth * 0.45)
         ..lineTo(center.dx + strokeWidth * 0.45, center.dy)
@@ -133,10 +145,9 @@ class TilePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant TilePainter oldDelegate) {
-    return oldDelegate.tile != tile ||
+    return oldDelegate.tile.mask != tile.mask ||
         oldDelegate.ridgeColor != ridgeColor ||
         oldDelegate.surfaceColor != surfaceColor ||
         oldDelegate.isDark != isDark;
   }
 }
-

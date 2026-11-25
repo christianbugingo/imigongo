@@ -31,7 +31,7 @@ void main() {
       expect(l10n.starsEarned(3), equals('3 Étoiles'));
     });
 
-    test('Kinyarwanda translations load correctly', () async {
+    test('Kinyarwanda placeholders load as stored (needs native review)', () async {
       final l10n = await AppLocalizations.delegate.load(const Locale('rw'));
       expect(l10n.appTitle, equals('Imigongo'));
       expect(l10n.play, equals('Gukina'));
