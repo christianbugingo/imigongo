@@ -159,3 +159,27 @@ Topology uniqueness ignores palette/scramble and normalizes quarter-turn rotatio
 With the complete catalog, Next continues across difficulty boundaries (15→16 and 35→36). The once-per-level +4 reward follows that next ID. Only level 50 has no next level/reward. This supersedes the earlier small review set's end-of-difficulty stop. It does not introduce Journey locking or persistent progress.
 
 See docs/LEVELS_50.md for verification, review instructions, limits and an exercise. No commits were created.
+
+## Approved sound, Settings and local progress checkpoint (2026-11-27)
+
+The user approved sound, Settings and saved progress only. Ratings and purchase preparation remain unstarted; no store buttons, products, receipts, payments or backend work are included. No git commits were created by the assistant.
+
+Settings use SharedPreferencesAsync; scores and first-win grants use Drift/SQLite. Production startup hydrates both before opening the game and offers Retry if local storage cannot be read. Tests may inject memory snapshots, stores and sound outputs. Progress stores puzzle identity as size/seed/generatorVersion and merges max stars/min moves. Tutorial attempts never enter the score store. In-progress boards and undo history are not restored after process restart.
+
+One transaction saves each win and an insert-once level completion/reward row. Success results appear only after that transaction commits. Save failure preserves the solved board and exposes Retry. Reset requires confirmation, keeps Settings/tutorial completion, invalidates the in-memory views, and uses a generation counter to reject queued writes from attempts predating reset. Settings prevents leaving during reset to keep its database and provider updates together.
+
+Sound cues are original synthesized tones; no traditional instrument attribution is claimed. A testable effects service applies the latest volume/mute/haptic settings, respects iOS silent mode through the ambient audio category, and treats unavailable effects as nonfatal. Audio stops when the app backgrounds. System reduced motion always takes precedence; the in-app setting can also disable animation. System theme is now the default; explicit light/dark selections persist.
+
+Kinyarwanda additions are English placeholders with needs-native-review ARB metadata and a checklist in docs/CULTURAL_REVIEW.md. This checkpoint does not verify translations. See docs/SETTINGS_PROGRESS.md for verification, run instructions and the review checkpoint.
+
+## Kinyarwanda selection crash and translation worksheet (2026-11-27)
+
+The user reported a crash selecting Kinyarwanda. A regression test reproduced `No MaterialLocalizations found`: generated app strings supported rw, while Flutter 3.47.7's framework delegates did not. The app now supplies explicit English Material/Cupertino/Widgets fallback resources for rw only, ahead of the generated delegates; app messages still load as rw. English formatting rules remain English rather than pretending they are reviewed Kinyarwanda framework translations. French and English use their normal delegates. This is a temporary fallback, not completed native framework localization. Official supported-language reference: https://api.flutter.dev/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html .
+
+`docs/translations/KINYARWANDA_TRANSLATIONS.csv` contains all 109 current app-message keys, English references, a blank Kinyarwanda column and placeholder notes. Existing rw guesses are not supplied as suggested answers. The worksheet is not imported automatically; user translations require validation and explicit native review before updating ARB values/metadata. No generated translations were invented or replaced. No commits were created.
+
+## Authorized draft translations and rating checkpoint (2026-11-27)
+
+The user requested assistant-written Kinyarwanda drafts, to correct personally, followed by ratings. They confirmed there are no App Store or Play Store listings. All 114 current app messages (including five rating messages) now have matching worksheet/ARB drafts, each marked needs native review. This supersedes the earlier blank worksheet. No native review is claimed; English framework fallback remains. The obsolete Free Play session-only note was corrected to match the saved-progress behavior.
+
+Ratings use in_app_review 2.0.12's openStoreListing behind a testable service and Riverpod provider. Settings offers a manual store destination only after per-platform listing-ready configuration and production-environment checks. iOS additionally requires a numeric Apple app ID. Without real listings the row shows a localized unavailable-after-release explanation. Dev builds stay disabled. A button does not call requestReview because store quotas may silently suppress that popup. No automatic prompts, review gating, incentives, fabricated IDs, store creation or purchases are included. A platform return means only that opening was requested, never that a review was submitted. Setup/review steps are in docs/RATINGS.md; filled JSON config is gitignored. No commits were made.

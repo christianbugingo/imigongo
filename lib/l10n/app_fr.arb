@@ -239,7 +239,7 @@
   "@practiceTutorial": {
     "description": "Step 4b: practiceTutorial"
   },
-  "sessionBestNote": "Les records en jeu libre sont conservés jusqu’à la fermeture de l’application.",
+  "sessionBestNote": "Vos meilleurs résultats en jeu libre sont enregistrés sur cet appareil.",
   "@sessionBestNote": {
     "description": "Step 4b: sessionBestNote"
   },
@@ -267,7 +267,7 @@
   "@freePlay": {
     "description": "Challenge checkpoint: freePlay"
   },
-  "challengeSessionNote": "La progression et les coups bonus des défis sont conservés pour cette session. Le jeu libre n’a pas de limite de coups.",
+  "challengeSessionNote": "La progression et les bonus gagnés sont enregistrés sur cet appareil. Le jeu libre n’a pas de limite de coups.",
   "@challengeSessionNote": {
     "description": "Challenge checkpoint: challengeSessionNote"
   },
@@ -359,5 +359,113 @@
   "colorHelp": "Les couleurs sont décoratives. Reliez les connexions, pas les couleurs.",
   "@colorHelp": {
     "description": "Level palettes do not affect puzzle validation."
+  },
+  "settingsTitle": "Paramètres",
+  "@settingsTitle": {
+    "description": "Settings checkpoint: settingsTitle"
+  },
+  "soundEnabled": "Effets sonores",
+  "@soundEnabled": {
+    "description": "Settings checkpoint: soundEnabled"
+  },
+  "volumeLabel": "Volume",
+  "@volumeLabel": {
+    "description": "Settings checkpoint: volumeLabel"
+  },
+  "previewSound": "Écouter un aperçu",
+  "@previewSound": {
+    "description": "Settings checkpoint: previewSound"
+  },
+  "hapticsEnabled": "Vibrations",
+  "@hapticsEnabled": {
+    "description": "Settings checkpoint: hapticsEnabled"
+  },
+  "reduceMotionSetting": "Réduire les animations",
+  "@reduceMotionSetting": {
+    "description": "Settings checkpoint: reduceMotionSetting"
+  },
+  "languageSetting": "Langue",
+  "@languageSetting": {
+    "description": "Settings checkpoint: languageSetting"
+  },
+  "themeSetting": "Apparence",
+  "@themeSetting": {
+    "description": "Settings checkpoint: themeSetting"
+  },
+  "systemSetting": "Réglage du système",
+  "@systemSetting": {
+    "description": "Settings checkpoint: systemSetting"
+  },
+  "lightSetting": "Clair",
+  "@lightSetting": {
+    "description": "Settings checkpoint: lightSetting"
+  },
+  "darkSetting": "Sombre",
+  "@darkSetting": {
+    "description": "Settings checkpoint: darkSetting"
+  },
+  "resetProgress": "Effacer la progression",
+  "@resetProgress": {
+    "description": "Settings checkpoint: resetProgress"
+  },
+  "resetProgressQuestion": "Effacer les niveaux terminés, les étoiles, les meilleurs scores et les bonus gagnés ? Les paramètres seront conservés.",
+  "@resetProgressQuestion": {
+    "description": "Settings checkpoint: resetProgressQuestion"
+  },
+  "cancelSetting": "Annuler",
+  "@cancelSetting": {
+    "description": "Settings checkpoint: cancelSetting"
+  },
+  "progressResetDone": "Progression effacée.",
+  "@progressResetDone": {
+    "description": "Settings checkpoint: progressResetDone"
+  },
+  "settingsSaveError": "Enregistrement impossible. Veuillez réessayer.",
+  "@settingsSaveError": {
+    "description": "Settings checkpoint: settingsSaveError"
+  },
+  "retrySave": "Réessayer",
+  "@retrySave": {
+    "description": "Settings checkpoint: retrySave"
+  },
+  "savingProgress": "Enregistrement de la progression…",
+  "@savingProgress": {
+    "description": "Settings checkpoint: savingProgress"
+  },
+  "progressSaveError": "Le puzzle est résolu, mais la progression n’a pas été enregistrée. Réessayez pour conserver votre résultat.",
+  "@progressSaveError": {
+    "description": "Settings checkpoint: progressSaveError"
+  },
+  "localStorageError": "Impossible d’ouvrir les données locales. Réessayez sans les effacer.",
+  "@localStorageError": {
+    "description": "Settings checkpoint: localStorageError"
+  },
+  "savedProgressLabel": "Progression enregistrée sur cet appareil",
+  "@savedProgressLabel": {
+    "description": "Settings checkpoint: savedProgressLabel"
+  },
+  "rwReviewLabel": "Kinyarwanda — relecture native nécessaire",
+  "@rwReviewLabel": {
+    "description": "Settings checkpoint: rwReviewLabel"
+  },
+  "rateGame": "Évaluer ce jeu",
+  "@rateGame": {
+    "description": "Ratings: rateGame"
+  },
+  "rateGameDescription": "Laisser une note ou un avis dans la boutique d’applications.",
+  "@rateGameDescription": {
+    "description": "Ratings: rateGameDescription"
+  },
+  "ratingNotReleased": "Disponible après la sortie du jeu dans la boutique d’applications.",
+  "@ratingNotReleased": {
+    "description": "Ratings: ratingNotReleased"
+  },
+  "ratingOpenFailed": "Impossible d’ouvrir la boutique d’applications. Veuillez réessayer.",
+  "@ratingOpenFailed": {
+    "description": "Ratings: ratingOpenFailed"
+  },
+  "ratingOpening": "Ouverture de la boutique d’applications…",
+  "@ratingOpening": {
+    "description": "Ratings: ratingOpening"
   }
 }

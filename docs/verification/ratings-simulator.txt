@@ -1,0 +1,5 @@
+Command: flutter run --no-resident -d 407020D1-FCAA-4F4A-8D99-C79B980A41CB -t lib/main_dev.dart
+Launching lib/main_dev.dart on iPhone 17 Pro in debug mode...
+Running pod install...                                             558ms
+Xcode build done.                                           16.4s
+Syncing files to device iPhone 17 Pro...                           114ms

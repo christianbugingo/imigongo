@@ -481,7 +481,7 @@ abstract class AppLocalizations {
   /// Step 4b: sessionBestNote
   ///
   /// In en, this message translates to:
-  /// **'Free Play bests last until the app closes.'**
+  /// **'Free Play bests are saved on this device.'**
   String get sessionBestNote;
 
   /// Step 4b: developmentBadge
@@ -523,7 +523,7 @@ abstract class AppLocalizations {
   /// Challenge checkpoint: challengeSessionNote
   ///
   /// In en, this message translates to:
-  /// **'Challenge progress and bonus moves last for this app session. Free Play has no move limit.'**
+  /// **'Progress and earned bonus moves are saved on this device. Free Play has no move limit.'**
   String get challengeSessionNote;
 
   /// Challenge checkpoint: choosePattern
@@ -621,6 +621,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Colors are decorative. Match the connections, not the colors.'**
   String get colorHelp;
+
+  /// Settings checkpoint: settingsTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// Settings checkpoint: soundEnabled
+  ///
+  /// In en, this message translates to:
+  /// **'Sound effects'**
+  String get soundEnabled;
+
+  /// Settings checkpoint: volumeLabel
+  ///
+  /// In en, this message translates to:
+  /// **'Volume'**
+  String get volumeLabel;
+
+  /// Settings checkpoint: previewSound
+  ///
+  /// In en, this message translates to:
+  /// **'Preview sound'**
+  String get previewSound;
+
+  /// Settings checkpoint: hapticsEnabled
+  ///
+  /// In en, this message translates to:
+  /// **'Haptics'**
+  String get hapticsEnabled;
+
+  /// Settings checkpoint: reduceMotionSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce motion'**
+  String get reduceMotionSetting;
+
+  /// Settings checkpoint: languageSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get languageSetting;
+
+  /// Settings checkpoint: themeSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get themeSetting;
+
+  /// Settings checkpoint: systemSetting
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get systemSetting;
+
+  /// Settings checkpoint: lightSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get lightSetting;
+
+  /// Settings checkpoint: darkSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get darkSetting;
+
+  /// Settings checkpoint: resetProgress
+  ///
+  /// In en, this message translates to:
+  /// **'Reset progress'**
+  String get resetProgress;
+
+  /// Settings checkpoint: resetProgressQuestion
+  ///
+  /// In en, this message translates to:
+  /// **'Erase completed levels, stars, best moves and earned bonuses? Settings will be kept.'**
+  String get resetProgressQuestion;
+
+  /// Settings checkpoint: cancelSetting
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelSetting;
+
+  /// Settings checkpoint: progressResetDone
+  ///
+  /// In en, this message translates to:
+  /// **'Progress erased.'**
+  String get progressResetDone;
+
+  /// Settings checkpoint: settingsSaveError
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Please retry.'**
+  String get settingsSaveError;
+
+  /// Settings checkpoint: retrySave
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retrySave;
+
+  /// Settings checkpoint: savingProgress
+  ///
+  /// In en, this message translates to:
+  /// **'Saving progress…'**
+  String get savingProgress;
+
+  /// Settings checkpoint: progressSaveError
+  ///
+  /// In en, this message translates to:
+  /// **'Your puzzle is solved, but progress could not be saved. Retry to keep your result.'**
+  String get progressSaveError;
+
+  /// Settings checkpoint: localStorageError
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open local storage. Retry without erasing your data.'**
+  String get localStorageError;
+
+  /// Settings checkpoint: savedProgressLabel
+  ///
+  /// In en, this message translates to:
+  /// **'Progress saved on this device'**
+  String get savedProgressLabel;
+
+  /// Settings checkpoint: rwReviewLabel
+  ///
+  /// In en, this message translates to:
+  /// **'Kinyarwanda — needs native review'**
+  String get rwReviewLabel;
+
+  /// Ratings: rateGame
+  ///
+  /// In en, this message translates to:
+  /// **'Rate this game'**
+  String get rateGame;
+
+  /// Ratings: rateGameDescription
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a rating or review in the app store.'**
+  String get rateGameDescription;
+
+  /// Ratings: ratingNotReleased
+  ///
+  /// In en, this message translates to:
+  /// **'Available after the game is released in the app store.'**
+  String get ratingNotReleased;
+
+  /// Ratings: ratingOpenFailed
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the app store. Please try again.'**
+  String get ratingOpenFailed;
+
+  /// Ratings: ratingOpening
+  ///
+  /// In en, this message translates to:
+  /// **'Opening the app store…'**
+  String get ratingOpening;
 }
 
 class _AppLocalizationsDelegate

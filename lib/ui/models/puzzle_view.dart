@@ -13,7 +13,15 @@ class TileView {
   });
 }
 
-enum PlayPhase { playing, paused, completing, results, gameOver }
+enum PlayPhase {
+  playing,
+  paused,
+  saving,
+  saveError,
+  completing,
+  results,
+  gameOver,
+}
 
 class CompletionView {
   final int attemptId, moves, targetMoves, stars;
@@ -59,9 +67,13 @@ class PatternView {
   final String paletteId;
   final String? nextId;
   final int number, size, baseMoves, bonusMoves;
+  final int stars;
+  final int? bestMoves;
   final List<TileView> tiles;
   PatternView({
     required this.id,
+    this.stars = 0,
+    this.bestMoves,
     this.paletteId = 'classic',
     required this.tier,
     required this.number,

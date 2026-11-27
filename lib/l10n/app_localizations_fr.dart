@@ -239,7 +239,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get sessionBestNote =>
-      'Les records en jeu libre sont conservés jusqu’à la fermeture de l’application.';
+      'Vos meilleurs résultats en jeu libre sont enregistrés sur cet appareil.';
 
   @override
   String get developmentBadge => 'DEV';
@@ -261,7 +261,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get challengeSessionNote =>
-      'La progression et les coups bonus des défis sont conservés pour cette session. Le jeu libre n’a pas de limite de coups.';
+      'La progression et les bonus gagnés sont enregistrés sur cet appareil. Le jeu libre n’a pas de limite de coups.';
 
   @override
   String get choosePattern =>
@@ -326,4 +326,92 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get colorHelp =>
       'Les couleurs sont décoratives. Reliez les connexions, pas les couleurs.';
+
+  @override
+  String get settingsTitle => 'Paramètres';
+
+  @override
+  String get soundEnabled => 'Effets sonores';
+
+  @override
+  String get volumeLabel => 'Volume';
+
+  @override
+  String get previewSound => 'Écouter un aperçu';
+
+  @override
+  String get hapticsEnabled => 'Vibrations';
+
+  @override
+  String get reduceMotionSetting => 'Réduire les animations';
+
+  @override
+  String get languageSetting => 'Langue';
+
+  @override
+  String get themeSetting => 'Apparence';
+
+  @override
+  String get systemSetting => 'Réglage du système';
+
+  @override
+  String get lightSetting => 'Clair';
+
+  @override
+  String get darkSetting => 'Sombre';
+
+  @override
+  String get resetProgress => 'Effacer la progression';
+
+  @override
+  String get resetProgressQuestion =>
+      'Effacer les niveaux terminés, les étoiles, les meilleurs scores et les bonus gagnés ? Les paramètres seront conservés.';
+
+  @override
+  String get cancelSetting => 'Annuler';
+
+  @override
+  String get progressResetDone => 'Progression effacée.';
+
+  @override
+  String get settingsSaveError =>
+      'Enregistrement impossible. Veuillez réessayer.';
+
+  @override
+  String get retrySave => 'Réessayer';
+
+  @override
+  String get savingProgress => 'Enregistrement de la progression…';
+
+  @override
+  String get progressSaveError =>
+      'Le puzzle est résolu, mais la progression n’a pas été enregistrée. Réessayez pour conserver votre résultat.';
+
+  @override
+  String get localStorageError =>
+      'Impossible d’ouvrir les données locales. Réessayez sans les effacer.';
+
+  @override
+  String get savedProgressLabel => 'Progression enregistrée sur cet appareil';
+
+  @override
+  String get rwReviewLabel => 'Kinyarwanda — relecture native nécessaire';
+
+  @override
+  String get rateGame => 'Évaluer ce jeu';
+
+  @override
+  String get rateGameDescription =>
+      'Laisser une note ou un avis dans la boutique d’applications.';
+
+  @override
+  String get ratingNotReleased =>
+      'Disponible après la sortie du jeu dans la boutique d’applications.';
+
+  @override
+  String get ratingOpenFailed =>
+      'Impossible d’ouvrir la boutique d’applications. Veuillez réessayer.';
+
+  @override
+  String get ratingOpening => 'Ouverture de la boutique d’applications…';
 }

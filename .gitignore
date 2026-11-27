@@ -50,3 +50,7 @@ app.*.map.json
 
 # Third-party visual references must not enter version control.
 /reference/
+
+# Local environment configuration (never commit filled environment files).
+/config/*.json
+!/config/*.example.json

@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/legacy.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final localeProvider = StateNotifierProvider<LocaleNotifier, Locale?>((ref) {
-  return LocaleNotifier();
+import 'settings_provider.dart';
+
+final localeProvider = Provider<Locale?>((ref) {
+  final language = ref.watch(settingsProvider).language;
+  return language == null ? null : Locale(language);
 });
-
-class LocaleNotifier extends StateNotifier<Locale?> {
-  LocaleNotifier() : super(null); // null uses system default
-
-  void setLocale(Locale? locale) {
-    state = locale;
-  }
-}
-

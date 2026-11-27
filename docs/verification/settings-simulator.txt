@@ -1,0 +1,4 @@
+Command: flutter run --no-resident -d 407020D1-FCAA-4F4A-8D99-C79B980A41CB -t lib/main_dev.dart
+Launching lib/main_dev.dart on iPhone 17 Pro in debug mode...
+Xcode build done.                                            9.2s
+Syncing files to device iPhone 17 Pro...                           105ms

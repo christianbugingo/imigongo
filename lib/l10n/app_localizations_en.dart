@@ -235,7 +235,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceTutorial => 'Practice the tutorial';
 
   @override
-  String get sessionBestNote => 'Free Play bests last until the app closes.';
+  String get sessionBestNote => 'Free Play bests are saved on this device.';
 
   @override
   String get developmentBadge => 'DEV';
@@ -257,7 +257,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get challengeSessionNote =>
-      'Challenge progress and bonus moves last for this app session. Free Play has no move limit.';
+      'Progress and earned bonus moves are saved on this device. Free Play has no move limit.';
 
   @override
   String get choosePattern => 'Choose the pattern you want to complete.';
@@ -320,4 +320,91 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get colorHelp =>
       'Colors are decorative. Match the connections, not the colors.';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get soundEnabled => 'Sound effects';
+
+  @override
+  String get volumeLabel => 'Volume';
+
+  @override
+  String get previewSound => 'Preview sound';
+
+  @override
+  String get hapticsEnabled => 'Haptics';
+
+  @override
+  String get reduceMotionSetting => 'Reduce motion';
+
+  @override
+  String get languageSetting => 'Language';
+
+  @override
+  String get themeSetting => 'Appearance';
+
+  @override
+  String get systemSetting => 'System default';
+
+  @override
+  String get lightSetting => 'Light';
+
+  @override
+  String get darkSetting => 'Dark';
+
+  @override
+  String get resetProgress => 'Reset progress';
+
+  @override
+  String get resetProgressQuestion =>
+      'Erase completed levels, stars, best moves and earned bonuses? Settings will be kept.';
+
+  @override
+  String get cancelSetting => 'Cancel';
+
+  @override
+  String get progressResetDone => 'Progress erased.';
+
+  @override
+  String get settingsSaveError => 'Could not save. Please retry.';
+
+  @override
+  String get retrySave => 'Retry';
+
+  @override
+  String get savingProgress => 'Saving progress…';
+
+  @override
+  String get progressSaveError =>
+      'Your puzzle is solved, but progress could not be saved. Retry to keep your result.';
+
+  @override
+  String get localStorageError =>
+      'Could not open local storage. Retry without erasing your data.';
+
+  @override
+  String get savedProgressLabel => 'Progress saved on this device';
+
+  @override
+  String get rwReviewLabel => 'Kinyarwanda — needs native review';
+
+  @override
+  String get rateGame => 'Rate this game';
+
+  @override
+  String get rateGameDescription =>
+      'Leave a rating or review in the app store.';
+
+  @override
+  String get ratingNotReleased =>
+      'Available after the game is released in the app store.';
+
+  @override
+  String get ratingOpenFailed =>
+      'Could not open the app store. Please try again.';
+
+  @override
+  String get ratingOpening => 'Opening the app store…';
 }

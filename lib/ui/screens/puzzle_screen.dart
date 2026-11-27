@@ -1,3 +1,5 @@
+import 'settings_screen.dart';
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -15,7 +17,7 @@ import '../widgets/puzzle_board_widget.dart';
 import '../widgets/pattern_image.dart';
 import 'how_to_play_screen.dart';
 
-enum _PauseAction { resume, restart, help, home }
+enum _PauseAction { resume, restart, help, settings, home }
 
 class PuzzleScreen extends ConsumerStatefulWidget {
   final int size, seed;
@@ -316,6 +318,7 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
               (_PauseAction.resume, l10n.resume),
               (_PauseAction.restart, l10n.restart),
               (_PauseAction.help, l10n.howToPlay),
+              (_PauseAction.settings, l10n.settingsTitle),
               (_PauseAction.home, l10n.home),
             ])
               Padding(
@@ -338,6 +341,13 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
         await Navigator.of(context).push<void>(
           MaterialPageRoute(builder: (_) => const HowToPlayScreen()),
         );
+        if (mounted && (ModalRoute.of(context)?.isCurrent ?? false)) {
+          await _pause();
+        }
+      case _PauseAction.settings:
+        await Navigator.of(
+          context,
+        ).push<void>(MaterialPageRoute(builder: (_) => const SettingsScreen()));
         if (mounted && (ModalRoute.of(context)?.isCurrent ?? false)) {
           await _pause();
         }
@@ -402,6 +412,16 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen>
         body: SafeArea(
           child: Column(
             children: [
+              if (state.phase == PlayPhase.saving)
+                LinearProgressIndicator(semanticsLabel: l10n.savingProgress),
+              if (state.phase == PlayPhase.saveError)
+                ListTile(
+                  title: Text(l10n.progressSaveError),
+                  trailing: TextButton(
+                    onPressed: controller.retrySave,
+                    child: Text(l10n.retrySave),
+                  ),
+                ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,

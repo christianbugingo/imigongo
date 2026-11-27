@@ -44,6 +44,10 @@ class PatternSelectionScreen extends ConsumerWidget {
                       l10n.patternNumber(pattern.number),
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
+                    if (pattern.stars > 0) Text(l10n.savedProgressLabel),
+                    if (pattern.stars > 0) Text('★' * pattern.stars),
+                    if (pattern.bestMoves != null)
+                      Text(l10n.movesValue(pattern.bestMoves!)),
                     const SizedBox(height: 12),
                     Center(
                       child: ConstrainedBox(

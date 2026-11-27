@@ -143,3 +143,46 @@ Every value in app_rw.arb is a placeholder and has `needs native review` metadat
 - [ ] `colorHelp`: Colors are decorative. Match the connections, not the colors. [needs native review] — **needs native review**. This is an English placeholder in app_rw.arb, not a verified translation.
 
 The new networks and palette labels carry no traditional pattern names or cultural meanings.
+
+## Settings checkpoint strings
+
+All new rw values remain English placeholders, **needs native review**.
+- [ ] `settingsTitle`
+- [ ] `soundEnabled`
+- [ ] `volumeLabel`
+- [ ] `previewSound`
+- [ ] `hapticsEnabled`
+- [ ] `reduceMotionSetting`
+- [ ] `languageSetting`
+- [ ] `themeSetting`
+- [ ] `systemSetting`
+- [ ] `lightSetting`
+- [ ] `darkSetting`
+- [ ] `resetProgress`
+- [ ] `resetProgressQuestion`
+- [ ] `cancelSetting`
+- [ ] `progressResetDone`
+- [ ] `settingsSaveError`
+- [ ] `retrySave`
+- [ ] `savingProgress`
+- [ ] `progressSaveError`
+- [ ] `localStorageError`
+- [ ] `savedProgressLabel`
+- [ ] `rwReviewLabel`
+- [ ] `challengeSessionNote`
+
+## User translation worksheet
+
+All 109 current app strings are listed with English references and blank Kinyarwanda fields in [KINYARWANDA_TRANSLATIONS.csv](translations/KINYARWANDA_TRANSLATIONS.csv). See [worksheet instructions](translations/README.md). Entries remain **needs native review** until reviewed. Editing the worksheet does not automatically change ARB files. Built-in framework controls temporarily use English for rw; this fallback is not a verified Kinyarwanda translation.
+
+## Assistant-written drafts requested by the user
+
+The worksheet now has 114 draft translations, also applied to `app_rw.arb`. This supersedes the earlier blank 109-row worksheet. Every draft is **needs native review**; no string has been marked reviewed. The five rating-message keys also need review:
+
+- [ ] `rateGame`
+- [ ] `rateGameDescription`
+- [ ] `ratingNotReleased`
+- [ ] `ratingOpenFailed`
+- [ ] `ratingOpening`
+
+Review and correct all worksheet entries, including the earlier placeholder strings. App terminology, directions, plural wording, accessibility labels and the distinction between haptics and animations need particular attention. Color labels are descriptive drafts, not pigment-origin claims. Framework controls continue to use the explicit English fallback.

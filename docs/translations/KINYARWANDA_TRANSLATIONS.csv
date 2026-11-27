@@ -1,0 +1,115 @@
+﻿key,English — reference only,Kinyarwanda — write here,Notes — needs native review
+appTitle,Imigongo Puzzle,Imigongo,DRAFT — needs native review; please correct this translation.
+geometricReliefPuzzle,Geometric Relief Puzzle,Umukino wo guhuza imirongo,DRAFT — needs native review; please correct this translation.
+play,Play,Gukina,DRAFT — needs native review; please correct this translation.
+settings,Settings,Igenamiterere,DRAFT — needs native review; please correct this translation.
+dailyChallenge,Daily Challenge,Umukino w’umunsi,DRAFT — needs native review; please correct this translation.
+moves,Moves,Intambwe,DRAFT — needs native review; please correct this translation.
+par,Par,Intego,DRAFT — needs native review; please correct this translation.
+targetMoves,Target Moves,Intambwe z’intego,DRAFT — needs native review; please correct this translation.
+solved,Solved,Byakemutse,DRAFT — needs native review; please correct this translation.
+starsEarned,"{count, plural, =1{1 Star} other{{count} Stars}}","{count, plural, =1{Inyenyeri 1} other{Inyenyeri {count}}}",DRAFT — needs native review; please correct this translation. Keep: {count} Preserve ICU plural structure.
+rotateInstruction,Tap a tile to rotate clockwise,Kanda ku gice kugira ngo ukizengurutse mu cyerekezo cy’inshinge z’isaha,DRAFT — needs native review; please correct this translation.
+colorCharcoal,Charcoal,Umukara,DRAFT — needs native review; please correct this translation.
+colorChalk,Chalk,Umweru,DRAFT — needs native review; please correct this translation.
+colorTerracotta,Terracotta,Umutuku wijimye,DRAFT — needs native review; please correct this translation.
+colorOchre,Ochre,Umuhondo wijimye,DRAFT — needs native review; please correct this translation.
+undo,Undo,Subiza inyuma,DRAFT — needs native review; please correct this translation.
+reset,Reset,Tangira bushya,DRAFT — needs native review; please correct this translation.
+inProgress,In progress,Biracyakorwa,DRAFT — needs native review; please correct this translation.
+welcomeTitle,Welcome to Imigongo,Murakaza neza muri Imigongo,DRAFT — needs native review; please correct this translation.
+welcomeBody,A quiet puzzle of connected lines. Learn with three short practice boards.,Umukino utuje wo guhuza imirongo. Wige uko ukinwa ukoresheje imyitozo itatu migufi.,DRAFT — needs native review; please correct this translation.
+learnToPlay,Learn to play,Iga gukina,DRAFT — needs native review; please correct this translation.
+skipTutorial,Skip tutorial,Simbuka inyigisho,DRAFT — needs native review; please correct this translation.
+howToPlay,How to Play,Uko bakina,DRAFT — needs native review; please correct this translation.
+back,Back,Subira inyuma,DRAFT — needs native review; please correct this translation.
+resume,Resume,Komeza,DRAFT — needs native review; please correct this translation.
+restart,Restart,Ongera utangire,DRAFT — needs native review; please correct this translation.
+pause,Pause,Hagarika gato,DRAFT — needs native review; please correct this translation.
+paused,Paused,Byahagaze gato,DRAFT — needs native review; please correct this translation.
+home,Home,Ahabanza,DRAFT — needs native review; please correct this translation.
+replay,Replay,Ongera ukine,DRAFT — needs native review; please correct this translation.
+nextPuzzle,Next puzzle,Umukino ukurikira,DRAFT — needs native review; please correct this translation.
+nextLesson,Next lesson,Isomo rikurikira,DRAFT — needs native review; please correct this translation.
+finishTutorial,Finish tutorial,Soza inyigisho,DRAFT — needs native review; please correct this translation.
+newBest,New best,Wageze ku ntsinzi nshya,DRAFT — needs native review; please correct this translation.
+levelComplete,Level complete,Urwego rwarangiye,DRAFT — needs native review; please correct this translation.
+lessonComplete,Lesson complete,Isomo ryarangiye,DRAFT — needs native review; please correct this translation.
+completionAnnouncement,"Level complete, {stars, plural, =1{1 star} other{{stars} stars}}","Urwego rwarangiye, {stars, plural, =1{inyenyeri 1} other{inyenyeri {stars}}}",DRAFT — needs native review; please correct this translation. Keep: {stars} Preserve ICU plural structure.
+freePlayTitle,Free Play · {size}×{size},Gukina wisanzuye · {size}×{size},DRAFT — needs native review; please correct this translation. Keep: {size}
+gridSize,{size}×{size},{size}×{size},DRAFT — needs native review; please correct this translation. Keep: {size}
+tutorialTitle,Tutorial {number} of 3,Isomo rya {number} muri 3,DRAFT — needs native review; please correct this translation. Keep: {number}
+movesValue,Moves: {count},Intambwe: {count},DRAFT — needs native review; please correct this translation. Keep: {count}
+targetValue,Target moves: {count},Intambwe z’intego: {count},DRAFT — needs native review; please correct this translation. Keep: {count}
+tileLabel,"Tile at row {row}, column {col}. Connections: {connections}.","Igice kiri ku murongo wa {row}, mu nkingi ya {col}. Aho gihurira n’ibindi: {connections}.","DRAFT — needs native review; please correct this translation. Keep: {row}, {col}, {connections}"
+north,north,amajyaruguru,DRAFT — needs native review; please correct this translation.
+east,east,iburasirazuba,DRAFT — needs native review; please correct this translation.
+south,south,amajyepfo,DRAFT — needs native review; please correct this translation.
+west,west,iburengerazuba,DRAFT — needs native review; please correct this translation.
+noConnections,none,nta na hamwe,DRAFT — needs native review; please correct this translation.
+ruleOne,Tap a tile to turn it a quarter turn clockwise.,Kanda ku gice kugira ngo ukizengurutse kimwe cya kane cy’uruziga mu cyerekezo cy’inshinge z’isaha.,DRAFT — needs native review; please correct this translation.
+ruleTwo,Join the lines so no line ends in the open or points off the board.,Huza imirongo ku buryo nta mutwe wayo usigara udahujwe cyangwa werekeza hanze y’ikibaho.,DRAFT — needs native review; please correct this translation.
+ruleThree,Everything must connect into one single pattern.,Byose bigomba guhuzwa bikavamo ishusho imwe.,DRAFT — needs native review; please correct this translation.
+ruleFour,Use as few turns as you can. Reach the target moves for three stars.,Koresha intambwe nke zishoboka. Nugera ku ntambwe z’intego uzabona inyenyeri eshatu.,DRAFT — needs native review; please correct this translation.
+ruleFive,Undo and Restart are always free.,Gusubiza inyuma no kongera gutangira ni ubuntu buri gihe.,DRAFT — needs native review; please correct this translation.
+lessonOne,One tile needs a turn. Tap it to complete the pattern.,Igice kimwe gikeneye kuzengurutswa. Gikande kugira ngo urangize ishusho.,DRAFT — needs native review; please correct this translation.
+lessonTwo,Match every open end. All lines must belong to one connected pattern; separate loops do not count.,Huza imitwe yose y’imirongo. Imirongo yose igomba kuba mu ishusho imwe ihujwe; inziga zitandukanye ntizemerwa.,DRAFT — needs native review; please correct this translation.
+lessonThree,"Try Undo or Restart, then solve the board. Meet the target moves to earn three stars.","Gerageza gusubiza inyuma cyangwa kongera gutangira, hanyuma ukemure umukino. Gerageza gukoresha intambwe z’intego kugira ngo ubone inyenyeri eshatu.",DRAFT — needs native review; please correct this translation.
+tutorialNotice,Practice only: these results do not affect your Free Play bests.,Uyu ni umwitozo gusa: ibisubizo byawo ntibihindura amanota yawe meza mu gukina wisanzuye.,DRAFT — needs native review; please correct this translation.
+chooseSize,Choose a Free Play grid,Hitamo ingano y’ikibaho cyo gukina wisanzuye,DRAFT — needs native review; please correct this translation.
+loading,Loading,Birimo gufunguka,DRAFT — needs native review; please correct this translation.
+loadFailed,Could not load tutorial preferences.,Ntibyashobotse gufungura igenamiterere ry’inyigisho.,DRAFT — needs native review; please correct this translation.
+retry,Retry,Ongera ugerageze,DRAFT — needs native review; please correct this translation.
+saveFailed,Could not remember tutorial completion. Please try again.,Ntibyashobotse kubika ko warangije inyigisho. Ongera ugerageze.,DRAFT — needs native review; please correct this translation.
+practiceTutorial,Practice the tutorial,Kora imyitozo y’inyigisho,DRAFT — needs native review; please correct this translation.
+sessionBestNote,Free Play bests are saved on this device.,Ibisubizo byawe byiza byo gukina wisanzuye bibikwa kuri iki gikoresho.,DRAFT — needs native review; please correct this translation.
+developmentBadge,DEV,DEV,DRAFT — needs native review; please correct this translation.
+chooseDifficulty,Choose a challenge difficulty,Hitamo ubukana bw’umukino,DRAFT — needs native review; please correct this translation.
+easy,Easy,Byoroshye,DRAFT — needs native review; please correct this translation.
+medium,Medium,Biringaniye,DRAFT — needs native review; please correct this translation.
+hard,Hard,Bikomeye,DRAFT — needs native review; please correct this translation.
+freePlay,Free Play,Gukina wisanzuye,DRAFT — needs native review; please correct this translation.
+challengeSessionNote,Progress and earned bonus moves are saved on this device. Free Play has no move limit.,Aho ugeze n’intambwe z’inyongera watsindiye bibikwa kuri iki gikoresho. Gukina wisanzuye ntibigira umubare ntarengwa w’intambwe.,DRAFT — needs native review; please correct this translation.
+choosePattern,Choose the pattern you want to complete.,Hitamo ishusho ushaka kurangiza.,DRAFT — needs native review; please correct this translation.
+patternNumber,Pattern {number},Ishusho ya {number},DRAFT — needs native review; please correct this translation. Keep: {number}
+allowanceValue,Move allowance: {count},Intambwe wemerewe: {count},DRAFT — needs native review; please correct this translation. Keep: {count}
+bonusIncluded,Includes {count} earned bonus moves.,Harimo intambwe {count} z’inyongera watsindiye.,DRAFT — needs native review; please correct this translation. Keep: {count}
+patternUnavailable,This pattern is not available.,Iyi shusho ntiboneka.,DRAFT — needs native review; please correct this translation.
+patternPreview,Study the completed pattern before you start.,Banza witegereze ishusho yuzuye mbere yo gutangira.,DRAFT — needs native review; please correct this translation.
+previewRule,Use this as your reference. Any single connected pattern with no loose ends is a valid solution.,Iyi shusho ni urugero rwo kukuyobora. Ishusho iyo ari yo yose ihujwe yose kandi idafite imitwe y’imirongo idahujwe ni igisubizo cyemewe.,DRAFT — needs native review; please correct this translation.
+referencePattern,Completed reference pattern,Ishusho yuzuye yo kureberaho,DRAFT — needs native review; please correct this translation.
+referenceHint,Your reference stays here. Tap it to enlarge.,Ishusho yo kureberaho iguma hano. Yikande kugira ngo uyagure.,DRAFT — needs native review; please correct this translation.
+startPuzzle,Start puzzle,Tangira umukino,DRAFT — needs native review; please correct this translation.
+remainingMoves,Moves left: {count},Intambwe zisigaye: {count},DRAFT — needs native review; please correct this translation. Keep: {count}
+bonusReward,+{count} moves earned for the next pattern,Watsindiye intambwe +{count} zo gukoresha ku ishusho ikurikira,DRAFT — needs native review; please correct this translation. Keep: {count}
+gameOver,Game over,Umukino urarangiye,DRAFT — needs native review; please correct this translation.
+outOfMoves,No moves left. Replay this pattern with a fresh allowance.,Nta ntambwe zisigaye. Ongera ukine iyi shusho uhabwe intambwe nshya.,DRAFT — needs native review; please correct this translation.
+challengeHelp,"Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active.","Imikino y’inzego igira umubare ntarengwa w’intambwe. Iyo urangije ishusho, utsindira intambwe enye z’inyongera ku ishusho ikurikira, rimwe gusa kuri buri rwego. Gusubiza inyuma bigusubiza intambwe imwe igihe umukino ugikomeje.",DRAFT — needs native review; please correct this translation.
+colorHelp,"Colors are decorative. Match the connections, not the colors.","Amabara ni ayo kurimbisha. Huza imirongo, si amabara.",DRAFT — needs native review; please correct this translation.
+settingsTitle,Settings,Igenamiterere,DRAFT — needs native review; please correct this translation.
+soundEnabled,Sound effects,Amajwi y’umukino,DRAFT — needs native review; please correct this translation.
+volumeLabel,Volume,Uburemere bw’ijwi,DRAFT — needs native review; please correct this translation.
+previewSound,Preview sound,Umva ijwi ry’igerageza,DRAFT — needs native review; please correct this translation.
+hapticsEnabled,Haptics,Kunyeganyega kw’igikoresho,DRAFT — needs native review; please correct this translation.
+reduceMotionSetting,Reduce motion,Gabanya ibinyeganyega kuri ecran,DRAFT — needs native review; please correct this translation.
+languageSetting,Language,Ururimi,DRAFT — needs native review; please correct this translation.
+themeSetting,Appearance,Isura,DRAFT — needs native review; please correct this translation.
+systemSetting,System default,Kurikiza igenamiterere ry’igikoresho,DRAFT — needs native review; please correct this translation.
+lightSetting,Light,Urumuri,DRAFT — needs native review; please correct this translation.
+darkSetting,Dark,Umwijima,DRAFT — needs native review; please correct this translation.
+resetProgress,Reset progress,Siba aho ugeze,DRAFT — needs native review; please correct this translation.
+resetProgressQuestion,"Erase completed levels, stars, best moves and earned bonuses? Settings will be kept.","Urasiba inzego warangije, inyenyeri, intambwe nke wakoresheje n’inyongera watsindiye? Igenamiterere rizagumaho.",DRAFT — needs native review; please correct this translation.
+cancelSetting,Cancel,Reka,DRAFT — needs native review; please correct this translation.
+progressResetDone,Progress erased.,Aho wari ugeze hasibwe.,DRAFT — needs native review; please correct this translation.
+settingsSaveError,Could not save. Please retry.,Ntibyashobotse kubika. Ongera ugerageze.,DRAFT — needs native review; please correct this translation.
+retrySave,Retry,Ongera ugerageze,DRAFT — needs native review; please correct this translation.
+savingProgress,Saving progress…,Birimo kubika aho ugeze…,DRAFT — needs native review; please correct this translation.
+progressSaveError,"Your puzzle is solved, but progress could not be saved. Retry to keep your result.","Wakemuye umukino, ariko ntibyashobotse kubika aho ugeze. Ongera ugerageze kugira ngo ubike igisubizo cyawe.",DRAFT — needs native review; please correct this translation.
+localStorageError,Could not open local storage. Retry without erasing your data.,Ntibyashobotse gufungura amakuru abitswe kuri iki gikoresho. Ongera ugerageze utayasibye.,DRAFT — needs native review; please correct this translation.
+savedProgressLabel,Progress saved on this device,Aho ugeze habitswe kuri iki gikoresho,DRAFT — needs native review; please correct this translation.
+rwReviewLabel,Kinyarwanda — needs native review,Kinyarwanda — gikeneye gusuzumwa n’ukivuga kavukire,DRAFT — needs native review; please correct this translation.
+rateGame,Rate this game,Tanga amanota ku mukino,DRAFT — needs native review; please correct this translation.
+rateGameDescription,Leave a rating or review in the app store.,Tanga amanota cyangwa igitekerezo mu bubiko bwa porogaramu.,DRAFT — needs native review; please correct this translation.
+ratingNotReleased,Available after the game is released in the app store.,Bizashoboka umukino umaze gushyirwa mu bubiko bwa porogaramu.,DRAFT — needs native review; please correct this translation.
+ratingOpenFailed,Could not open the app store. Please try again.,Ntibyashobotse gufungura ububiko bwa porogaramu. Ongera ugerageze.,DRAFT — needs native review; please correct this translation.
+ratingOpening,Opening the app store…,Birimo gufungura ububiko bwa porogaramu…,DRAFT — needs native review; please correct this translation.

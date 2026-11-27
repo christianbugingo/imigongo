@@ -1,206 +1,206 @@
 {
   "@@locale": "rw",
   "appTitle": "Imigongo",
-  "geometricReliefPuzzle": "Umukino w'Ubugeni bw'Imigongo",
+  "geometricReliefPuzzle": "Umukino wo guhuza imirongo",
   "play": "Gukina",
-  "settings": "Ibyigenewe",
-  "dailyChallenge": "Umukoro w'Umunsi",
+  "settings": "Igenamiterere",
+  "dailyChallenge": "Umukino w’umunsi",
   "moves": "Intambwe",
   "par": "Intego",
-  "targetMoves": "Intambwe Ziteganyijwe",
-  "solved": "Birarangiye",
+  "targetMoves": "Intambwe z’intego",
+  "solved": "Byakemutse",
   "starsEarned": "{count, plural, =1{Inyenyeri 1} other{Inyenyeri {count}}}",
-  "rotateInstruction": "Kanda ku gasanduku kugira ngo gahindukire",
+  "rotateInstruction": "Kanda ku gice kugira ngo ukizengurutse mu cyerekezo cy’inshinge z’isaha",
   "colorCharcoal": "Umukara",
   "colorChalk": "Umweru",
-  "colorTerracotta": "Umutuku w'ibumba",
-  "colorOchre": "Umuhondo w'ibumba",
-  "undo": "Undo [needs native review]",
-  "reset": "Reset [needs native review]",
-  "inProgress": "In progress [needs native review]",
+  "colorTerracotta": "Umutuku wijimye",
+  "colorOchre": "Umuhondo wijimye",
+  "undo": "Subiza inyuma",
+  "reset": "Tangira bushya",
+  "inProgress": "Biracyakorwa",
   "@appTitle": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. appTitle"
   },
   "@geometricReliefPuzzle": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. geometricReliefPuzzle"
   },
   "@play": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. play"
   },
   "@settings": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. settings"
   },
   "@dailyChallenge": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. dailyChallenge"
   },
   "@moves": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. moves"
   },
   "@par": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. par"
   },
   "@targetMoves": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. targetMoves"
   },
   "@solved": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. solved"
   },
   "@starsEarned": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. starsEarned"
   },
   "@rotateInstruction": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. rotateInstruction"
   },
   "@colorCharcoal": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. colorCharcoal"
   },
   "@colorChalk": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. colorChalk"
   },
   "@colorTerracotta": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. colorTerracotta"
   },
   "@colorOchre": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. colorOchre"
   },
   "@undo": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. undo"
   },
   "@reset": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. reset"
   },
   "@inProgress": {
-    "description": "PLACEHOLDER — needs native review; not a verified Kinyarwanda translation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. inProgress"
   },
-  "welcomeTitle": "Welcome to Imigongo [needs native review]",
+  "welcomeTitle": "Murakaza neza muri Imigongo",
   "@welcomeTitle": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: welcomeTitle"
+    "description": "DRAFT — needs native review; assistant translation, not verified. welcomeTitle"
   },
-  "welcomeBody": "A quiet puzzle of connected lines. Learn with three short practice boards. [needs native review]",
+  "welcomeBody": "Umukino utuje wo guhuza imirongo. Wige uko ukinwa ukoresheje imyitozo itatu migufi.",
   "@welcomeBody": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: welcomeBody"
+    "description": "DRAFT — needs native review; assistant translation, not verified. welcomeBody"
   },
-  "learnToPlay": "Learn to play [needs native review]",
+  "learnToPlay": "Iga gukina",
   "@learnToPlay": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: learnToPlay"
+    "description": "DRAFT — needs native review; assistant translation, not verified. learnToPlay"
   },
-  "skipTutorial": "Skip tutorial [needs native review]",
+  "skipTutorial": "Simbuka inyigisho",
   "@skipTutorial": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: skipTutorial"
+    "description": "DRAFT — needs native review; assistant translation, not verified. skipTutorial"
   },
-  "howToPlay": "How to Play [needs native review]",
+  "howToPlay": "Uko bakina",
   "@howToPlay": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: howToPlay"
+    "description": "DRAFT — needs native review; assistant translation, not verified. howToPlay"
   },
-  "back": "Back [needs native review]",
+  "back": "Subira inyuma",
   "@back": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: back"
+    "description": "DRAFT — needs native review; assistant translation, not verified. back"
   },
-  "resume": "Resume [needs native review]",
+  "resume": "Komeza",
   "@resume": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: resume"
+    "description": "DRAFT — needs native review; assistant translation, not verified. resume"
   },
-  "restart": "Restart [needs native review]",
+  "restart": "Ongera utangire",
   "@restart": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: restart"
+    "description": "DRAFT — needs native review; assistant translation, not verified. restart"
   },
-  "pause": "Pause [needs native review]",
+  "pause": "Hagarika gato",
   "@pause": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: pause"
+    "description": "DRAFT — needs native review; assistant translation, not verified. pause"
   },
-  "paused": "Paused [needs native review]",
+  "paused": "Byahagaze gato",
   "@paused": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: paused"
+    "description": "DRAFT — needs native review; assistant translation, not verified. paused"
   },
-  "home": "Home [needs native review]",
+  "home": "Ahabanza",
   "@home": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: home"
+    "description": "DRAFT — needs native review; assistant translation, not verified. home"
   },
-  "replay": "Replay [needs native review]",
+  "replay": "Ongera ukine",
   "@replay": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: replay"
+    "description": "DRAFT — needs native review; assistant translation, not verified. replay"
   },
-  "nextPuzzle": "Next puzzle [needs native review]",
+  "nextPuzzle": "Umukino ukurikira",
   "@nextPuzzle": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: nextPuzzle"
+    "description": "DRAFT — needs native review; assistant translation, not verified. nextPuzzle"
   },
-  "nextLesson": "Next lesson [needs native review]",
+  "nextLesson": "Isomo rikurikira",
   "@nextLesson": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: nextLesson"
+    "description": "DRAFT — needs native review; assistant translation, not verified. nextLesson"
   },
-  "finishTutorial": "Finish tutorial [needs native review]",
+  "finishTutorial": "Soza inyigisho",
   "@finishTutorial": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: finishTutorial"
+    "description": "DRAFT — needs native review; assistant translation, not verified. finishTutorial"
   },
-  "newBest": "New best [needs native review]",
+  "newBest": "Wageze ku ntsinzi nshya",
   "@newBest": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: newBest"
+    "description": "DRAFT — needs native review; assistant translation, not verified. newBest"
   },
-  "levelComplete": "Level complete [needs native review]",
+  "levelComplete": "Urwego rwarangiye",
   "@levelComplete": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: levelComplete"
+    "description": "DRAFT — needs native review; assistant translation, not verified. levelComplete"
   },
-  "lessonComplete": "Lesson complete [needs native review]",
+  "lessonComplete": "Isomo ryarangiye",
   "@lessonComplete": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: lessonComplete"
+    "description": "DRAFT — needs native review; assistant translation, not verified. lessonComplete"
   },
-  "completionAnnouncement": "Level complete, {stars, plural, =1{1 star} other{{stars} stars}} [needs native review]",
+  "completionAnnouncement": "Urwego rwarangiye, {stars, plural, =1{inyenyeri 1} other{inyenyeri {stars}}}",
   "@completionAnnouncement": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: completionAnnouncement",
+    "description": "DRAFT — needs native review; assistant translation, not verified. completionAnnouncement",
     "placeholders": {
       "stars": {
         "type": "int"
       }
     }
   },
-  "freePlayTitle": "Free Play · {size}×{size} [needs native review]",
+  "freePlayTitle": "Gukina wisanzuye · {size}×{size}",
   "@freePlayTitle": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: freePlayTitle",
+    "description": "DRAFT — needs native review; assistant translation, not verified. freePlayTitle",
     "placeholders": {
       "size": {
         "type": "int"
       }
     }
   },
-  "gridSize": "{size}×{size} [needs native review]",
+  "gridSize": "{size}×{size}",
   "@gridSize": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: gridSize",
+    "description": "DRAFT — needs native review; assistant translation, not verified. gridSize",
     "placeholders": {
       "size": {
         "type": "int"
       }
     }
   },
-  "tutorialTitle": "Tutorial {number} of 3 [needs native review]",
+  "tutorialTitle": "Isomo rya {number} muri 3",
   "@tutorialTitle": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: tutorialTitle",
+    "description": "DRAFT — needs native review; assistant translation, not verified. tutorialTitle",
     "placeholders": {
       "number": {
         "type": "int"
       }
     }
   },
-  "movesValue": "Moves: {count} [needs native review]",
+  "movesValue": "Intambwe: {count}",
   "@movesValue": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: movesValue",
+    "description": "DRAFT — needs native review; assistant translation, not verified. movesValue",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "targetValue": "Target moves: {count} [needs native review]",
+  "targetValue": "Intambwe z’intego: {count}",
   "@targetValue": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: targetValue",
+    "description": "DRAFT — needs native review; assistant translation, not verified. targetValue",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "tileLabel": "Tile at row {row}, column {col}. Connections: {connections}. [needs native review]",
+  "tileLabel": "Igice kiri ku murongo wa {row}, mu nkingi ya {col}. Aho gihurira n’ibindi: {connections}.",
   "@tileLabel": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: tileLabel",
+    "description": "DRAFT — needs native review; assistant translation, not verified. tileLabel",
     "placeholders": {
       "row": {
         "type": "int"
@@ -213,205 +213,313 @@
       }
     }
   },
-  "north": "north [needs native review]",
+  "north": "amajyaruguru",
   "@north": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: north"
+    "description": "DRAFT — needs native review; assistant translation, not verified. north"
   },
-  "east": "east [needs native review]",
+  "east": "iburasirazuba",
   "@east": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: east"
+    "description": "DRAFT — needs native review; assistant translation, not verified. east"
   },
-  "south": "south [needs native review]",
+  "south": "amajyepfo",
   "@south": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: south"
+    "description": "DRAFT — needs native review; assistant translation, not verified. south"
   },
-  "west": "west [needs native review]",
+  "west": "iburengerazuba",
   "@west": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: west"
+    "description": "DRAFT — needs native review; assistant translation, not verified. west"
   },
-  "noConnections": "none [needs native review]",
+  "noConnections": "nta na hamwe",
   "@noConnections": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: noConnections"
+    "description": "DRAFT — needs native review; assistant translation, not verified. noConnections"
   },
-  "ruleOne": "Tap a tile to turn it a quarter turn clockwise. [needs native review]",
+  "ruleOne": "Kanda ku gice kugira ngo ukizengurutse kimwe cya kane cy’uruziga mu cyerekezo cy’inshinge z’isaha.",
   "@ruleOne": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: ruleOne"
+    "description": "DRAFT — needs native review; assistant translation, not verified. ruleOne"
   },
-  "ruleTwo": "Join the lines so no line ends in the open or points off the board. [needs native review]",
+  "ruleTwo": "Huza imirongo ku buryo nta mutwe wayo usigara udahujwe cyangwa werekeza hanze y’ikibaho.",
   "@ruleTwo": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: ruleTwo"
+    "description": "DRAFT — needs native review; assistant translation, not verified. ruleTwo"
   },
-  "ruleThree": "Everything must connect into one single pattern. [needs native review]",
+  "ruleThree": "Byose bigomba guhuzwa bikavamo ishusho imwe.",
   "@ruleThree": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: ruleThree"
+    "description": "DRAFT — needs native review; assistant translation, not verified. ruleThree"
   },
-  "ruleFour": "Use as few turns as you can. Reach the target moves for three stars. [needs native review]",
+  "ruleFour": "Koresha intambwe nke zishoboka. Nugera ku ntambwe z’intego uzabona inyenyeri eshatu.",
   "@ruleFour": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: ruleFour"
+    "description": "DRAFT — needs native review; assistant translation, not verified. ruleFour"
   },
-  "ruleFive": "Undo and Restart are always free. [needs native review]",
+  "ruleFive": "Gusubiza inyuma no kongera gutangira ni ubuntu buri gihe.",
   "@ruleFive": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: ruleFive"
+    "description": "DRAFT — needs native review; assistant translation, not verified. ruleFive"
   },
-  "lessonOne": "One tile needs a turn. Tap it to complete the pattern. [needs native review]",
+  "lessonOne": "Igice kimwe gikeneye kuzengurutswa. Gikande kugira ngo urangize ishusho.",
   "@lessonOne": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: lessonOne"
+    "description": "DRAFT — needs native review; assistant translation, not verified. lessonOne"
   },
-  "lessonTwo": "Match every open end. All lines must belong to one connected pattern; separate loops do not count. [needs native review]",
+  "lessonTwo": "Huza imitwe yose y’imirongo. Imirongo yose igomba kuba mu ishusho imwe ihujwe; inziga zitandukanye ntizemerwa.",
   "@lessonTwo": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: lessonTwo"
+    "description": "DRAFT — needs native review; assistant translation, not verified. lessonTwo"
   },
-  "lessonThree": "Try Undo or Restart, then solve the board. Meet the target moves to earn three stars. [needs native review]",
+  "lessonThree": "Gerageza gusubiza inyuma cyangwa kongera gutangira, hanyuma ukemure umukino. Gerageza gukoresha intambwe z’intego kugira ngo ubone inyenyeri eshatu.",
   "@lessonThree": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: lessonThree"
+    "description": "DRAFT — needs native review; assistant translation, not verified. lessonThree"
   },
-  "tutorialNotice": "Practice only: these results do not affect your Free Play bests. [needs native review]",
+  "tutorialNotice": "Uyu ni umwitozo gusa: ibisubizo byawo ntibihindura amanota yawe meza mu gukina wisanzuye.",
   "@tutorialNotice": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: tutorialNotice"
+    "description": "DRAFT — needs native review; assistant translation, not verified. tutorialNotice"
   },
-  "chooseSize": "Choose a Free Play grid [needs native review]",
+  "chooseSize": "Hitamo ingano y’ikibaho cyo gukina wisanzuye",
   "@chooseSize": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: chooseSize"
+    "description": "DRAFT — needs native review; assistant translation, not verified. chooseSize"
   },
-  "loading": "Loading [needs native review]",
+  "loading": "Birimo gufunguka",
   "@loading": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: loading"
+    "description": "DRAFT — needs native review; assistant translation, not verified. loading"
   },
-  "loadFailed": "Could not load tutorial preferences. [needs native review]",
+  "loadFailed": "Ntibyashobotse gufungura igenamiterere ry’inyigisho.",
   "@loadFailed": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: loadFailed"
+    "description": "DRAFT — needs native review; assistant translation, not verified. loadFailed"
   },
-  "retry": "Retry [needs native review]",
+  "retry": "Ongera ugerageze",
   "@retry": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: retry"
+    "description": "DRAFT — needs native review; assistant translation, not verified. retry"
   },
-  "saveFailed": "Could not remember tutorial completion. Please try again. [needs native review]",
+  "saveFailed": "Ntibyashobotse kubika ko warangije inyigisho. Ongera ugerageze.",
   "@saveFailed": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: saveFailed"
+    "description": "DRAFT — needs native review; assistant translation, not verified. saveFailed"
   },
-  "practiceTutorial": "Practice the tutorial [needs native review]",
+  "practiceTutorial": "Kora imyitozo y’inyigisho",
   "@practiceTutorial": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: practiceTutorial"
+    "description": "DRAFT — needs native review; assistant translation, not verified. practiceTutorial"
   },
-  "sessionBestNote": "Free Play bests last until the app closes. [needs native review]",
+  "sessionBestNote": "Ibisubizo byawe byiza byo gukina wisanzuye bibikwa kuri iki gikoresho.",
   "@sessionBestNote": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: sessionBestNote"
+    "description": "DRAFT — needs native review; assistant translation, not verified. sessionBestNote"
   },
-  "developmentBadge": "DEV [needs native review]",
+  "developmentBadge": "DEV",
   "@developmentBadge": {
-    "description": "PLACEHOLDER — needs native review. Step 4b: developmentBadge"
+    "description": "DRAFT — needs native review; assistant translation, not verified. developmentBadge"
   },
-  "chooseDifficulty": "Choose a challenge difficulty [needs native review]",
+  "chooseDifficulty": "Hitamo ubukana bw’umukino",
   "@chooseDifficulty": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: chooseDifficulty"
+    "description": "DRAFT — needs native review; assistant translation, not verified. chooseDifficulty"
   },
-  "easy": "Easy [needs native review]",
+  "easy": "Byoroshye",
   "@easy": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: easy"
+    "description": "DRAFT — needs native review; assistant translation, not verified. easy"
   },
-  "medium": "Medium [needs native review]",
+  "medium": "Biringaniye",
   "@medium": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: medium"
+    "description": "DRAFT — needs native review; assistant translation, not verified. medium"
   },
-  "hard": "Hard [needs native review]",
+  "hard": "Bikomeye",
   "@hard": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: hard"
+    "description": "DRAFT — needs native review; assistant translation, not verified. hard"
   },
-  "freePlay": "Free Play [needs native review]",
+  "freePlay": "Gukina wisanzuye",
   "@freePlay": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: freePlay"
+    "description": "DRAFT — needs native review; assistant translation, not verified. freePlay"
   },
-  "challengeSessionNote": "Challenge progress and bonus moves last for this app session. Free Play has no move limit. [needs native review]",
+  "challengeSessionNote": "Aho ugeze n’intambwe z’inyongera watsindiye bibikwa kuri iki gikoresho. Gukina wisanzuye ntibigira umubare ntarengwa w’intambwe.",
   "@challengeSessionNote": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: challengeSessionNote"
+    "description": "DRAFT — needs native review; assistant translation, not verified. challengeSessionNote"
   },
-  "choosePattern": "Choose the pattern you want to complete. [needs native review]",
+  "choosePattern": "Hitamo ishusho ushaka kurangiza.",
   "@choosePattern": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: choosePattern"
+    "description": "DRAFT — needs native review; assistant translation, not verified. choosePattern"
   },
-  "patternNumber": "Pattern {number} [needs native review]",
+  "patternNumber": "Ishusho ya {number}",
   "@patternNumber": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternNumber",
+    "description": "DRAFT — needs native review; assistant translation, not verified. patternNumber",
     "placeholders": {
       "number": {
         "type": "int"
       }
     }
   },
-  "allowanceValue": "Move allowance: {count} [needs native review]",
+  "allowanceValue": "Intambwe wemerewe: {count}",
   "@allowanceValue": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: allowanceValue",
+    "description": "DRAFT — needs native review; assistant translation, not verified. allowanceValue",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "bonusIncluded": "Includes {count} earned bonus moves. [needs native review]",
+  "bonusIncluded": "Harimo intambwe {count} z’inyongera watsindiye.",
   "@bonusIncluded": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: bonusIncluded",
+    "description": "DRAFT — needs native review; assistant translation, not verified. bonusIncluded",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "patternUnavailable": "This pattern is not available. [needs native review]",
+  "patternUnavailable": "Iyi shusho ntiboneka.",
   "@patternUnavailable": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternUnavailable"
+    "description": "DRAFT — needs native review; assistant translation, not verified. patternUnavailable"
   },
-  "patternPreview": "Study the completed pattern before you start. [needs native review]",
+  "patternPreview": "Banza witegereze ishusho yuzuye mbere yo gutangira.",
   "@patternPreview": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: patternPreview"
+    "description": "DRAFT — needs native review; assistant translation, not verified. patternPreview"
   },
-  "previewRule": "Use this as your reference. Any single connected pattern with no loose ends is a valid solution. [needs native review]",
+  "previewRule": "Iyi shusho ni urugero rwo kukuyobora. Ishusho iyo ari yo yose ihujwe yose kandi idafite imitwe y’imirongo idahujwe ni igisubizo cyemewe.",
   "@previewRule": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: previewRule"
+    "description": "DRAFT — needs native review; assistant translation, not verified. previewRule"
   },
-  "referencePattern": "Completed reference pattern [needs native review]",
+  "referencePattern": "Ishusho yuzuye yo kureberaho",
   "@referencePattern": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: referencePattern"
+    "description": "DRAFT — needs native review; assistant translation, not verified. referencePattern"
   },
-  "referenceHint": "Your reference stays here. Tap it to enlarge. [needs native review]",
+  "referenceHint": "Ishusho yo kureberaho iguma hano. Yikande kugira ngo uyagure.",
   "@referenceHint": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: referenceHint"
+    "description": "DRAFT — needs native review; assistant translation, not verified. referenceHint"
   },
-  "startPuzzle": "Start puzzle [needs native review]",
+  "startPuzzle": "Tangira umukino",
   "@startPuzzle": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: startPuzzle"
+    "description": "DRAFT — needs native review; assistant translation, not verified. startPuzzle"
   },
-  "remainingMoves": "Moves left: {count} [needs native review]",
+  "remainingMoves": "Intambwe zisigaye: {count}",
   "@remainingMoves": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: remainingMoves",
+    "description": "DRAFT — needs native review; assistant translation, not verified. remainingMoves",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "bonusReward": "+{count} moves earned for the next pattern [needs native review]",
+  "bonusReward": "Watsindiye intambwe +{count} zo gukoresha ku ishusho ikurikira",
   "@bonusReward": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: bonusReward",
+    "description": "DRAFT — needs native review; assistant translation, not verified. bonusReward",
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
-  "gameOver": "Game over [needs native review]",
+  "gameOver": "Umukino urarangiye",
   "@gameOver": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: gameOver"
+    "description": "DRAFT — needs native review; assistant translation, not verified. gameOver"
   },
-  "outOfMoves": "No moves left. Replay this pattern with a fresh allowance. [needs native review]",
+  "outOfMoves": "Nta ntambwe zisigaye. Ongera ukine iyi shusho uhabwe intambwe nshya.",
   "@outOfMoves": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: outOfMoves"
+    "description": "DRAFT — needs native review; assistant translation, not verified. outOfMoves"
   },
-  "challengeHelp": "Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active. [needs native review]",
+  "challengeHelp": "Imikino y’inzego igira umubare ntarengwa w’intambwe. Iyo urangije ishusho, utsindira intambwe enye z’inyongera ku ishusho ikurikira, rimwe gusa kuri buri rwego. Gusubiza inyuma bigusubiza intambwe imwe igihe umukino ugikomeje.",
   "@challengeHelp": {
-    "description": "PLACEHOLDER — needs native review. Challenge checkpoint: challengeHelp"
+    "description": "DRAFT — needs native review; assistant translation, not verified. challengeHelp"
   },
-  "colorHelp": "Colors are decorative. Match the connections, not the colors. [needs native review]",
+  "colorHelp": "Amabara ni ayo kurimbisha. Huza imirongo, si amabara.",
   "@colorHelp": {
-    "description": "PLACEHOLDER — needs native review. Level palettes do not affect puzzle validation."
+    "description": "DRAFT — needs native review; assistant translation, not verified. colorHelp"
+  },
+  "settingsTitle": "Igenamiterere",
+  "@settingsTitle": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. settingsTitle"
+  },
+  "soundEnabled": "Amajwi y’umukino",
+  "@soundEnabled": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. soundEnabled"
+  },
+  "volumeLabel": "Uburemere bw’ijwi",
+  "@volumeLabel": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. volumeLabel"
+  },
+  "previewSound": "Umva ijwi ry’igerageza",
+  "@previewSound": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. previewSound"
+  },
+  "hapticsEnabled": "Kunyeganyega kw’igikoresho",
+  "@hapticsEnabled": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. hapticsEnabled"
+  },
+  "reduceMotionSetting": "Gabanya ibinyeganyega kuri ecran",
+  "@reduceMotionSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. reduceMotionSetting"
+  },
+  "languageSetting": "Ururimi",
+  "@languageSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. languageSetting"
+  },
+  "themeSetting": "Isura",
+  "@themeSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. themeSetting"
+  },
+  "systemSetting": "Kurikiza igenamiterere ry’igikoresho",
+  "@systemSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. systemSetting"
+  },
+  "lightSetting": "Urumuri",
+  "@lightSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. lightSetting"
+  },
+  "darkSetting": "Umwijima",
+  "@darkSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. darkSetting"
+  },
+  "resetProgress": "Siba aho ugeze",
+  "@resetProgress": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. resetProgress"
+  },
+  "resetProgressQuestion": "Urasiba inzego warangije, inyenyeri, intambwe nke wakoresheje n’inyongera watsindiye? Igenamiterere rizagumaho.",
+  "@resetProgressQuestion": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. resetProgressQuestion"
+  },
+  "cancelSetting": "Reka",
+  "@cancelSetting": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. cancelSetting"
+  },
+  "progressResetDone": "Aho wari ugeze hasibwe.",
+  "@progressResetDone": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. progressResetDone"
+  },
+  "settingsSaveError": "Ntibyashobotse kubika. Ongera ugerageze.",
+  "@settingsSaveError": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. settingsSaveError"
+  },
+  "retrySave": "Ongera ugerageze",
+  "@retrySave": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. retrySave"
+  },
+  "savingProgress": "Birimo kubika aho ugeze…",
+  "@savingProgress": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. savingProgress"
+  },
+  "progressSaveError": "Wakemuye umukino, ariko ntibyashobotse kubika aho ugeze. Ongera ugerageze kugira ngo ubike igisubizo cyawe.",
+  "@progressSaveError": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. progressSaveError"
+  },
+  "localStorageError": "Ntibyashobotse gufungura amakuru abitswe kuri iki gikoresho. Ongera ugerageze utayasibye.",
+  "@localStorageError": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. localStorageError"
+  },
+  "savedProgressLabel": "Aho ugeze habitswe kuri iki gikoresho",
+  "@savedProgressLabel": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. savedProgressLabel"
+  },
+  "rwReviewLabel": "Kinyarwanda — gikeneye gusuzumwa n’ukivuga kavukire",
+  "@rwReviewLabel": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. rwReviewLabel"
+  },
+  "rateGame": "Tanga amanota ku mukino",
+  "@rateGame": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. rateGame"
+  },
+  "rateGameDescription": "Tanga amanota cyangwa igitekerezo mu bubiko bwa porogaramu.",
+  "@rateGameDescription": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. rateGameDescription"
+  },
+  "ratingNotReleased": "Bizashoboka umukino umaze gushyirwa mu bubiko bwa porogaramu.",
+  "@ratingNotReleased": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. ratingNotReleased"
+  },
+  "ratingOpenFailed": "Ntibyashobotse gufungura ububiko bwa porogaramu. Ongera ugerageze.",
+  "@ratingOpenFailed": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. ratingOpenFailed"
+  },
+  "ratingOpening": "Birimo gufungura ububiko bwa porogaramu…",
+  "@ratingOpening": {
+    "description": "DRAFT — needs native review; assistant translation, not verified. ratingOpening"
   }
 }

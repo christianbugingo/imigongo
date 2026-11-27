@@ -298,7 +298,7 @@
   "@practiceTutorial": {
     "description": "Step 4b: practiceTutorial"
   },
-  "sessionBestNote": "Free Play bests last until the app closes.",
+  "sessionBestNote": "Free Play bests are saved on this device.",
   "@sessionBestNote": {
     "description": "Step 4b: sessionBestNote"
   },
@@ -326,7 +326,7 @@
   "@freePlay": {
     "description": "Challenge checkpoint: freePlay"
   },
-  "challengeSessionNote": "Challenge progress and bonus moves last for this app session. Free Play has no move limit.",
+  "challengeSessionNote": "Progress and earned bonus moves are saved on this device. Free Play has no move limit.",
   "@challengeSessionNote": {
     "description": "Challenge checkpoint: challengeSessionNote"
   },
@@ -418,5 +418,113 @@
   "colorHelp": "Colors are decorative. Match the connections, not the colors.",
   "@colorHelp": {
     "description": "Level palettes do not affect puzzle validation."
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Settings checkpoint: settingsTitle"
+  },
+  "soundEnabled": "Sound effects",
+  "@soundEnabled": {
+    "description": "Settings checkpoint: soundEnabled"
+  },
+  "volumeLabel": "Volume",
+  "@volumeLabel": {
+    "description": "Settings checkpoint: volumeLabel"
+  },
+  "previewSound": "Preview sound",
+  "@previewSound": {
+    "description": "Settings checkpoint: previewSound"
+  },
+  "hapticsEnabled": "Haptics",
+  "@hapticsEnabled": {
+    "description": "Settings checkpoint: hapticsEnabled"
+  },
+  "reduceMotionSetting": "Reduce motion",
+  "@reduceMotionSetting": {
+    "description": "Settings checkpoint: reduceMotionSetting"
+  },
+  "languageSetting": "Language",
+  "@languageSetting": {
+    "description": "Settings checkpoint: languageSetting"
+  },
+  "themeSetting": "Appearance",
+  "@themeSetting": {
+    "description": "Settings checkpoint: themeSetting"
+  },
+  "systemSetting": "System default",
+  "@systemSetting": {
+    "description": "Settings checkpoint: systemSetting"
+  },
+  "lightSetting": "Light",
+  "@lightSetting": {
+    "description": "Settings checkpoint: lightSetting"
+  },
+  "darkSetting": "Dark",
+  "@darkSetting": {
+    "description": "Settings checkpoint: darkSetting"
+  },
+  "resetProgress": "Reset progress",
+  "@resetProgress": {
+    "description": "Settings checkpoint: resetProgress"
+  },
+  "resetProgressQuestion": "Erase completed levels, stars, best moves and earned bonuses? Settings will be kept.",
+  "@resetProgressQuestion": {
+    "description": "Settings checkpoint: resetProgressQuestion"
+  },
+  "cancelSetting": "Cancel",
+  "@cancelSetting": {
+    "description": "Settings checkpoint: cancelSetting"
+  },
+  "progressResetDone": "Progress erased.",
+  "@progressResetDone": {
+    "description": "Settings checkpoint: progressResetDone"
+  },
+  "settingsSaveError": "Could not save. Please retry.",
+  "@settingsSaveError": {
+    "description": "Settings checkpoint: settingsSaveError"
+  },
+  "retrySave": "Retry",
+  "@retrySave": {
+    "description": "Settings checkpoint: retrySave"
+  },
+  "savingProgress": "Saving progress…",
+  "@savingProgress": {
+    "description": "Settings checkpoint: savingProgress"
+  },
+  "progressSaveError": "Your puzzle is solved, but progress could not be saved. Retry to keep your result.",
+  "@progressSaveError": {
+    "description": "Settings checkpoint: progressSaveError"
+  },
+  "localStorageError": "Could not open local storage. Retry without erasing your data.",
+  "@localStorageError": {
+    "description": "Settings checkpoint: localStorageError"
+  },
+  "savedProgressLabel": "Progress saved on this device",
+  "@savedProgressLabel": {
+    "description": "Settings checkpoint: savedProgressLabel"
+  },
+  "rwReviewLabel": "Kinyarwanda — needs native review",
+  "@rwReviewLabel": {
+    "description": "Settings checkpoint: rwReviewLabel"
+  },
+  "rateGame": "Rate this game",
+  "@rateGame": {
+    "description": "Ratings: rateGame"
+  },
+  "rateGameDescription": "Leave a rating or review in the app store.",
+  "@rateGameDescription": {
+    "description": "Ratings: rateGameDescription"
+  },
+  "ratingNotReleased": "Available after the game is released in the app store.",
+  "@ratingNotReleased": {
+    "description": "Ratings: ratingNotReleased"
+  },
+  "ratingOpenFailed": "Could not open the app store. Please try again.",
+  "@ratingOpenFailed": {
+    "description": "Ratings: ratingOpenFailed"
+  },
+  "ratingOpening": "Opening the app store…",
+  "@ratingOpening": {
+    "description": "Ratings: ratingOpening"
   }
 }

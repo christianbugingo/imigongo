@@ -13,16 +13,16 @@ class AppLocalizationsRw extends AppLocalizations {
   String get appTitle => 'Imigongo';
 
   @override
-  String get geometricReliefPuzzle => 'Umukino w\'Ubugeni bw\'Imigongo';
+  String get geometricReliefPuzzle => 'Umukino wo guhuza imirongo';
 
   @override
   String get play => 'Gukina';
 
   @override
-  String get settings => 'Ibyigenewe';
+  String get settings => 'Igenamiterere';
 
   @override
-  String get dailyChallenge => 'Umukoro w\'Umunsi';
+  String get dailyChallenge => 'Umukino w’umunsi';
 
   @override
   String get moves => 'Intambwe';
@@ -31,10 +31,10 @@ class AppLocalizationsRw extends AppLocalizations {
   String get par => 'Intego';
 
   @override
-  String get targetMoves => 'Intambwe Ziteganyijwe';
+  String get targetMoves => 'Intambwe z’intego';
 
   @override
-  String get solved => 'Birarangiye';
+  String get solved => 'Byakemutse';
 
   @override
   String starsEarned(int count) {
@@ -48,7 +48,8 @@ class AppLocalizationsRw extends AppLocalizations {
   }
 
   @override
-  String get rotateInstruction => 'Kanda ku gasanduku kugira ngo gahindukire';
+  String get rotateInstruction =>
+      'Kanda ku gice kugira ngo ukizengurutse mu cyerekezo cy’inshinge z’isaha';
 
   @override
   String get colorCharcoal => 'Umukara';
@@ -57,278 +58,361 @@ class AppLocalizationsRw extends AppLocalizations {
   String get colorChalk => 'Umweru';
 
   @override
-  String get colorTerracotta => 'Umutuku w\'ibumba';
+  String get colorTerracotta => 'Umutuku wijimye';
 
   @override
-  String get colorOchre => 'Umuhondo w\'ibumba';
+  String get colorOchre => 'Umuhondo wijimye';
 
   @override
-  String get undo => 'Undo [needs native review]';
+  String get undo => 'Subiza inyuma';
 
   @override
-  String get reset => 'Reset [needs native review]';
+  String get reset => 'Tangira bushya';
 
   @override
-  String get inProgress => 'In progress [needs native review]';
+  String get inProgress => 'Biracyakorwa';
 
   @override
-  String get welcomeTitle => 'Welcome to Imigongo [needs native review]';
+  String get welcomeTitle => 'Murakaza neza muri Imigongo';
 
   @override
   String get welcomeBody =>
-      'A quiet puzzle of connected lines. Learn with three short practice boards. [needs native review]';
+      'Umukino utuje wo guhuza imirongo. Wige uko ukinwa ukoresheje imyitozo itatu migufi.';
 
   @override
-  String get learnToPlay => 'Learn to play [needs native review]';
+  String get learnToPlay => 'Iga gukina';
 
   @override
-  String get skipTutorial => 'Skip tutorial [needs native review]';
+  String get skipTutorial => 'Simbuka inyigisho';
 
   @override
-  String get howToPlay => 'How to Play [needs native review]';
+  String get howToPlay => 'Uko bakina';
 
   @override
-  String get back => 'Back [needs native review]';
+  String get back => 'Subira inyuma';
 
   @override
-  String get resume => 'Resume [needs native review]';
+  String get resume => 'Komeza';
 
   @override
-  String get restart => 'Restart [needs native review]';
+  String get restart => 'Ongera utangire';
 
   @override
-  String get pause => 'Pause [needs native review]';
+  String get pause => 'Hagarika gato';
 
   @override
-  String get paused => 'Paused [needs native review]';
+  String get paused => 'Byahagaze gato';
 
   @override
-  String get home => 'Home [needs native review]';
+  String get home => 'Ahabanza';
 
   @override
-  String get replay => 'Replay [needs native review]';
+  String get replay => 'Ongera ukine';
 
   @override
-  String get nextPuzzle => 'Next puzzle [needs native review]';
+  String get nextPuzzle => 'Umukino ukurikira';
 
   @override
-  String get nextLesson => 'Next lesson [needs native review]';
+  String get nextLesson => 'Isomo rikurikira';
 
   @override
-  String get finishTutorial => 'Finish tutorial [needs native review]';
+  String get finishTutorial => 'Soza inyigisho';
 
   @override
-  String get newBest => 'New best [needs native review]';
+  String get newBest => 'Wageze ku ntsinzi nshya';
 
   @override
-  String get levelComplete => 'Level complete [needs native review]';
+  String get levelComplete => 'Urwego rwarangiye';
 
   @override
-  String get lessonComplete => 'Lesson complete [needs native review]';
+  String get lessonComplete => 'Isomo ryarangiye';
 
   @override
   String completionAnnouncement(int stars) {
     String _temp0 = intl.Intl.pluralLogic(
       stars,
       locale: localeName,
-      other: '$stars stars',
-      one: '1 star',
+      other: 'inyenyeri $stars',
+      one: 'inyenyeri 1',
     );
-    return 'Level complete, $_temp0 [needs native review]';
+    return 'Urwego rwarangiye, $_temp0';
   }
 
   @override
   String freePlayTitle(int size) {
-    return 'Free Play · $size×$size [needs native review]';
+    return 'Gukina wisanzuye · $size×$size';
   }
 
   @override
   String gridSize(int size) {
-    return '$size×$size [needs native review]';
+    return '$size×$size';
   }
 
   @override
   String tutorialTitle(int number) {
-    return 'Tutorial $number of 3 [needs native review]';
+    return 'Isomo rya $number muri 3';
   }
 
   @override
   String movesValue(int count) {
-    return 'Moves: $count [needs native review]';
+    return 'Intambwe: $count';
   }
 
   @override
   String targetValue(int count) {
-    return 'Target moves: $count [needs native review]';
+    return 'Intambwe z’intego: $count';
   }
 
   @override
   String tileLabel(int row, int col, String connections) {
-    return 'Tile at row $row, column $col. Connections: $connections. [needs native review]';
+    return 'Igice kiri ku murongo wa $row, mu nkingi ya $col. Aho gihurira n’ibindi: $connections.';
   }
 
   @override
-  String get north => 'north [needs native review]';
+  String get north => 'amajyaruguru';
 
   @override
-  String get east => 'east [needs native review]';
+  String get east => 'iburasirazuba';
 
   @override
-  String get south => 'south [needs native review]';
+  String get south => 'amajyepfo';
 
   @override
-  String get west => 'west [needs native review]';
+  String get west => 'iburengerazuba';
 
   @override
-  String get noConnections => 'none [needs native review]';
+  String get noConnections => 'nta na hamwe';
 
   @override
   String get ruleOne =>
-      'Tap a tile to turn it a quarter turn clockwise. [needs native review]';
+      'Kanda ku gice kugira ngo ukizengurutse kimwe cya kane cy’uruziga mu cyerekezo cy’inshinge z’isaha.';
 
   @override
   String get ruleTwo =>
-      'Join the lines so no line ends in the open or points off the board. [needs native review]';
+      'Huza imirongo ku buryo nta mutwe wayo usigara udahujwe cyangwa werekeza hanze y’ikibaho.';
 
   @override
-  String get ruleThree =>
-      'Everything must connect into one single pattern. [needs native review]';
+  String get ruleThree => 'Byose bigomba guhuzwa bikavamo ishusho imwe.';
 
   @override
   String get ruleFour =>
-      'Use as few turns as you can. Reach the target moves for three stars. [needs native review]';
+      'Koresha intambwe nke zishoboka. Nugera ku ntambwe z’intego uzabona inyenyeri eshatu.';
 
   @override
   String get ruleFive =>
-      'Undo and Restart are always free. [needs native review]';
+      'Gusubiza inyuma no kongera gutangira ni ubuntu buri gihe.';
 
   @override
   String get lessonOne =>
-      'One tile needs a turn. Tap it to complete the pattern. [needs native review]';
+      'Igice kimwe gikeneye kuzengurutswa. Gikande kugira ngo urangize ishusho.';
 
   @override
   String get lessonTwo =>
-      'Match every open end. All lines must belong to one connected pattern; separate loops do not count. [needs native review]';
+      'Huza imitwe yose y’imirongo. Imirongo yose igomba kuba mu ishusho imwe ihujwe; inziga zitandukanye ntizemerwa.';
 
   @override
   String get lessonThree =>
-      'Try Undo or Restart, then solve the board. Meet the target moves to earn three stars. [needs native review]';
+      'Gerageza gusubiza inyuma cyangwa kongera gutangira, hanyuma ukemure umukino. Gerageza gukoresha intambwe z’intego kugira ngo ubone inyenyeri eshatu.';
 
   @override
   String get tutorialNotice =>
-      'Practice only: these results do not affect your Free Play bests. [needs native review]';
+      'Uyu ni umwitozo gusa: ibisubizo byawo ntibihindura amanota yawe meza mu gukina wisanzuye.';
 
   @override
-  String get chooseSize => 'Choose a Free Play grid [needs native review]';
+  String get chooseSize => 'Hitamo ingano y’ikibaho cyo gukina wisanzuye';
 
   @override
-  String get loading => 'Loading [needs native review]';
+  String get loading => 'Birimo gufunguka';
 
   @override
   String get loadFailed =>
-      'Could not load tutorial preferences. [needs native review]';
+      'Ntibyashobotse gufungura igenamiterere ry’inyigisho.';
 
   @override
-  String get retry => 'Retry [needs native review]';
+  String get retry => 'Ongera ugerageze';
 
   @override
   String get saveFailed =>
-      'Could not remember tutorial completion. Please try again. [needs native review]';
+      'Ntibyashobotse kubika ko warangije inyigisho. Ongera ugerageze.';
 
   @override
-  String get practiceTutorial => 'Practice the tutorial [needs native review]';
+  String get practiceTutorial => 'Kora imyitozo y’inyigisho';
 
   @override
   String get sessionBestNote =>
-      'Free Play bests last until the app closes. [needs native review]';
+      'Ibisubizo byawe byiza byo gukina wisanzuye bibikwa kuri iki gikoresho.';
 
   @override
-  String get developmentBadge => 'DEV [needs native review]';
+  String get developmentBadge => 'DEV';
 
   @override
-  String get chooseDifficulty =>
-      'Choose a challenge difficulty [needs native review]';
+  String get chooseDifficulty => 'Hitamo ubukana bw’umukino';
 
   @override
-  String get easy => 'Easy [needs native review]';
+  String get easy => 'Byoroshye';
 
   @override
-  String get medium => 'Medium [needs native review]';
+  String get medium => 'Biringaniye';
 
   @override
-  String get hard => 'Hard [needs native review]';
+  String get hard => 'Bikomeye';
 
   @override
-  String get freePlay => 'Free Play [needs native review]';
+  String get freePlay => 'Gukina wisanzuye';
 
   @override
   String get challengeSessionNote =>
-      'Challenge progress and bonus moves last for this app session. Free Play has no move limit. [needs native review]';
+      'Aho ugeze n’intambwe z’inyongera watsindiye bibikwa kuri iki gikoresho. Gukina wisanzuye ntibigira umubare ntarengwa w’intambwe.';
 
   @override
-  String get choosePattern =>
-      'Choose the pattern you want to complete. [needs native review]';
+  String get choosePattern => 'Hitamo ishusho ushaka kurangiza.';
 
   @override
   String patternNumber(int number) {
-    return 'Pattern $number [needs native review]';
+    return 'Ishusho ya $number';
   }
 
   @override
   String allowanceValue(int count) {
-    return 'Move allowance: $count [needs native review]';
+    return 'Intambwe wemerewe: $count';
   }
 
   @override
   String bonusIncluded(int count) {
-    return 'Includes $count earned bonus moves. [needs native review]';
+    return 'Harimo intambwe $count z’inyongera watsindiye.';
   }
 
   @override
-  String get patternUnavailable =>
-      'This pattern is not available. [needs native review]';
+  String get patternUnavailable => 'Iyi shusho ntiboneka.';
 
   @override
   String get patternPreview =>
-      'Study the completed pattern before you start. [needs native review]';
+      'Banza witegereze ishusho yuzuye mbere yo gutangira.';
 
   @override
   String get previewRule =>
-      'Use this as your reference. Any single connected pattern with no loose ends is a valid solution. [needs native review]';
+      'Iyi shusho ni urugero rwo kukuyobora. Ishusho iyo ari yo yose ihujwe yose kandi idafite imitwe y’imirongo idahujwe ni igisubizo cyemewe.';
 
   @override
-  String get referencePattern =>
-      'Completed reference pattern [needs native review]';
+  String get referencePattern => 'Ishusho yuzuye yo kureberaho';
 
   @override
   String get referenceHint =>
-      'Your reference stays here. Tap it to enlarge. [needs native review]';
+      'Ishusho yo kureberaho iguma hano. Yikande kugira ngo uyagure.';
 
   @override
-  String get startPuzzle => 'Start puzzle [needs native review]';
+  String get startPuzzle => 'Tangira umukino';
 
   @override
   String remainingMoves(int count) {
-    return 'Moves left: $count [needs native review]';
+    return 'Intambwe zisigaye: $count';
   }
 
   @override
   String bonusReward(int count) {
-    return '+$count moves earned for the next pattern [needs native review]';
+    return 'Watsindiye intambwe +$count zo gukoresha ku ishusho ikurikira';
   }
 
   @override
-  String get gameOver => 'Game over [needs native review]';
+  String get gameOver => 'Umukino urarangiye';
 
   @override
   String get outOfMoves =>
-      'No moves left. Replay this pattern with a fresh allowance. [needs native review]';
+      'Nta ntambwe zisigaye. Ongera ukine iyi shusho uhabwe intambwe nshya.';
 
   @override
   String get challengeHelp =>
-      'Challenges have a move limit. Solving a pattern earns four extra moves for its next pattern, once per level. Undo returns a move while the attempt is active. [needs native review]';
+      'Imikino y’inzego igira umubare ntarengwa w’intambwe. Iyo urangije ishusho, utsindira intambwe enye z’inyongera ku ishusho ikurikira, rimwe gusa kuri buri rwego. Gusubiza inyuma bigusubiza intambwe imwe igihe umukino ugikomeje.';
 
   @override
   String get colorHelp =>
-      'Colors are decorative. Match the connections, not the colors. [needs native review]';
+      'Amabara ni ayo kurimbisha. Huza imirongo, si amabara.';
+
+  @override
+  String get settingsTitle => 'Igenamiterere';
+
+  @override
+  String get soundEnabled => 'Amajwi y’umukino';
+
+  @override
+  String get volumeLabel => 'Uburemere bw’ijwi';
+
+  @override
+  String get previewSound => 'Umva ijwi ry’igerageza';
+
+  @override
+  String get hapticsEnabled => 'Kunyeganyega kw’igikoresho';
+
+  @override
+  String get reduceMotionSetting => 'Gabanya ibinyeganyega kuri ecran';
+
+  @override
+  String get languageSetting => 'Ururimi';
+
+  @override
+  String get themeSetting => 'Isura';
+
+  @override
+  String get systemSetting => 'Kurikiza igenamiterere ry’igikoresho';
+
+  @override
+  String get lightSetting => 'Urumuri';
+
+  @override
+  String get darkSetting => 'Umwijima';
+
+  @override
+  String get resetProgress => 'Siba aho ugeze';
+
+  @override
+  String get resetProgressQuestion =>
+      'Urasiba inzego warangije, inyenyeri, intambwe nke wakoresheje n’inyongera watsindiye? Igenamiterere rizagumaho.';
+
+  @override
+  String get cancelSetting => 'Reka';
+
+  @override
+  String get progressResetDone => 'Aho wari ugeze hasibwe.';
+
+  @override
+  String get settingsSaveError => 'Ntibyashobotse kubika. Ongera ugerageze.';
+
+  @override
+  String get retrySave => 'Ongera ugerageze';
+
+  @override
+  String get savingProgress => 'Birimo kubika aho ugeze…';
+
+  @override
+  String get progressSaveError =>
+      'Wakemuye umukino, ariko ntibyashobotse kubika aho ugeze. Ongera ugerageze kugira ngo ubike igisubizo cyawe.';
+
+  @override
+  String get localStorageError =>
+      'Ntibyashobotse gufungura amakuru abitswe kuri iki gikoresho. Ongera ugerageze utayasibye.';
+
+  @override
+  String get savedProgressLabel => 'Aho ugeze habitswe kuri iki gikoresho';
+
+  @override
+  String get rwReviewLabel =>
+      'Kinyarwanda — gikeneye gusuzumwa n’ukivuga kavukire';
+
+  @override
+  String get rateGame => 'Tanga amanota ku mukino';
+
+  @override
+  String get rateGameDescription =>
+      'Tanga amanota cyangwa igitekerezo mu bubiko bwa porogaramu.';
+
+  @override
+  String get ratingNotReleased =>
+      'Bizashoboka umukino umaze gushyirwa mu bubiko bwa porogaramu.';
+
+  @override
+  String get ratingOpenFailed =>
+      'Ntibyashobotse gufungura ububiko bwa porogaramu. Ongera ugerageze.';
+
+  @override
+  String get ratingOpening => 'Birimo gufungura ububiko bwa porogaramu…';
 }

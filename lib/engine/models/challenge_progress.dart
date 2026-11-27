@@ -12,10 +12,12 @@ class ChallengeRules {
       };
 }
 
-/// Session-only progress: a replay cannot farm bonus moves or stack grants.
+/// Hydrated progress: a replay cannot farm bonus moves or stack grants.
 class ChallengeProgress {
-  final Set<String> _completed = {};
-  final Map<String, int> _bonuses = {};
+  final Set<String> _completed;
+  final Map<String, int> _bonuses;
+  ChallengeProgress({Iterable<String> completed = const [], Map<String, int> bonuses = const {}})
+    : _completed = Set.of(completed), _bonuses = Map.of(bonuses);
   int bonusFor(String levelId) => _bonuses[levelId] ?? 0;
   bool isCompleted(String id) => _completed.contains(id);
   int recordWin(ChallengeLevel level) {
